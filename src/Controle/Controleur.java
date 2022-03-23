@@ -49,6 +49,7 @@ public class Controleur {
 					e1.printStackTrace();
 				}
 			}});
+		
 		options.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
