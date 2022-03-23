@@ -21,6 +21,11 @@ public class Controleur {
 	@FXML
 	private Button play;
 	
+	@FXML
+	private Button options;
+	
+	@FXML
+	private Button howtoplay;
 	
 
 	@FXML
@@ -44,12 +49,48 @@ public class Controleur {
 					e1.printStackTrace();
 				}
 			}});
+		options.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent arg0) {
+                Stage stage = new Stage();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("pageoptions.fxml"));
+
+                Parent root;
+                try {
+                    root = loader.load();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                }catch (IOException e1){
+
+                    e1.printStackTrace();
+                }
+            }});
+
+        howtoplay.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent arg0) {
+                Stage stage = new Stage();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("pagehowtoplay.fxml"));
+
+                Parent root;
+                try {
+                    root = loader.load();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                }catch (IOException e1){
+
+                    e1.printStackTrace();
+                }
+	
+
+
+         }});
+	
 	}
-
-
-
-	
-	
 }
 
 

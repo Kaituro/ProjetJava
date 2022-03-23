@@ -17,12 +17,12 @@
             <Font name="Arial" size="96.0" />
          </font>
       </Label>
-      <Button layoutX="342.0" layoutY="444.0" mnemonicParsing="false" prefHeight="140.0" prefWidth="494.0" text="Options">
+      <Button fx:id="options" layoutX="342.0" layoutY="444.0" mnemonicParsing="false" prefHeight="140.0" prefWidth="494.0" text="Options">
          <font>
             <Font name="Arial Black" size="50.0" />
          </font>
       </Button>
-      <Button layoutX="342.0" layoutY="625.0" mnemonicParsing="false" prefHeight="140.0" prefWidth="494.0" text="How to play">
+      <Button fx:id="howtoplay" layoutX="342.0" layoutY="625.0" mnemonicParsing="false" prefHeight="140.0" prefWidth="494.0" text="How to play">
          <font>
             <Font name="Arial Black" size="50.0" />
          </font>

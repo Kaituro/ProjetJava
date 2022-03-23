@@ -17,6 +17,7 @@ Class<?> clazz = this.getClass();
     ImageView imageView = new ImageView(image);
     
 int taille;
+
 public Brique(Image image, int taille) {
 	this.image=image;
 	this.taille=taille;
