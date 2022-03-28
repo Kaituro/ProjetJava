@@ -3,7 +3,6 @@ package Controle;
 import java.io.IOException;
 
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -14,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class Controleur {
+public class Controleur{
 	
 	
 
@@ -35,21 +34,23 @@ public class Controleur {
 
 			@Override
 			public void handle(ActionEvent arg0) {
-				Stage stage = new Stage();
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("PageJeu.fxml"));
-				
-				Parent root;
-				try {
-					root = loader.load();
+				play.getScene().getWindow().hide();
+				try {	
+					Stage stage = (Stage) ((Node)arg0.getSource()).getScene().getWindow();
+					Parent root =  FXMLLoader.load((getClass().getResource("PageJeu.fxml")));
 					Scene scene = new Scene(root);
 					stage.setScene(scene);
 					stage.show();
-				}catch (IOException e1){
 					
-					e1.printStackTrace();
-				}
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}	
+						
+				;	
+				
 			}});
-		
+		/**
 		options.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
@@ -90,8 +91,12 @@ public class Controleur {
 
 
          }});
-	
+	**/
 	}
+
+
+
+	
 }
 
 
