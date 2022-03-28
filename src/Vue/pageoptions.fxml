@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="679.0" prefWidth="1177.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Slider layoutX="449.0" layoutY="340.0" prefHeight="69.0" prefWidth="266.0" />
+      <CheckBox layoutX="449.0" layoutY="446.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="281.0" text="Sauvegarde automatique">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </CheckBox>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="434.0" layoutY="121.0" prefHeight="48.0" prefWidth="281.0" text="Options">
+         <font>
+            <Font size="47.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>
-

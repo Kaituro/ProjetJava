@@ -36,7 +36,7 @@ public class Controleur{
 			@Override
 			public void handle(ActionEvent arg0) {
 				 Stage stage = new Stage();
-
+				 
 	                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/PageJeu.fxml"));
 
 	               
