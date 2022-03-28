@@ -8,29 +8,23 @@ import javafx.scene.image.ImageView;
 
 public class Brique {
 	
-Class<?> clazz = this.getClass();
+public Image im;
+public int t;
 
-    InputStream input = clazz.getResourceAsStream("../../../Images/Images enregistrées/Nouveau dossier/23032022.png");
-
-    Image image = new Image(input);
-
-    ImageView imageView = new ImageView(image);
-    
-int taille;
-
-public Brique(Image image, int taille) {
-	this.image=image;
-	this.taille=taille;
+public Brique(int tai){
 	
-	
-	
-}
-	public static void main(String[] args) {
-		
-		InputStream input = clazz.getResourceAsStream("../../../Images/Images enregistrées/Nouveau dossier/23032022.png");
-		Image image = new Image(input);
-		Brique a =new Brique(image,30);
-
+	t=tai;
+	if (tai==1) {
+		this.im=new Image("brique rouge1.png");
+	}else if (tai==2){
+		this.im=new Image("brique rouge2.png");
+	}else {
+		this.im=new Image("brique rouge3.png");
 	}
+}
+
+
+
+
 
 }
