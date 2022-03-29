@@ -39,7 +39,8 @@ public class Controleur{
 				 
 	                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/PageJeu.fxml"));
 
-	               
+	                ControleurJeu cont = new ControleurJeu(); 
+	                loader.setController(cont);
 	                stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 	                    @Override
 	                    public void handle(WindowEvent e) {
@@ -47,7 +48,8 @@ public class Controleur{
 
 	                    }
 	                });	                
-
+	                
+	               
 	                Parent root;
 	                try {
 	                    root = loader.load();

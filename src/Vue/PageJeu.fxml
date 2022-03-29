@@ -13,7 +13,7 @@
       <ColorPicker prefHeight="224.0" prefWidth="102.0" BorderPane.alignment="CENTER" />
    </left>
    <bottom>
-      <ListView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <ListView fx:id="ListV" orientation="HORIZONTAL" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </bottom>
    <top>
       <MenuBar BorderPane.alignment="CENTER">
