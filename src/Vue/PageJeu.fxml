@@ -8,12 +8,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="801.0" prefWidth="1294.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="bopa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1065.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <left>
-      <ColorPicker prefHeight="224.0" prefWidth="102.0" BorderPane.alignment="CENTER" />
+      <ColorPicker fx:id="coul" prefHeight="224.0" prefWidth="102.0" BorderPane.alignment="CENTER" />
    </left>
    <bottom>
-      <ListView fx:id="ListV" orientation="HORIZONTAL" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <ListView fx:id="ListV" orientation="HORIZONTAL" prefHeight="186.0" prefWidth="1288.0" BorderPane.alignment="CENTER" />
    </bottom>
    <top>
       <MenuBar BorderPane.alignment="CENTER">
