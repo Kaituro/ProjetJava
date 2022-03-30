@@ -12,8 +12,6 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
 
 
 public class Main extends Application {
@@ -29,9 +27,9 @@ public class Main extends Application {
 			Controleur controlleur = new Controleur();
 			loader.setController(controlleur);		
 			root = loader.load();			
-			scene = new Scene(root);			
+			scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());	
-			
+			primaryStage.setFullScreen(true);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {

@@ -55,9 +55,9 @@ public class Controleur{
 	                    root = loader.load();
 	                    Scene scene = new Scene(root);
 	                    stage.setScene(scene);
+	                    stage.setFullScreen(true);
 	                    stage.show();
 	                } catch (IOException e1) {
-	                    // TODO Auto-generated catch block
 	                    e1.printStackTrace();
 	                }
 
@@ -86,6 +86,7 @@ public class Controleur{
 	                    root = loader.load();
 	                    Scene scene = new Scene(root);
 	                    stage.setScene(scene);
+	                    stage.setFullScreen(true);
 	                    stage.show();
 	                } catch (IOException e1) {
 	                    // TODO Auto-generated catch block
@@ -116,10 +117,10 @@ public class Controleur{
 	                try {
 	                    root = loader.load();
 	                    Scene scene = new Scene(root);
+	                    stage.setFullScreen(true);
 	                    stage.setScene(scene);
 	                    stage.show();
 	                } catch (IOException e1) {
-	                    // TODO Auto-generated catch block
 	                    e1.printStackTrace();
 	                }
 

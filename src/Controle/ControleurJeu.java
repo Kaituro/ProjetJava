@@ -22,11 +22,11 @@ public class ControleurJeu {
 	
 	@FXML
     private void initialize() {
-		bri = new Briques();
-		Image image1 = new Image("/Modele/brique rouge1.png");
-		Image image2 = new Image("/Modele/brique rouge2.png");
-		Image image3 = new Image("/Modele/brique rouge3.png");
-		Image [] listimg = {image1,image2,image3};
+		/*bri = new Briques();
+		Image image1 = new Image("/Modele/brique_rouge1.png",50,50,true,true);
+		Image image2 = new Image("/Modele/brique_rouge2.png",50,50,true,true);
+		Image image3 = new Image("/Modele/brique_rouge3.png",50,50,true,true);
+		Image [] listimg = {image1,image2,image3};*/
 		
 		    
 	}
