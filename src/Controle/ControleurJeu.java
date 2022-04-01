@@ -48,10 +48,28 @@ public class ControleurJeu {
 			public void handle(ActionEvent arg0) {
 				Color c = coul.getValue();
 				System.out.println(c);
+		
+				ArrayList<Color> a = new ArrayList<>();
+				a.add(c);
+				
 				//String varcouleur = String.format("#%02x%02x%02x", r,g,b); 
-				bopa.setStyle("-fx-background-color: red ;"+ "-fx-bar-fill:red;");
+				//String hex= a.get(0);
+				String hex;
+				hex=String.valueOf(c);
+				ArrayList<String> b = new ArrayList<>();
+				b.add(hex);
+				String d="#";
+				
+				System.out.println("b.get"+b.get(0));
+				for(int i=2;i<b.get(0).length()-2;i++) {
+					d+=b.get(0).charAt(i);
+				}
+				
+				System.out.println(d);
+				bopa.setStyle("-fx-background-color: "+d);
 				
 				}
+			
 	              
 	                });	
 
