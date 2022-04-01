@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" prefHeight="786.0" prefWidth="1316.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="play" layoutX="441.0" layoutY="313.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" text="Play">
+      <Button fx:id="play" layoutX="441.0" layoutY="313.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" stylesheets="@application.css" text="Play">
          <font>
             <Font name="Arial Black" size="50.0" />
          </font>
@@ -18,12 +18,12 @@
             <Font name="Arial" size="96.0" />
          </font>
       </Label>
-      <Button fx:id="options" layoutX="438.0" layoutY="448.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" text="Options">
+      <Button fx:id="options" layoutX="438.0" layoutY="448.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" stylesheets="@application.css" text="Options">
          <font>
             <Font name="Arial Black" size="50.0" />
          </font>
       </Button>
-      <Button fx:id="howtoplay" layoutX="438.0" layoutY="581.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" text="How to play">
+      <Button fx:id="howtoplay" layoutX="438.0" layoutY="581.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" stylesheets="@application.css" text="How to play">
          <font>
             <Font name="Arial Black" size="50.0" />
          </font>
