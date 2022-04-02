@@ -1,5 +1,22 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 
-Button{
--fx-alignment:center;
+.root{
+    -fx-background-color: red ;
 }
+
+.button{
+    -fx-background-color:yellow;
+    -fx-text-fill:black;
+    -fx-background-radius:30px;
+}
+
+.button:hover{
+    -fx-background-color:green;
+}
+
+.label{
+    -fx-text-fill:black;
+}
+
+
+

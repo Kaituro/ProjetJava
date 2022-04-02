@@ -10,22 +10,22 @@
    <children>
       <Button fx:id="play" layoutX="441.0" layoutY="313.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" stylesheets="@application.css" text="Play">
          <font>
-            <Font name="Arial Black" size="50.0" />
+            <Font name="Bauhaus 93" size="60.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="386.0" layoutY="48.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="202.0" prefWidth="550.0" style="-fx-alignment: center;" text="Blocks">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="275.0" layoutY="66.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="202.0" prefWidth="775.0" style="-fx-alignment: center;" text="BLOCKS" AnchorPane.bottomAnchor="517.6" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="265.79999999999995" AnchorPane.topAnchor="66.0">
          <font>
-            <Font name="Arial" size="96.0" />
+            <Font name="Showcard Gothic" size="140.0" />
          </font>
       </Label>
       <Button fx:id="options" layoutX="438.0" layoutY="448.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" stylesheets="@application.css" text="Options">
          <font>
-            <Font name="Arial Black" size="50.0" />
+            <Font name="Bauhaus 93" size="55.0" />
          </font>
       </Button>
       <Button fx:id="howtoplay" layoutX="438.0" layoutY="581.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" stylesheets="@application.css" text="How to play">
          <font>
-            <Font name="Arial Black" size="50.0" />
+            <Font name="Bauhaus 93" size="55.0" />
          </font>
       </Button>
    </children>
