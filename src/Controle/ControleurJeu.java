@@ -1,5 +1,6 @@
 package Controle;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Map.Entry;
@@ -11,8 +12,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -31,6 +36,9 @@ public class ControleurJeu {
 	@FXML 
 	private BorderPane bopa;
 	public Briques bri;
+
+	@FXML
+	private MenuItem close;
 	
 	@FXML
     private void initialize() {
@@ -73,7 +81,38 @@ public class ControleurJeu {
 	              
 	                });	
 
-		
+		close.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				 Stage stage = new Stage();
+				 
+	                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/PageOne.fxml"));
+
+	                Controleur controlleur = new Controleur();
+	    			loader.setController(controlleur);
+	                stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+	                    @Override
+	                    public void handle(WindowEvent e) {
+	                        stage.close();
+
+	                    }
+	                });	                
+	                
+	               
+	                Parent root;
+	                try {
+	                    root = loader.load();
+	                    Scene scene = new Scene(root);
+	                    stage.setScene(scene);
+	                    stage.setFullScreen(true);
+	                    stage.show();
+	                } catch (IOException e1) {
+	                    e1.printStackTrace();
+	                }
+
+				
+			}});
 		
 	
 	}

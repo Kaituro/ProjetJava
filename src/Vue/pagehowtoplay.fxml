@@ -17,6 +17,6 @@
             </Label>
          </children>
       </Pane>
-      <Button cancelButton="true" mnemonicParsing="false" text="retour" />
+      <Button fx:id="retour" cancelButton="true" mnemonicParsing="false" text="retour" />
    </children>
 </AnchorPane>

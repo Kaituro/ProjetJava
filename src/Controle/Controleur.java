@@ -71,7 +71,8 @@ public class Controleur{
 				 Stage stage = new Stage();
 
 	                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/pageoptions.fxml"));
-
+	                ControleurOptio controlleur = new ControleurOptio();
+	    			loader.setController(controlleur);	
 	               
 	                stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 	                    @Override
@@ -104,7 +105,8 @@ public class Controleur{
 
 	                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/pagehowtoplay.fxml"));
 
-	               
+	                ControleurHowto conto = new ControleurHowto(); 
+	                loader.setController(conto);
 	                stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 	                    @Override
 	                    public void handle(WindowEvent e) {
