@@ -25,6 +25,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -46,6 +47,9 @@ public class ControleurJeu {
 	
 	@FXML
 	private ImageView imagedroit;
+	
+	@FXML
+	private GridPane grille;
 	
 	@FXML
     private void initialize() {
@@ -87,7 +91,7 @@ public class ControleurJeu {
 				}
 				
 				System.out.println(d);
-				bopa.setStyle("-fx-background-color: "+d);
+				grille.setStyle("-fx-background-color: "+d);
 				
 				}
 			
