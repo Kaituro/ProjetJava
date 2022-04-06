@@ -1,6 +1,8 @@
 package Vue;
 	
 
+import java.awt.Dimension;
+
 import Controle.Controleur;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
@@ -21,16 +23,16 @@ public class Main extends Application {
 	public static Parent root;
 	@Override
 	public void start(Stage primaryStage) {
-		try {
-			
+		try {			
 			loader = new FXMLLoader(getClass().getResource("PageOne.fxml"));
 			Controleur controlleur = new Controleur();
 			loader.setController(controlleur);		
 			root = loader.load();			
 			scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());	
-			primaryStage.setFullScreen(true);
+			primaryStage.setFullScreen(true);			
 			primaryStage.setScene(scene);
+			
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
