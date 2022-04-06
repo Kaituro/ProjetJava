@@ -54,6 +54,7 @@ public class Controleur{
 	                try {
 	                    root = loader.load();
 	                    Scene scene = new Scene(root);
+	        			scene.getStylesheets().add(getClass().getResource("/Vue/play.css").toExternalForm());	
 	                    stage.setScene(scene);
 	                    stage.setFullScreen(true);
 	                    stage.show();
@@ -84,8 +85,10 @@ public class Controleur{
 
 	                Parent root;
 	                try {
+	          
 	                    root = loader.load();
 	                    Scene scene = new Scene(root);
+	        			scene.getStylesheets().add(getClass().getResource("/Vue/options.css").toExternalForm());	
 	                    stage.setScene(scene);
 	                    stage.setFullScreen(true);
 	                    stage.show();
@@ -119,6 +122,7 @@ public class Controleur{
 	                try {
 	                    root = loader.load();
 	                    Scene scene = new Scene(root);
+	        			scene.getStylesheets().add(getClass().getResource("/Vue/howtoplay.css").toExternalForm());	
 	                    stage.setFullScreen(true);
 	                    stage.setScene(scene);
 	                    stage.show();
