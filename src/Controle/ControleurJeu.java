@@ -7,6 +7,8 @@ import java.util.Map.Entry;
 
 import Modele.Brique;
 import Modele.Briques;
+import Vue.Main;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -30,7 +32,7 @@ public class ControleurJeu {
 	
 
 	@FXML
-	private ListView<Image> ListV;
+	private ListView<String> ListV;
 	@FXML 
 	private ColorPicker coul;
 	@FXML 
@@ -41,20 +43,23 @@ public class ControleurJeu {
 	private MenuItem close;
 	
 	@FXML
+	private ImageView imagedroit;
+	
+	@FXML
     private void initialize() {
 		
 		
 		Image image1 = new Image("file:/Modele/brique_rouge1.png",50,50,true,true);
-		Image image2 = new Image("file:/Modele/brique_rouge2.png",50,50,true,true);
+		Image image2 = new Image(Main.class.getResourceAsStream("/Modele/brique_rouge1.png"));
+		
 		Image image3 = new Image("file:/Modele/brique_rouge3.png",50,50,true,true);
-		ImageView imageView = new ImageView(image1);
+		ObservableList<String> data = FXCollections.observableArrayList("image1","image2","image3");
+		ListV.setItems(data);
+				
 		
-		
-		ListV.getItems().add(image1);
-		ListV.getItems().add(image2);
-		ListV.getItems().add(image3);
 		coul.setOnAction(new EventHandler<ActionEvent>() {
-
+			
+			
 			@Override
 			public void handle(ActionEvent arg0) {
 				Color c = coul.getValue();
@@ -118,4 +123,6 @@ public class ControleurJeu {
 		
 	
 	}
+
+	
 }
