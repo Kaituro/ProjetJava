@@ -1,5 +1,7 @@
 package Controle;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -47,7 +49,11 @@ public class ControleurJeu {
 	
 	@FXML
     private void initialize() {
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		int longueur = screenSize.width;
+		int largeur = screenSize.height;
 		
+		bopa.setPrefSize(longueur, largeur-70);
 		
 		Image image1 = new Image("file:/Modele/brique_rouge1.png",50,50,true,true);
 		Image image2 = new Image(Main.class.getResourceAsStream("/Modele/brique_rouge1.png"));
@@ -112,7 +118,7 @@ public class ControleurJeu {
 	                    root = loader.load();
 	                    Scene scene = new Scene(root);
 	                    stage.setScene(scene);
-	                    stage.setFullScreen(true);
+	                    
 	                    stage.show();
 	                } catch (IOException e1) {
 	                    e1.printStackTrace();

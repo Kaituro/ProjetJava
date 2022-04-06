@@ -1,5 +1,7 @@
 package Controle;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.IOException;
 
 
@@ -11,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -27,10 +30,16 @@ public class Controleur{
 	@FXML
 	private Button howtoplay;
 	
-
+	@FXML
+	private AnchorPane ecran;
 	@FXML
     private void initialize() {
 	
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		int longueur = screenSize.width;
+		int largeur = screenSize.height;
+		
+		ecran.setPrefSize(longueur, largeur-70);
 		play.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -56,7 +65,7 @@ public class Controleur{
 	                    Scene scene = new Scene(root);
 	        			scene.getStylesheets().add(getClass().getResource("/Vue/play.css").toExternalForm());	
 	                    stage.setScene(scene);
-	                    stage.setFullScreen(true);
+	                    
 	                    stage.show();
 	                } catch (IOException e1) {
 	                    e1.printStackTrace();
@@ -90,7 +99,6 @@ public class Controleur{
 	                    Scene scene = new Scene(root);
 	        			scene.getStylesheets().add(getClass().getResource("/Vue/options.css").toExternalForm());	
 	                    stage.setScene(scene);
-	                    stage.setFullScreen(true);
 	                    stage.show();
 	                } catch (IOException e1) {
 	                    // TODO Auto-generated catch block
@@ -101,7 +109,7 @@ public class Controleur{
 			}});
 		
 		howtoplay.setOnAction(new EventHandler<ActionEvent>() {
-
+			
 			@Override
 			public void handle(ActionEvent arg0) {
 				 Stage stage = new Stage();
@@ -123,7 +131,6 @@ public class Controleur{
 	                    root = loader.load();
 	                    Scene scene = new Scene(root);
 	        			scene.getStylesheets().add(getClass().getResource("/Vue/howtoplay.css").toExternalForm());	
-	                    stage.setFullScreen(true);
 	                    stage.setScene(scene);
 	                    stage.show();
 	                } catch (IOException e1) {
