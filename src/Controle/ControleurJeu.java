@@ -54,7 +54,8 @@ public class ControleurJeu {
 		ListV.getItems().add(image2);
 		ListV.getItems().add(image3);
 		coul.setOnAction(new EventHandler<ActionEvent>() {
-
+			
+			
 			@Override
 			public void handle(ActionEvent arg0) {
 				Color c = coul.getValue();
