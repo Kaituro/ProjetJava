@@ -28,8 +28,9 @@ public class ControleurHowto {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int longueur = screenSize.width;
 		int largeur = screenSize.height;
-		
-		ecranHow.setPrefSize(longueur, largeur-70);
+		int pour = 9* largeur/100;
+		largeur -=pour;
+		ecranHow.setPrefSize(longueur, largeur);
 		retour.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override

@@ -56,8 +56,9 @@ public class ControleurJeu {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int longueur = screenSize.width;
 		int largeur = screenSize.height;
-		
-		bopa.setPrefSize(longueur, largeur-70);
+		int pour = 9* largeur/100;
+		largeur -=pour;
+		bopa.setPrefSize(longueur, largeur);
 		
 		Image image1 = new Image("file:/Modele/brique_rouge1.png",50,50,true,true);
 		Image image2 = new Image(Main.class.getResourceAsStream("/Modele/brique_rouge1.png"));

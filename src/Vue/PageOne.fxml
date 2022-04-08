@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ecran" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" prefHeight="786.0" prefWidth="1316.0" style="-fx-border-width: 50%;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="ecran" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" prefHeight="786.0" prefWidth="1316.0" style="-fx-border-width: 50%;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="play" layoutX="444.0" layoutY="324.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" style="-fx-alignment: center;" stylesheets="@application.css" text="Play" AnchorPane.leftAnchor="444.0" AnchorPane.rightAnchor="428.79999999999995" AnchorPane.topAnchor="324.0">
+      <Button fx:id="play" layoutX="445.0" layoutY="287.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" style="-fx-alignment: center;" stylesheets="@application.css" text="Play" AnchorPane.leftAnchor="445.0" AnchorPane.rightAnchor="427.79999999999995" AnchorPane.topAnchor="287.0">
          <font>
             <Font name="Bauhaus 93" size="60.0" />
          </font>
@@ -18,12 +18,12 @@
             <Font name="Showcard Gothic" size="140.0" />
          </font>
       </Label>
-      <Button fx:id="options" layoutX="441.0" layoutY="462.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" style="-fx-alignment: center;" stylesheets="@application.css" text="Options" AnchorPane.leftAnchor="441.0" AnchorPane.rightAnchor="431.79999999999995" AnchorPane.topAnchor="462.0">
+      <Button fx:id="options" layoutX="445.0" layoutY="423.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" style="-fx-alignment: center;" stylesheets="@application.css" text="Options" AnchorPane.leftAnchor="445.0" AnchorPane.rightAnchor="427.79999999999995" AnchorPane.topAnchor="423.0">
          <font>
             <Font name="Bauhaus 93" size="55.0" />
          </font>
       </Button>
-      <Button fx:id="howtoplay" layoutX="441.0" layoutY="585.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" stylesheets="@application.css" text="How to play" AnchorPane.leftAnchor="441.0" AnchorPane.rightAnchor="431.79999999999995" AnchorPane.topAnchor="585.0">
+      <Button fx:id="howtoplay" layoutX="442.0" layoutY="548.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" stylesheets="@application.css" text="How to play" AnchorPane.leftAnchor="442.0" AnchorPane.rightAnchor="430.79999999999995" AnchorPane.topAnchor="548.0">
          <font>
             <Font name="Bauhaus 93" size="55.0" />
          </font>
