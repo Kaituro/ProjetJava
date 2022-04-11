@@ -17,9 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
-public class Controleur{
-	
-	
+public class Controleur{	
 
 	@FXML
 	private Button play;
@@ -41,24 +39,18 @@ public class Controleur{
 		int pour = 9* largeur/100;
 		largeur -=pour;
 		ecran.setPrefSize(longueur, largeur);
+		
 		play.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent arg0) {
+				((Stage)(((Button)arg0.getSource()).getScene().getWindow())).close();
 				 Stage stage = new Stage();
 				 
 	                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/PageJeu.fxml"));
 
 	                ControleurJeu cont = new ControleurJeu(); 
-	                loader.setController(cont);
-	                stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-	                    @Override
-	                    public void handle(WindowEvent e) {
-	                        stage.close();
-
-	                    }
-	                });	                
-	                
+	                loader.setController(cont);                                          
 	               
 	                Parent root;
 	                try {
@@ -79,19 +71,14 @@ public class Controleur{
 
 			@Override
 			public void handle(ActionEvent arg0) {
+				((Stage)(((Button)arg0.getSource()).getScene().getWindow())).close();
 				 Stage stage = new Stage();
 
 	                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/pageoptions.fxml"));
 	                ControleurOptio controlleur = new ControleurOptio();
 	    			loader.setController(controlleur);	
 	               
-	                stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-	                    @Override
-	                    public void handle(WindowEvent e) {
-	                        stage.close();
-
-	                    }
-	                });	                
+	                      
 
 	                Parent root;
 	                try {
@@ -113,20 +100,13 @@ public class Controleur{
 			
 			@Override
 			public void handle(ActionEvent arg0) {
+				((Stage)(((Button)arg0.getSource()).getScene().getWindow())).close();
 				 Stage stage = new Stage();
 
 	                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/pagehowtoplay.fxml"));
 
 	                ControleurHowto conto = new ControleurHowto(); 
 	                loader.setController(conto);
-	                stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-	                    @Override
-	                    public void handle(WindowEvent e) {
-	                        stage.close();
-
-	                    }
-	                });	                
-
 	                Parent root;
 	                try {
 	                    root = loader.load();

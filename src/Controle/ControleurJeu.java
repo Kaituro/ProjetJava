@@ -2,6 +2,7 @@ package Controle;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -73,6 +75,7 @@ public class ControleurJeu {
 			
 			@Override
 			public void handle(ActionEvent arg0) {
+				
 				Color c = coul.getValue();
 				System.out.println(c);
 		
@@ -103,20 +106,13 @@ public class ControleurJeu {
 
 			@Override
 			public void handle(ActionEvent arg0) {
+			
 				 Stage stage = new Stage();
 				 
 	                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/PageOne.fxml"));
 
 	                Controleur controlleur = new Controleur();
-	    			loader.setController(controlleur);
-	                stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-	                    @Override
-	                    public void handle(WindowEvent e) {
-	                        stage.close();
-
-	                    }
-	                });	                
-	                
+	    			loader.setController(controlleur);	               
 	               
 	                Parent root;
 	                try {

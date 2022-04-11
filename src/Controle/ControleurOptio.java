@@ -18,50 +18,51 @@ import javafx.stage.WindowEvent;
 public class ControleurOptio {
 	@FXML	
 	private Button back;
-	
+
 	@FXML
 	private AnchorPane ecranOP;
-	
+
 	public void initialize() {
-		
+
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int longueur = screenSize.width;
 		int largeur = screenSize.height;
 		int pour = 9* largeur/100;
 		largeur -=pour;
 		ecranOP.setPrefSize(longueur, largeur);		
-		
+
 		back.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent arg0) {
-				 Stage stage = new Stage();
-				 
-	                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/PageOne.fxml"));
+				((Stage)(((Button)arg0.getSource()).getScene().getWindow())).close();
+				Stage stage = new Stage();
 
-	                Controleur controlleur = new Controleur();
-	    			loader.setController(controlleur);	
-	                stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-	                    @Override
-	                    public void handle(WindowEvent e) {
-	                        stage.close();
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/PageOne.fxml"));
 
-	                    }
-	                });	                
-	                
-	               
-	                Parent root;
-	                try {
-	                    root = loader.load();
-	                    Scene scene = new Scene(root);
-	                    stage.setScene(scene);
-	                    
-	                    stage.show();
-	                } catch (IOException e1) {
-	                    e1.printStackTrace();
-	                }
+				Controleur controlleur = new Controleur();
+				loader.setController(controlleur);	
+				stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+					@Override
+					public void handle(WindowEvent e) {
+						stage.close();
 
-				
+					}
+				});	                
+
+
+				Parent root;
+				try {
+					root = loader.load();
+					Scene scene = new Scene(root);
+					stage.setScene(scene);
+
+					stage.show();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+
+
 			}});
 	}
 }

@@ -31,23 +31,19 @@ public class ControleurHowto {
 		int pour = 9* largeur/100;
 		largeur -=pour;
 		ecranHow.setPrefSize(longueur, largeur);
+		
 		retour.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent arg0) {
+				((Stage)(((Button)arg0.getSource()).getScene().getWindow())).close();
 				 Stage stage = new Stage();
 				 
 	                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/PageOne.fxml"));
 
 	                Controleur controlleur = new Controleur();
 	    			loader.setController(controlleur);
-	                stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-	                    @Override
-	                    public void handle(WindowEvent e) {
-	                        stage.close();
-	                    }
-	                });
-	                
+	                	                
 	                Parent root;
 	                try {
 	                    root = loader.load();
