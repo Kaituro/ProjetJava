@@ -51,7 +51,7 @@ public class ControleurJeu {
 	private MenuBar fen;
 
 	@FXML
-	private Button close;
+	private MenuItem close;
 	
 	@FXML
 	private ImageView imagedroit;
@@ -115,7 +115,7 @@ public class ControleurJeu {
 			@Override
 			public void handle(ActionEvent arg0) {
 				
-				((Stage)(((MenuBar)arg0.getSource()).getScene().getWindow())).close();
+			//	((Stage)(((MenuItem)arg0.getSource()).getScene().getWindow())).close();
 				 Stage stage = new Stage();
 				 
 	                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/PageOne.fxml"));
