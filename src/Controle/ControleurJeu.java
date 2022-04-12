@@ -11,6 +11,7 @@ import java.util.Map.Entry;
 import Modele.Brique;
 import Modele.Briques;
 import Vue.Main;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,8 +22,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBase;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -43,9 +46,12 @@ public class ControleurJeu {
 	@FXML 
 	private BorderPane bopa;
 	public Briques bri;
+	
+	@FXML
+	private MenuBar fen;
 
 	@FXML
-	private MenuItem close;
+	private Button close;
 	
 	@FXML
 	private ImageView imagedroit;
@@ -101,12 +107,15 @@ public class ControleurJeu {
 			
 	              
 	                });	
+		
+		 
 
 		close.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent arg0) {
-			
+				
+				((Stage)(((MenuBar)arg0.getSource()).getScene().getWindow())).close();
 				 Stage stage = new Stage();
 				 
 	                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/PageOne.fxml"));
@@ -121,6 +130,7 @@ public class ControleurJeu {
 	                    stage.setScene(scene);
 	                    
 	                    stage.show();
+	                    
 	                } catch (IOException e1) {
 	                    e1.printStackTrace();
 	                }
