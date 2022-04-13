@@ -52,7 +52,7 @@ public class ControleurJeu implements Serializable {
 	@FXML
 	private ListView<String> ListV;
 	@FXML 
-	private ColorPicker coul;
+	public ColorPicker coul;
 	@FXML 
 	private BorderPane bopa;
 	public Briques bri;
@@ -86,20 +86,23 @@ public class ControleurJeu implements Serializable {
 		int pour = 9* largeur/100;
 		largeur -=pour;
 		bopa.setPrefSize(longueur, largeur);
-		
+		/*
 		try {
 			FileInputStream fis = new FileInputStream(fichier);
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			d = (String)ois.readObject();
-			
-			this.coul.setValue(c);
+			double r = (double) Integer.valueOf( d.substring( 1, 3 ), 16 )/16.0;
+			double  g=  (double) Integer.valueOf( d.substring( 3, 5 ), 16 )/16.0;
+			double  b=  (double) Integer.valueOf( d.substring( 5, 7 ), 16 )/16.0;
+			Color clor = new Color(r,g,b,1.0);
+			this.coul.setValue(clor);
 			ois.close();
 			fis.close();
 		
 		}catch (IOException | ClassNotFoundException e){
 			//throw new RuntimeException("Lecture des donn�es impossible ou donn�es corrompues");
 		}
-		
+		*/
 		Image image1 = new Image("file:/Modele/brique_rouge1.png",50,50,true,true);
 		Image image2 = new Image(Main.class.getResourceAsStream("/Modele/brique_rouge1.png"));
 		
@@ -127,7 +130,7 @@ public class ControleurJeu implements Serializable {
 				hex=String.valueOf(c);
 				ArrayList<String> b = new ArrayList<>();
 				b.add(hex);
-				d="#";
+				d="";
 				
 				System.out.println("b.get"+b.get(0));
 				for(int i=2;i<b.get(0).length()-2;i++) {
@@ -136,7 +139,7 @@ public class ControleurJeu implements Serializable {
 				
 				System.out.println(d);
 				
-				grille.setStyle("-fx-background-color: "+d);
+				grille.setStyle("-fx-background-color: "+"#"+d);
 				
 				}
 			
@@ -174,7 +177,7 @@ public class ControleurJeu implements Serializable {
 			}});
 		
 	
-		
+		/*
 		Quitter.setOnAction(new EventHandler<ActionEvent>() {
 			
 			@Override
@@ -182,9 +185,13 @@ public class ControleurJeu implements Serializable {
 				try {
 					FileOutputStream fos = new FileOutputStream(fichier);
 					ObjectOutputStream oos = new ObjectOutputStream(fos);
+					double r = (double) Integer.valueOf( d.substring( 1, 3 ), 16 )/16.0;
+					double  g=  (double) Integer.valueOf( d.substring( 3, 5 ), 16 )/16.0;
+					double  b=  (double) Integer.valueOf( d.substring( 5, 7 ), 16 )/16.0;
+					Color clor = new Color(r,g,b,1.0);
+					coul.setValue(clor);
 					
-					
-					oos.writeObject(d);
+					oos.writeObject(c);
 					oos.close();
 					fos.close();
 					
@@ -194,10 +201,9 @@ public class ControleurJeu implements Serializable {
 					
 				}
 				System.exit(0);
-	}
-	
-	
+	}	
 
 		});
+		*/
 	}	
 }
