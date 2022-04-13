@@ -15,14 +15,19 @@
             <Font size="19.0" />
          </font>
       </CheckBox>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="434.0" layoutY="121.0" prefHeight="48.0" prefWidth="281.0" text="Options">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="434.0" layoutY="121.0" prefHeight="48.0" prefWidth="281.0" text="Options" AnchorPane.bottomAnchor="482.8" AnchorPane.leftAnchor="434.0" AnchorPane.rightAnchor="461.4" AnchorPane.topAnchor="121.0">
          <font>
-            <Font size="47.0" />
+            <Font name="Showcard Gothic" size="65.0" />
          </font>
       </Label>
-      <Button fx:id="back" layoutX="458.0" layoutY="545.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="234.0" text="Retour">
+      <Button fx:id="back" minHeight="15.0" minWidth="34.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" text="&lt;-">
          <font>
-            <Font name="System Bold" size="27.0" />
+            <Font name="Berlin Sans FB Bold" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="close" layoutX="67.0" minHeight="15.0" minWidth="34.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" text="X">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="19.0" />
          </font>
       </Button>
    </children>

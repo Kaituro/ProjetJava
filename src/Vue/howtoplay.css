@@ -6,14 +6,17 @@
 }
 
 .button{
-    -fx-background-color:yellow;
-    -fx-text-fill:black;
-    -fx-background-radius:30px;
+    -fx-background-color:#0896E4;
+    -fx-border-width:1px;
+    -fx-border-color:white;
+    -fx-background-radius:10px;
+    -fx-border-radius:10px;
 }
 
 .button:hover{
-    -fx-background-color:green;
+    -fx-background-color:white;
 }
+
 
 .label{
     -fx-text-fill:black;

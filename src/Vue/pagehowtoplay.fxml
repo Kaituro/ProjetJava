@@ -12,14 +12,19 @@
             <Font name="Showcard Gothic" size="65.0" />
          </font>
       </Label>
-      <Button fx:id="retour" cancelButton="true" mnemonicParsing="false" text="RETOUR">
+      <Button fx:id="retour" cancelButton="true" mnemonicParsing="false" prefHeight="40.0" prefWidth="49.0" text="&lt;-">
          <font>
-            <Font name="Bauhaus 93" size="12.0" />
+            <Font name="Berlin Sans FB Bold" size="19.0" />
          </font></Button>
       <Label layoutX="152.0" layoutY="122.0" prefHeight="526.0" prefWidth="472.0" text="ghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu" wrapText="true" AnchorPane.bottomAnchor="1.6000000000000227" AnchorPane.leftAnchor="152.0" AnchorPane.rightAnchor="152.0" AnchorPane.topAnchor="122.0">
          <font>
             <Font name="Bauhaus 93" size="18.0" />
          </font>
       </Label>
+      <Button fx:id="fin" cancelButton="true" layoutX="57.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="40.0" prefWidth="49.0" text="X">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="19.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

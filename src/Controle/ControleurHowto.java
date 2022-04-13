@@ -19,6 +19,8 @@ public class ControleurHowto {
 
 	@FXML
 	private Button retour;	
+	@FXML
+	private Button fin;
 	
 	@FXML
 	private AnchorPane ecranHow;
@@ -57,6 +59,15 @@ public class ControleurHowto {
 
 				
 			}});
-	}
+		
+		fin.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+	}}
 	
-}
+	
+
