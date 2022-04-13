@@ -20,6 +20,9 @@ public class ControleurOptio {
 	private Button back;
 
 	@FXML
+	private Button close;
+
+	@FXML
 	private AnchorPane ecranOP;
 
 	public void initialize() {
@@ -42,14 +45,6 @@ public class ControleurOptio {
 
 				Controleur controlleur = new Controleur();
 				loader.setController(controlleur);	
-				stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-					@Override
-					public void handle(WindowEvent e) {
-						stage.close();
-
-					}
-				});	                
-
 
 				Parent root;
 				try {
@@ -64,5 +59,19 @@ public class ControleurOptio {
 
 
 			}});
+
+
+		close.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {				
+					System.exit(0);
+
+				}
+
+			});
+
+
+
+		}
 	}
-}

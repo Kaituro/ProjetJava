@@ -19,13 +19,14 @@ public class ControleurHowto {
 
 	@FXML
 	private Button retour;	
+	
 	@FXML
 	private Button fin;
-	
+
 	@FXML
 	private AnchorPane ecranHow;
-	
-	
+
+
 	public void initialize() {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int longueur = screenSize.width;
@@ -33,33 +34,35 @@ public class ControleurHowto {
 		int pour = 9* largeur/100;
 		largeur -=pour;
 		ecranHow.setPrefSize(longueur, largeur);
-		
+
 		retour.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent arg0) {
 				((Stage)(((Button)arg0.getSource()).getScene().getWindow())).close();
-				 Stage stage = new Stage();
-				 
-	                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/PageOne.fxml"));
+				Stage stage = new Stage();
 
-	                Controleur controlleur = new Controleur();
-	    			loader.setController(controlleur);
-	                	                
-	                Parent root;
-	                try {
-	                    root = loader.load();
-	                    Scene scene = new Scene(root);
-	                    stage.setScene(scene);
-	                    
-	                    stage.show();
-	                } catch (IOException e1) {
-	                    e1.printStackTrace();
-	                }
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/PageOne.fxml"));
 
-				
+				Controleur controlleur = new Controleur();
+				loader.setController(controlleur);
+
+				Parent root;
+				try {
+					root = loader.load();
+					Scene scene = new Scene(root);
+					stage.setScene(scene);
+
+					stage.show();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+
+
 			}});
 		
+	
+
 		fin.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -67,7 +70,10 @@ public class ControleurHowto {
 				System.exit(0);
 			}
 		});
-	}}
-	
-	
+
+	}
+
+}
+
+
 
