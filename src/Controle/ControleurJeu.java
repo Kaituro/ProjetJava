@@ -3,8 +3,14 @@ package Controle;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.Closeable;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Map.Entry;
 
@@ -29,7 +35,12 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+<<<<<<< Updated upstream
 import javafx.scene.input.MouseEvent;
+=======
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+>>>>>>> Stashed changes
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -37,9 +48,10 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 
-public class ControleurJeu {
-	
 
+public class ControleurJeu implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	@FXML
 	private ListView<String> ListV;
 	@FXML 
@@ -55,10 +67,19 @@ public class ControleurJeu {
 	private MenuItem close;
 	
 	@FXML
+	private MenuItem Quitter;
+	
+	@FXML
 	private ImageView imagedroit;
 	
 	@FXML
 	private GridPane grille;
+	
+	public String d;
+	public Color c=Color.WHITE;
+	
+	public File fichier = new File("colo.dat");
+	public ArrayList<Color> couleure;
 	
 	@FXML
     private void initialize() {
@@ -68,6 +89,19 @@ public class ControleurJeu {
 		int pour = 9* largeur/100;
 		largeur -=pour;
 		bopa.setPrefSize(longueur, largeur);
+		
+		try {
+			FileInputStream fis = new FileInputStream(fichier);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			d = (String)ois.readObject();
+			
+			this.coul.setValue(c);
+			ois.close();
+			fis.close();
+		
+		}catch (IOException | ClassNotFoundException e){
+			//throw new RuntimeException("Lecture des données impossible ou données corrompues");
+		}
 		
 		Image image1 = new Image("file:/Modele/brique_rouge1.png",50,50,true,true);
 		Image image2 = new Image(Main.class.getResourceAsStream("/Modele/brique_rouge1.png"));
@@ -80,10 +114,12 @@ public class ControleurJeu {
 		coul.setOnAction(new EventHandler<ActionEvent>() {
 			
 			
+			
+
 			@Override
 			public void handle(ActionEvent arg0) {
 				
-				Color c = coul.getValue();
+				c = coul.getValue();
 				System.out.println(c);
 		
 				ArrayList<Color> a = new ArrayList<>();
@@ -94,7 +130,7 @@ public class ControleurJeu {
 				hex=String.valueOf(c);
 				ArrayList<String> b = new ArrayList<>();
 				b.add(hex);
-				String d="#";
+				d="#";
 				
 				System.out.println("b.get"+b.get(0));
 				for(int i=2;i<b.get(0).length()-2;i++) {
@@ -102,6 +138,7 @@ public class ControleurJeu {
 				}
 				
 				System.out.println(d);
+				
 				grille.setStyle("-fx-background-color: "+d);
 				
 				}
@@ -140,9 +177,30 @@ public class ControleurJeu {
 			}});
 		
 	
+		
+		Quitter.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent arg0) {
+				try {
+					FileOutputStream fos = new FileOutputStream(fichier);
+					ObjectOutputStream oos = new ObjectOutputStream(fos);
+					
+					
+					oos.writeObject(d);
+					oos.close();
+					fos.close();
+					
+				}catch (IOException e1) {
+					e1.printStackTrace();
+					//throw new RuntimeException("Impossible d'écrire les données");
+					
+				}
+				System.exit(0);
 	}
 	
 	
 
-	
+		});
+	}	
 }
