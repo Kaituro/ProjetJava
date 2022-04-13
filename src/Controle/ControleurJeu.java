@@ -80,12 +80,6 @@ public class ControleurJeu implements Serializable {
 	
 	@FXML
     private void initialize() {
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		int longueur = screenSize.width;
-		int largeur = screenSize.height;
-		int pour = 9* largeur/100;
-		largeur -=pour;
-		bopa.setPrefSize(longueur, largeur);
 		
 		try {
 			FileInputStream fis = new FileInputStream(fichier);
@@ -163,7 +157,7 @@ public class ControleurJeu implements Serializable {
 	                    root = loader.load();
 	                    Scene scene = new Scene(root);
 	                    stage.setScene(scene);
-	                    
+	                    stage.setFullScreen(true);
 	                    stage.show();
 	                    
 	                } catch (IOException e1) {

@@ -25,14 +25,7 @@ public class ControleurOptio {
 	@FXML
 	private AnchorPane ecranOP;
 
-	public void initialize() {
-
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		int longueur = screenSize.width;
-		int largeur = screenSize.height;
-		int pour = 9* largeur/100;
-		largeur -=pour;
-		ecranOP.setPrefSize(longueur, largeur);		
+	public void initialize() {	
 
 		back.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -51,7 +44,7 @@ public class ControleurOptio {
 					root = loader.load();
 					Scene scene = new Scene(root);
 					stage.setScene(scene);
-
+					stage.setFullScreen(true);
 					stage.show();
 				} catch (IOException e1) {
 					e1.printStackTrace();

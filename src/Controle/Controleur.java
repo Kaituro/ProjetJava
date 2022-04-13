@@ -58,7 +58,7 @@ public class Controleur{
 	                    Scene scene = new Scene(root);
 	        			scene.getStylesheets().add(getClass().getResource("/Vue/play.css").toExternalForm());	
 	                    stage.setScene(scene);
-	                    
+	                    stage.setFullScreen(true);
 	                    stage.show();
 	                } catch (IOException e1) {
 	                    e1.printStackTrace();
@@ -87,6 +87,7 @@ public class Controleur{
 	                    Scene scene = new Scene(root);
 	        			scene.getStylesheets().add(getClass().getResource("/Vue/options.css").toExternalForm());	
 	                    stage.setScene(scene);
+	                    stage.setFullScreen(true);
 	                    stage.show();
 	                } catch (IOException e1) {
 	                    // TODO Auto-generated catch block
@@ -113,6 +114,7 @@ public class Controleur{
 	                    Scene scene = new Scene(root);
 	        			scene.getStylesheets().add(getClass().getResource("/Vue/howtoplay.css").toExternalForm());	
 	                    stage.setScene(scene);
+	                    stage.setFullScreen(true);
 	                    stage.show();
 	                } catch (IOException e1) {
 	                    e1.printStackTrace();
