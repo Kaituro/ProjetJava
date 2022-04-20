@@ -224,5 +224,14 @@ public class ControleurJeu implements Serializable {
 
 		});
 		
+		 /*grille.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent arg0) {
+		
+				
+			}
+			});
+		*/
 	}	
 }
