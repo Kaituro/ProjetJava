@@ -35,12 +35,9 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-<<<<<<< Updated upstream
-import javafx.scene.input.MouseEvent;
-=======
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
->>>>>>> Stashed changes
+
+
+
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -83,12 +80,6 @@ public class ControleurJeu implements Serializable {
 	
 	@FXML
     private void initialize() {
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		int longueur = screenSize.width;
-		int largeur = screenSize.height;
-		int pour = 9* largeur/100;
-		largeur -=pour;
-		bopa.setPrefSize(longueur, largeur);
 		
 		try {
 			FileInputStream fis = new FileInputStream(fichier);
@@ -100,7 +91,7 @@ public class ControleurJeu implements Serializable {
 			fis.close();
 		
 		}catch (IOException | ClassNotFoundException e){
-			//throw new RuntimeException("Lecture des données impossible ou données corrompues");
+			//throw new RuntimeException("Lecture des donnï¿½es impossible ou donnï¿½es corrompues");
 		}
 		
 		Image image1 = new Image("file:/Modele/brique_rouge1.png",50,50,true,true);
@@ -166,7 +157,7 @@ public class ControleurJeu implements Serializable {
 	                    root = loader.load();
 	                    Scene scene = new Scene(root);
 	                    stage.setScene(scene);
-	                    
+	                    stage.setFullScreen(true);
 	                    stage.show();
 	                    
 	                } catch (IOException e1) {
@@ -193,7 +184,7 @@ public class ControleurJeu implements Serializable {
 					
 				}catch (IOException e1) {
 					e1.printStackTrace();
-					//throw new RuntimeException("Impossible d'écrire les données");
+					//throw new RuntimeException("Impossible d'ï¿½crire les donnï¿½es");
 					
 				}
 				System.exit(0);

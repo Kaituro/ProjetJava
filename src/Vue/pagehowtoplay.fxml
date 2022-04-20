@@ -21,7 +21,7 @@
             <Font name="Bauhaus 93" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="fin" cancelButton="true" layoutX="57.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="40.0" prefWidth="49.0" text="X">
+      <Button fx:id="fin" cancelButton="true" layoutX="57.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="49.0" text="X">
          <font>
             <Font name="Berlin Sans FB Bold" size="19.0" />
          </font>

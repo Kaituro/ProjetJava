@@ -20,16 +20,12 @@ public class ControleurOptio {
 	private Button back;
 
 	@FXML
+	private Button close;
+
+	@FXML
 	private AnchorPane ecranOP;
 
-	public void initialize() {
-
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		int longueur = screenSize.width;
-		int largeur = screenSize.height;
-		int pour = 9* largeur/100;
-		largeur -=pour;
-		ecranOP.setPrefSize(longueur, largeur);		
+	public void initialize() {	
 
 		back.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -42,21 +38,13 @@ public class ControleurOptio {
 
 				Controleur controlleur = new Controleur();
 				loader.setController(controlleur);	
-				stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-					@Override
-					public void handle(WindowEvent e) {
-						stage.close();
-
-					}
-				});	                
-
 
 				Parent root;
 				try {
 					root = loader.load();
 					Scene scene = new Scene(root);
 					stage.setScene(scene);
-
+					stage.setFullScreen(true);
 					stage.show();
 				} catch (IOException e1) {
 					e1.printStackTrace();
@@ -64,5 +52,19 @@ public class ControleurOptio {
 
 
 			}});
+
+
+		close.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent arg0) {				
+					System.exit(0);
+
+				}
+
+			});
+
+
+
+		}
 	}
-}
