@@ -73,19 +73,22 @@ public class ControleurJeu implements Serializable {
 	private GridPane grille;
 	
 	public String d;
-	public Color c=Color.WHITE;
+	public Color c=null;
+	
+	public Color geu;
 	
 	public File fichier = new File("colo.dat");
 	public ArrayList<Color> couleure;
 	
 	@FXML
     private void initialize() {
-		/*
+		
 		try {
 			FileInputStream fis = new FileInputStream(fichier);
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			d = (String)ois.readObject();
 			
+			c = Color.valueOf(d);
 			this.coul.setValue(c);
 			ois.close();
 			fis.close();
@@ -93,7 +96,7 @@ public class ControleurJeu implements Serializable {
 		}catch (IOException | ClassNotFoundException e){
 			//throw new RuntimeException("Lecture des donn�es impossible ou donn�es corrompues");
 		}
-		*/
+		
 		Image image1 = new Image("file:/Modele/brique_rouge1.png",50,50,true,true);
 		Image image2 = new Image(Main.class.getResourceAsStream("/Modele/brique_rouge1.png"));
 		
@@ -101,10 +104,33 @@ public class ControleurJeu implements Serializable {
 		ObservableList<String> data = FXCollections.observableArrayList("image1","image2","image3");
 		ListV.setItems(data);
 				
+	
+		c = coul.getValue();
+		System.out.println(c);
+
+		ArrayList<Color> a = new ArrayList<>();
+		a.add(c);
 		
-		coul.setOnAction(new EventHandler<ActionEvent>() {
-			
-			
+		
+		String hex;
+		hex=String.valueOf(c);
+		ArrayList<String> b = new ArrayList<>();
+		b.add(hex);
+		d="#";
+		
+		System.out.println("b.get"+b.get(0));
+		for(int i=2;i<b.get(0).length()-2;i++) {
+			d+=b.get(0).charAt(i);
+		}
+		
+		System.out.println(d);
+		
+		grille.setStyle("-fx-background-color: "+d);
+		
+		
+		
+		
+		coul.setOnAction(new EventHandler<ActionEvent>() {		
 			
 
 			@Override
@@ -131,6 +157,8 @@ public class ControleurJeu implements Serializable {
 				System.out.println(d);
 				
 				grille.setStyle("-fx-background-color: "+d);
+				
+				
 				
 				}
 			
@@ -169,7 +197,7 @@ public class ControleurJeu implements Serializable {
 		
 	
 		
-	/*	Quitter.setOnAction(new EventHandler<ActionEvent>() {
+		Quitter.setOnAction(new EventHandler<ActionEvent>() {
 			
 			@Override
 			public void handle(ActionEvent arg0) {
@@ -195,6 +223,6 @@ public class ControleurJeu implements Serializable {
 	
 
 		});
-		*/
+		
 	}	
 }
