@@ -24,6 +24,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -50,7 +51,7 @@ public class ControleurJeu implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	@FXML
-	private ListView<String> ListV;
+	private ListView<Image> ListV;
 	@FXML 
 	private ColorPicker coul;
 	@FXML 
@@ -98,8 +99,15 @@ public class ControleurJeu implements Serializable {
 		Image image2 = new Image(Main.class.getResourceAsStream("/Modele/brique_rouge1.png"));
 		
 		Image image3 = new Image("file:/Modele/brique_rouge3.png",50,50,true,true);
-		ObservableList<String> data = FXCollections.observableArrayList("image1","image2","image3");
-		ListV.setItems(data);
+		
+		//ImageView imagedroit = new ImageView(image2);
+		
+		//Group root = new Group(imageView);
+		//ObservableList<String> data = FXCollections.observableArrayList("image1","image2","image3");
+		ObservableList<Image> data = FXCollections.observableArrayList(image1,image2,image3);
+		//ListV.setItems(data);
+		ListV.getItems().add(data.get(0));
+		
 				
 		
 		coul.setOnAction(new EventHandler<ActionEvent>() {
