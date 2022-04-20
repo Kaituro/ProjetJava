@@ -80,7 +80,7 @@ public class ControleurJeu implements Serializable {
 	
 	@FXML
     private void initialize() {
-		
+		/*
 		try {
 			FileInputStream fis = new FileInputStream(fichier);
 			ObjectInputStream ois = new ObjectInputStream(fis);
@@ -93,7 +93,7 @@ public class ControleurJeu implements Serializable {
 		}catch (IOException | ClassNotFoundException e){
 			//throw new RuntimeException("Lecture des donn�es impossible ou donn�es corrompues");
 		}
-		
+		*/
 		Image image1 = new Image("file:/Modele/brique_rouge1.png",50,50,true,true);
 		Image image2 = new Image(Main.class.getResourceAsStream("/Modele/brique_rouge1.png"));
 		
@@ -169,10 +169,11 @@ public class ControleurJeu implements Serializable {
 		
 	
 		
-		Quitter.setOnAction(new EventHandler<ActionEvent>() {
+	/*	Quitter.setOnAction(new EventHandler<ActionEvent>() {
 			
 			@Override
 			public void handle(ActionEvent arg0) {
+			
 				try {
 					FileOutputStream fos = new FileOutputStream(fichier);
 					ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -187,11 +188,13 @@ public class ControleurJeu implements Serializable {
 					//throw new RuntimeException("Impossible d'�crire les donn�es");
 					
 				}
+				
 				System.exit(0);
 	}
 	
 	
 
 		});
+		*/
 	}	
 }
