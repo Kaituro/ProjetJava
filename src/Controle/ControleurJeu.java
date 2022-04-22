@@ -42,6 +42,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -72,6 +73,9 @@ public class ControleurJeu implements Serializable {
 	
 	@FXML
 	private GridPane grille;
+	
+	@FXML
+	private Rectangle Test;
 	
 	public String d;
 	public Color c=null;
@@ -133,8 +137,9 @@ public class ControleurJeu implements Serializable {
 		
 		System.out.println(d);
 		
-		grille.setStyle("-fx-background-color: "+d);
-		
+		//grille.setStyle("-fx-background-color: "+d);
+	
+		Test.setFill(c);
 		
 		
 		
@@ -164,9 +169,9 @@ public class ControleurJeu implements Serializable {
 				
 				System.out.println(d);
 				
-				grille.setStyle("-fx-background-color: "+d);
+				//grille.setStyle("-fx-background-color: "+d);
 				
-				
+				Test.setFill(c);
 				
 				}
 			
@@ -232,7 +237,7 @@ public class ControleurJeu implements Serializable {
 
 		});
 		
-		 /*grille.setOnAction(new EventHandler<ActionEvent>() {
+		/* Test.setOnAction(new EventHandler<ActionEvent>() {
 			
 			@Override
 			public void handle(ActionEvent arg0) {
