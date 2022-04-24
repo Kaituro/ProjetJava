@@ -21,7 +21,9 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
@@ -45,8 +47,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-
-
+import javafx.scene.input.MouseEvent;
 
 public class ControleurJeu implements Serializable {
 	
@@ -236,6 +237,17 @@ public class ControleurJeu implements Serializable {
 	
 
 		});
+		/*
+		EventType<MouseEvent> event = MouseEvent.MOUSE_CLICKED;
+		
+		Node clickedNode = event.getPickResult().getIntersectedNode();
+		Integer colIndex = GridPane.getColumnIndex(clickedNode);
+		Integer rowIndex = GridPane.getRowIndex(clickedNode);
+		System.out.println(colIndex + ":" + rowIndex);
+	
+		*/
+		
+		
 		
 		/* Test.setOnAction(new EventHandler<ActionEvent>() {
 			
@@ -248,3 +260,6 @@ public class ControleurJeu implements Serializable {
 		*/
 	}	
 }
+
+
+
