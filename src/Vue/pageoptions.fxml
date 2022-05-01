@@ -11,12 +11,12 @@
 
 <AnchorPane fx:id="ecranOP" accessibleText="Josian Rivière" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="679.0" prefWidth="1177.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <CheckBox fx:id="sauvegarde" layoutX="449.0" layoutY="380.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="247.0" text="Sauvegarde automatique" AnchorPane.leftAnchor="449.0" AnchorPane.topAnchor="380.0">
+      <CheckBox fx:id="sauvegarde" layoutX="450.0" layoutY="432.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="247.0" text="Sauvegarde automatique">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="17.0" />
          </font>
       </CheckBox>
-      <Label fx:id="labeloptions" alignment="CENTER" contentDisplay="CENTER" layoutX="433.0" layoutY="87.0" prefHeight="48.0" prefWidth="281.0" text="Options" AnchorPane.bottomAnchor="516.8" AnchorPane.leftAnchor="433.0" AnchorPane.rightAnchor="462.4" AnchorPane.topAnchor="87.00000000000004">
+      <Label fx:id="labeloptions" alignment="CENTER" contentDisplay="CENTER" layoutX="433.0" layoutY="87.0" prefHeight="48.0" prefWidth="281.0" text="Options" AnchorPane.leftAnchor="433.0" AnchorPane.rightAnchor="462.4" AnchorPane.topAnchor="87.00000000000004">
          <font>
             <Font name="Showcard Gothic" size="65.0" />
          </font>
@@ -31,12 +31,12 @@
             <Font name="Berlin Sans FB Bold" size="19.0" />
          </font>
       </Button>
-      <CheckBox fx:id="sonoff" layoutX="534.0" layoutY="315.0" mnemonicParsing="false" text="SON OFF">
+      <CheckBox fx:id="sonoff" layoutX="539.0" layoutY="355.0" mnemonicParsing="false" text="SON OFF">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="12.0" />
          </font>
       </CheckBox>
-      <MenuButton fx:id="credits" layoutX="531.0" layoutY="471.0" mnemonicParsing="false" text="Crédits" textAlignment="CENTER">
+      <MenuButton fx:id="credits" layoutX="530.0" layoutY="537.0" mnemonicParsing="false" text="Crédits" textAlignment="CENTER">
         <items>
           <MenuItem mnemonicParsing="false" text="Josian Rivière" />
             <SeparatorMenuItem mnemonicParsing="false" />
@@ -48,7 +48,7 @@
             <Font name="Berlin Sans FB Demi Bold" size="15.0" />
          </font>
       </MenuButton>
-      <CheckBox fx:id="modesombre" layoutX="515.0" layoutY="239.0" mnemonicParsing="false" text="Mode Sombre" AnchorPane.bottomAnchor="415.2" AnchorPane.leftAnchor="515.0" AnchorPane.rightAnchor="546.8" AnchorPane.topAnchor="239.0">
+      <CheckBox fx:id="modesombre" layoutX="517.0" layoutY="271.0" mnemonicParsing="false" text="Mode Sombre">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="14.0" />
          </font>

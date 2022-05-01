@@ -7,4 +7,5 @@ module ProjetJava {
 
 	opens Vue to javafx.graphics, javafx.fxml;
 	opens Controle to javafx.fxml, javafx.graphics, javafx.controls;
+	opens Modele to javafx.graphics;
 }

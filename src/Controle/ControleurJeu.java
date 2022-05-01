@@ -12,10 +12,12 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map.Entry;
 
 import Modele.Brique;
 import Modele.Briques;
+import Modele.quadrillage;
 import Vue.Main;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -43,6 +45,7 @@ import javafx.scene.image.ImageView;
 
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -70,13 +73,10 @@ public class ControleurJeu implements Serializable {
 	private MenuItem Quitter;
 	
 	@FXML
-	private ImageView imagedroit;
+	private ImageView imagedroit;	
 	
 	@FXML
-	private GridPane grille;
-	
-	@FXML
-	private Rectangle Test;
+	private HBox leHB;
 	
 	public String d;
 	public Color c=null;
@@ -85,10 +85,24 @@ public class ControleurJeu implements Serializable {
 	
 	public File fichier = new File("colo.dat");
 	public ArrayList<Color> couleure;
+	public Briques b;
+	public List<Brique> brayk;
+	public quadrillage quad;
+	public void grillebas() {
+		b= new Briques();
+		brayk = new ArrayList<>();
+		for(int i =0;i<3;i++) {
+			brayk.add(b.get("petit"));
+			brayk.add(b.get("moyen"));
+			brayk.add(b.get("grand"));
+		}		
+		
+	}
 	
 	@FXML
     private void initialize() {
-		
+		quad = new quadrillage();
+		bopa.setCenter(quad);
 		try {
 			FileInputStream fis = new FileInputStream(fichier);
 			ObjectInputStream ois = new ObjectInputStream(fis);
@@ -102,7 +116,7 @@ public class ControleurJeu implements Serializable {
 		}catch (IOException | ClassNotFoundException e){
 			//throw new RuntimeException("Lecture des donn�es impossible ou donn�es corrompues");
 		}
-		
+		/*
 		Image image1 = new Image("file:/Modele/brique_rouge1.png",50,50,true,true);
 		Image image2 = new Image(Main.class.getResourceAsStream("/Modele/brique_rouge1.png"));
 		
@@ -115,9 +129,17 @@ public class ControleurJeu implements Serializable {
 		ObservableList<Image> data = FXCollections.observableArrayList(image1,image2,image3);
 		//ListV.setItems(data);
 		ListV.getItems().add(data.get(0));
-		
-				
+		*/
 	
+		//grillebas();
+		leHB.setSpacing(20);
+				
+		/*
+		for(int l =0;l<brayk.size();l++) {
+			leHB.getChildren().add(brayk.get(l));
+		}
+		
+	*/
 		c = coul.getValue();
 		System.out.println(c);
 
@@ -138,11 +160,11 @@ public class ControleurJeu implements Serializable {
 		
 		System.out.println(d);
 		
-		//grille.setStyle("-fx-background-color: "+d);
+		quad.setStyle("-fx-background-color: "+d);
 	
-		Test.setFill(c);
 		
 		
+	
 		
 		coul.setOnAction(new EventHandler<ActionEvent>() {		
 			
@@ -170,9 +192,9 @@ public class ControleurJeu implements Serializable {
 				
 				System.out.println(d);
 				
-				//grille.setStyle("-fx-background-color: "+d);
+				quad.setStyle("-fx-background-color: "+d);
 				
-				Test.setFill(c);
+			
 				
 				}
 			
@@ -258,6 +280,7 @@ public class ControleurJeu implements Serializable {
 			}
 			});
 		*/
+		
 	}	
 }
 

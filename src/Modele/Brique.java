@@ -15,11 +15,11 @@ public Brique(int tai){
 	
 	t=tai;
 	if (tai==1) {
-		this.im=new Image("/Modele/brique_rouge1.png");
+		this.im=new Image("/brique_rouge1.png");
 	}else if (tai==2){
-		this.im=new Image("/Modele/brique_rouge2.png");
+		this.im=new Image("/brique_rouge2.png");
 	}else {
-		this.im=new Image("/Modele/brique_rouge3.png");
+		this.im=new Image("/brique_rouge3.png");
 	}
 }
 
