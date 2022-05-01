@@ -10,8 +10,8 @@ import javafx.stage.Stage;
 public class quadrillage extends GridPane{	
 	
 	public quadrillage()  {
-		int ligne = 5;
-		int colonne = 5;
+		int ligne = 12;
+		int colonne = 35;
 		
 		for(int i = 0; i < colonne; i++) {
 			ColumnConstraints column = new ColumnConstraints(40);
@@ -22,7 +22,8 @@ public class quadrillage extends GridPane{
 			this.getRowConstraints().add(row);
 		}
 
-
+		
+		this.setGridLinesVisible(true);
 		
 		
 	}
