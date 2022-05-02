@@ -35,6 +35,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBase;
 import javafx.scene.control.ColorPicker;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -53,7 +54,7 @@ import javafx.stage.WindowEvent;
 import javafx.scene.input.MouseEvent;
 
 public class ControleurJeu implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 	@FXML
 	private ListView<Image> ListV;
@@ -62,27 +63,27 @@ public class ControleurJeu implements Serializable {
 	@FXML 
 	private BorderPane bopa;
 	public Briques bri;
-	
+
 	@FXML
 	private MenuBar fen;
 
 	@FXML
 	private MenuItem close;
-	
+
 	@FXML
 	private MenuItem Quitter;
-	
+
 	@FXML
 	private ImageView imagedroit;	
-	
+
 	@FXML
 	private HBox leHB;
-	
+
 	public String d;
 	public Color c=null;
-	
+
 	public Color geu;
-	
+
 	public File fichier = new File("colo.dat");
 	public ArrayList<Color> couleure;
 	public Briques b;
@@ -96,191 +97,206 @@ public class ControleurJeu implements Serializable {
 			brayk.add(b.get("moyen"));
 			brayk.add(b.get("grand"));
 		}		
-		
+
 	}
-	
+
 	@FXML
-    private void initialize() {
+	private void initialize() {
 		quad = new quadrillage();
+
+
 		bopa.setCenter(quad);
+
+
 		try {
 			FileInputStream fis = new FileInputStream(fichier);
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			d = (String)ois.readObject();
-			
+
 			c = Color.valueOf(d);
 			this.coul.setValue(c);
 			ois.close();
 			fis.close();
-		
+
 		}catch (IOException | ClassNotFoundException e){
 			//throw new RuntimeException("Lecture des donn�es impossible ou donn�es corrompues");
 		}
 		/*
 		Image image1 = new Image("file:/Modele/brique_rouge1.png",50,50,true,true);
 		Image image2 = new Image(Main.class.getResourceAsStream("/Modele/brique_rouge1.png"));
-		
+
 		Image image3 = new Image("file:/Modele/brique_rouge3.png",50,50,true,true);
-		
+
 		//ImageView imagedroit = new ImageView(image2);
-		
+
 		//Group root = new Group(imageView);
 		//ObservableList<String> data = FXCollections.observableArrayList("image1","image2","image3");
 		ObservableList<Image> data = FXCollections.observableArrayList(image1,image2,image3);
 		//ListV.setItems(data);
 		ListV.getItems().add(data.get(0));
-		*/
-	
+		 */
+
 		//grillebas();
 		leHB.setSpacing(20);
-				
+
 		/*
 		for(int l =0;l<brayk.size();l++) {
 			leHB.getChildren().add(brayk.get(l));
 		}
-		
-	*/
+
+		 */
 		c = coul.getValue();
 		System.out.println(c);
 
 		ArrayList<Color> a = new ArrayList<>();
 		a.add(c);
-		
-		
+
+
 		String hex;
 		hex=String.valueOf(c);
 		ArrayList<String> b = new ArrayList<>();
 		b.add(hex);
 		d="#";
-		
+
 		System.out.println("b.get"+b.get(0));
 		for(int i=2;i<b.get(0).length()-2;i++) {
 			d+=b.get(0).charAt(i);
 		}
-		
+
 		System.out.println(d);
-		
+
 		quad.setStyle("-fx-background-color: "+d);
-	
-		
-		
-	
-		
+
+
+
+
+
 		coul.setOnAction(new EventHandler<ActionEvent>() {		
-			
+
 
 			@Override
 			public void handle(ActionEvent arg0) {
-				
+
 				c = coul.getValue();
 				System.out.println(c);
-		
+
 				ArrayList<Color> a = new ArrayList<>();
 				a.add(c);
-				
-				
+
+
 				String hex;
 				hex=String.valueOf(c);
 				ArrayList<String> b = new ArrayList<>();
 				b.add(hex);
 				d="#";
-				
+
 				System.out.println("b.get"+b.get(0));
 				for(int i=2;i<b.get(0).length()-2;i++) {
 					d+=b.get(0).charAt(i);
 				}
-				
+
 				System.out.println(d);
-				
+
 				quad.setStyle("-fx-background-color: "+d);
-				
-			
-				
-				}
-			
-	              
-	                });	
-		
-		 
+
+
+
+			}
+
+
+		});	
+
+
 
 		close.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent arg0) {
 				
-			//	((Stage)(((MenuItem)arg0.getSource()).getScene().getWindow())).close();
-				 Stage stage = new Stage();
-				 
-	                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/PageOne.fxml"));
-
-	                Controleur controlleur = new Controleur();
-	    			loader.setController(controlleur);	               
-	               
-	                Parent root;
-	                try {
-	                    root = loader.load();
-	                    Scene scene = new Scene(root);
-	                    stage.setScene(scene);
-	                    stage.setFullScreen(true);
-	                    stage.show();
-	                    
-	                } catch (IOException e1) {
-	                    e1.printStackTrace();
-	                }
-
+				((Stage)((close.getParentPopup().getOwnerWindow()).getScene().getWindow())).close();	
 				
-			}});
-		
-	
-		
+				Stage stage = new Stage();
+
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/PageOne.fxml"));
+
+				Controleur controlleur = new Controleur();
+				loader.setController(controlleur);	               
+
+				Parent root;
+				try {
+					root = loader.load();
+					Scene scene = new Scene(root);
+					stage.setScene(scene);
+					stage.setFullScreen(true);
+					stage.show();
+
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+
+
+			}
+
+
+		});
+
+
+
 		Quitter.setOnAction(new EventHandler<ActionEvent>() {
-			
+
 			@Override
 			public void handle(ActionEvent arg0) {
-			
+
 				try {
 					FileOutputStream fos = new FileOutputStream(fichier);
 					ObjectOutputStream oos = new ObjectOutputStream(fos);
-					
-					
+
+
 					oos.writeObject(d);
 					oos.close();
 					fos.close();
-					
+
 				}catch (IOException e1) {
 					e1.printStackTrace();
 					//throw new RuntimeException("Impossible d'�crire les donn�es");
-					
+
 				}
-				
+
 				System.exit(0);
-	}
-	
-	
+			}
+
+
+
+		});
+
+		quad.setOnMouseClicked((MouseEvent t) -> {
+			Rectangle re=new Rectangle();
+			re.setFill(c);
+			quad.add(re , (int)t.getX(), (int)t.getY() );
 
 		});
 		/*
 		EventType<MouseEvent> event = MouseEvent.MOUSE_CLICKED;
-		
+
 		Node clickedNode = event.getPickResult().getIntersectedNode();
 		Integer colIndex = GridPane.getColumnIndex(clickedNode);
 		Integer rowIndex = GridPane.getRowIndex(clickedNode);
 		System.out.println(colIndex + ":" + rowIndex);
-	
-		*/
-		
-		
-		
+
+		 */
+
+
+
 		/* Test.setOnAction(new EventHandler<ActionEvent>() {
-			
+
 			@Override
 			public void handle(ActionEvent arg0) {
-		
-				
+
+
 			}
 			});
-		*/
-		
+		 */
+
 	}	
 }
 

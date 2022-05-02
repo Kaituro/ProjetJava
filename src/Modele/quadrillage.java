@@ -1,6 +1,9 @@
 package Modele;
 
+
+import javafx.event.EventType;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
@@ -21,14 +24,14 @@ public class quadrillage extends GridPane{
 			RowConstraints row = new RowConstraints(40);
 			this.getRowConstraints().add(row);
 		}
-
-		this.maxWidth(USE_COMPUTED_SIZE);
-		this.maxHeight(USE_COMPUTED_SIZE);
+				
+	
 		this.setGridLinesVisible(true);
 		
 		
 	}
 
+	
 
 
 }
