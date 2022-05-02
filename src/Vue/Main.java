@@ -2,6 +2,7 @@ package Vue;
 	
 
 import java.awt.Dimension;
+import java.nio.file.Paths;
 
 import Controle.Controleur;
 import javafx.application.Application;
@@ -14,6 +15,8 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 
 public class Main extends Application {
@@ -23,7 +26,9 @@ public class Main extends Application {
 	public static Parent root;
 	@Override
 	public void start(Stage primaryStage) {
-		try {			
+		
+		try {		
+			music();
 			loader = new FXMLLoader(getClass().getResource("PageOne.fxml"));
 			Controleur controlleur = new Controleur();
 			loader.setController(controlleur);		
@@ -38,7 +43,13 @@ public class Main extends Application {
 		}
 	}
 	
-	
+	MediaPlayer mediaPlayer;
+	public void music() {
+		String s = "musique.mp3";
+		Media h = new Media(Paths.get(s).toUri().toString());
+		mediaPlayer = new MediaPlayer(h);
+		mediaPlayer.play();
+		}
 	
 	public static void main(String[] args) {
 		launch(args);

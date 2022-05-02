@@ -23,8 +23,4 @@ public Brique(int tai){
 	}
 }
 
-
-
-
-
 }
