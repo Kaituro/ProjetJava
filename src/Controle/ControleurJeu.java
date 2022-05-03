@@ -56,7 +56,7 @@ import javafx.stage.WindowEvent;
 import javafx.scene.input.MouseEvent;
 
 public class ControleurJeu implements Serializable {
-
+//méthodes et variables
 	private static final long serialVersionUID = 1L;
 	@FXML
 	private ListView<Image> ListV;
@@ -93,7 +93,7 @@ public class ControleurJeu implements Serializable {
 	public Briques b;	
 	public List<Brique> brayk;	
 	public quadrillage quad;
-	
+	public String Taille="0";
 	public void grillebas() {
 		b= new Briques();
 		brayk = new ArrayList<>();
@@ -104,7 +104,7 @@ public class ControleurJeu implements Serializable {
 		}		
 
 	}
-
+//code principal
 	@FXML
 	private void initialize() throws FileNotFoundException {
 		
@@ -128,9 +128,7 @@ public class ControleurJeu implements Serializable {
 		//affichage des images
 	
 		grillebas();
-		Button button1 = new Button();
-		Button button2 = new Button();
-		Button button3 = new Button();
+		
 		
 		//button1.setGraphic(imOn.setImage(brayk.get(0).im));
 		//button2.setGraphic(imOn.setImage(brayk.get(1).im));
@@ -168,7 +166,7 @@ public class ControleurJeu implements Serializable {
 
 		System.out.println(d);
 
-		//quad.setStyle("-fx-background-color: "+d);
+		
 
 
 
@@ -273,7 +271,7 @@ public class ControleurJeu implements Serializable {
 		});
 
 		quad.setOnMouseClicked((MouseEvent t) -> {
-			
+		
 			Rectangle re=new Rectangle(30,30);
 			int x = (int)t.getX();
 			int y = (int)t.getY();
@@ -281,97 +279,13 @@ public class ControleurJeu implements Serializable {
 			quad.add(re , x, y );
 
 		});
-		EventHandler<MouseEvent> SelectImage1 = new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent arg0) {
-				// si image 1 selectionner : creer une brique de type 1
-				
-			}
+	
+	
+		imOn.setOnMouseClicked((MouseEvent e) -> {
 			
 			
-		};
-		EventHandler<MouseEvent> SelectImage1Handler = new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent arg0) {
-				// si image 1 selectionner : creer une brique de type 1
-				
-			}
-			
-			
-		};
+		});
 		
-		
-		EventHandler<MouseEvent> SelectImage2 = new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent arg0) {
-				// si image 1 selectionner : creer une brique de type 1
-				
-			}
-			
-			
-		};
-		EventHandler<MouseEvent> SelectImage2Handler = new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent arg0) {
-				// si image 1 selectionner : creer une brique de type 1
-				
-			}
-			
-			
-		};
-		
-		
-		
-		EventHandler<MouseEvent> SelectImage3 = new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent arg0) {
-				// si image 1 selectionner : creer une brique de type 1
-				
-			}
-			
-			
-		};
-		EventHandler<MouseEvent> SelectImage3Handler = new EventHandler<MouseEvent>() {
-			@Override
-			public void handle(MouseEvent arg0) {
-				// si image 1 selectionner : creer une brique de type 1
-				
-			}
-			
-			
-		};
-		
-		button1.addEventFilter(MouseEvent.MOUSE_CLICKED,SelectImage1);
-		button1.addEventHandler(MouseEvent.MOUSE_CLICKED,SelectImage1Handler);
-		
-		button2.addEventFilter(MouseEvent.MOUSE_CLICKED,SelectImage2);
-		button2.addEventHandler(MouseEvent.MOUSE_CLICKED,SelectImage2Handler);
-		
-		button3.addEventFilter(MouseEvent.MOUSE_CLICKED,SelectImage3);
-		button3.addEventHandler(MouseEvent.MOUSE_CLICKED,SelectImage3Handler);
-		
-		
-		/*
-		EventType<MouseEvent> event = MouseEvent.MOUSE_CLICKED;
-
-		Node clickedNode = event.getPickResult().getIntersectedNode();
-		Integer colIndex = GridPane.getColumnIndex(clickedNode);
-		Integer rowIndex = GridPane.getRowIndex(clickedNode);
-		System.out.println(colIndex + ":" + rowIndex);
-
-		 */
-
-
-
-		/* Test.setOnAction(new EventHandler<ActionEvent>() {
-
-			@Override
-			public void handle(ActionEvent arg0) {
-
-
-			}
-			});
-		 */
 
 	}	
 }
