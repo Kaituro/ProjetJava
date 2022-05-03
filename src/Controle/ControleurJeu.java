@@ -300,8 +300,57 @@ public class ControleurJeu implements Serializable {
 			
 		};
 		
+		
+		EventHandler<MouseEvent> SelectImage2 = new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent arg0) {
+				// si image 1 selectionner : creer une brique de type 1
+				
+			}
+			
+			
+		};
+		EventHandler<MouseEvent> SelectImage2Handler = new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent arg0) {
+				// si image 1 selectionner : creer une brique de type 1
+				
+			}
+			
+			
+		};
+		
+		
+		
+		EventHandler<MouseEvent> SelectImage3 = new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent arg0) {
+				// si image 1 selectionner : creer une brique de type 1
+				
+			}
+			
+			
+		};
+		EventHandler<MouseEvent> SelectImage3Handler = new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent arg0) {
+				// si image 1 selectionner : creer une brique de type 1
+				
+			}
+			
+			
+		};
+		
 		button1.addEventFilter(MouseEvent.MOUSE_CLICKED,SelectImage1);
 		button1.addEventHandler(MouseEvent.MOUSE_CLICKED,SelectImage1Handler);
+		
+		button2.addEventFilter(MouseEvent.MOUSE_CLICKED,SelectImage2);
+		button2.addEventHandler(MouseEvent.MOUSE_CLICKED,SelectImage2Handler);
+		
+		button3.addEventFilter(MouseEvent.MOUSE_CLICKED,SelectImage3);
+		button3.addEventHandler(MouseEvent.MOUSE_CLICKED,SelectImage3Handler);
+		
+		
 		/*
 		EventType<MouseEvent> event = MouseEvent.MOUSE_CLICKED;
 
