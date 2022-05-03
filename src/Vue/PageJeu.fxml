@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -38,6 +40,26 @@
       <ImageView fx:id="imagedroit" fitHeight="339.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
    </right>
    <bottom>
-      <HBox fx:id="leHB" prefHeight="187.0" prefWidth="1065.0" BorderPane.alignment="CENTER" />
+      <HBox fx:id="leHB" prefHeight="187.0" prefWidth="1065.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imOn" fitHeight="188.0" fitWidth="231.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <effect>
+                  <DropShadow height="0.0" offsetY="2.0" radius="20.14" spread="0.11" width="82.56" />
+               </effect>
+            </ImageView>
+            <ImageView fx:id="imTwo" fitHeight="187.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </ImageView>
+            <ImageView fx:id="imTre" fitHeight="188.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </ImageView>
+         </children></HBox>
    </bottom>
 </BorderPane>

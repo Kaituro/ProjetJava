@@ -28,7 +28,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		
 		try {		
-			music();
+			//music();
 			loader = new FXMLLoader(getClass().getResource("PageOne.fxml"));
 			Controleur controlleur = new Controleur();
 			loader.setController(controlleur);		
@@ -42,14 +42,14 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-	
+	/*
 	MediaPlayer mediaPlayer;
 	public void music() {
 		String s = "musique.mp3";
 		Media h = new Media(Paths.get(s).toUri().toString());
 		mediaPlayer = new MediaPlayer(h);
 		mediaPlayer.play();
-		}
+		}*/
 	
 	public static void main(String[] args) {
 		launch(args);

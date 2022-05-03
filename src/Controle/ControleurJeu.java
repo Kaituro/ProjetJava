@@ -5,12 +5,14 @@ import java.awt.Toolkit;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
@@ -63,32 +65,35 @@ public class ControleurJeu implements Serializable {
 	@FXML 
 	private BorderPane bopa;
 	public Briques bri;
-
 	@FXML
 	private MenuBar fen;
-
 	@FXML
 	private MenuItem close;
-
 	@FXML
 	private MenuItem Quitter;
-
 	@FXML
 	private ImageView imagedroit;	
-
 	@FXML
 	private HBox leHB;
-
+	@FXML
+	private ImageView imOn;
+	@FXML
+	private ImageView imTwo;
+	@FXML
+	private ImageView imTre;
 	public String d;
 	public Color c=null;
 
 	public Color geu;
 
 	public File fichier = new File("colo.dat");
+	
 	public ArrayList<Color> couleure;
-	public Briques b;
-	public List<Brique> brayk;
+	
+	public Briques b;	
+	public List<Brique> brayk;	
 	public quadrillage quad;
+	
 	public void grillebas() {
 		b= new Briques();
 		brayk = new ArrayList<>();
@@ -101,13 +106,13 @@ public class ControleurJeu implements Serializable {
 	}
 
 	@FXML
-	private void initialize() {
+	private void initialize() throws FileNotFoundException {
 		quad = new quadrillage();
 
 
 		bopa.setCenter(quad);
 
-
+//Sérialisation
 		try {
 			FileInputStream fis = new FileInputStream(fichier);
 			ObjectInputStream ois = new ObjectInputStream(fis);
@@ -121,30 +126,18 @@ public class ControleurJeu implements Serializable {
 		}catch (IOException | ClassNotFoundException e){
 			//throw new RuntimeException("Lecture des donn�es impossible ou donn�es corrompues");
 		}
-		/*
-		Image image1 = new Image("file:/Modele/brique_rouge1.png",50,50,true,true);
-		Image image2 = new Image(Main.class.getResourceAsStream("/Modele/brique_rouge1.png"));
-
-		Image image3 = new Image("file:/Modele/brique_rouge3.png",50,50,true,true);
-
-		//ImageView imagedroit = new ImageView(image2);
-
-		//Group root = new Group(imageView);
-		//ObservableList<String> data = FXCollections.observableArrayList("image1","image2","image3");
-		ObservableList<Image> data = FXCollections.observableArrayList(image1,image2,image3);
-		//ListV.setItems(data);
-		ListV.getItems().add(data.get(0));
-		 */
-
-		//grillebas();
-		leHB.setSpacing(20);
-
-		/*
-		for(int l =0;l<brayk.size();l++) {
-			leHB.getChildren().add(brayk.get(l));
-		}
-
-		 */
+		
+		
+		//affichage des images
+	
+		grillebas();
+		imOn.setImage(brayk.get(0).im);		
+		imTwo.setImage(brayk.get(1).im);
+		imTre.setImage(brayk.get(2).im);
+		
+		leHB.setSpacing(50);
+		
+		
 		c = coul.getValue();
 		System.out.println(c);
 
