@@ -33,12 +33,7 @@ public class Controleur{
 	@FXML
     private void initialize() {
 	
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		int longueur = screenSize.width;
-		int largeur = screenSize.height;
-		int pour = 9* largeur/100;
-		largeur -=pour;
-		ecran.setPrefSize(longueur, largeur);
+		
 		
 		play.setOnAction(new EventHandler<ActionEvent>() {
 

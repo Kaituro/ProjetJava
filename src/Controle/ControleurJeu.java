@@ -56,7 +56,7 @@ import javafx.stage.WindowEvent;
 import javafx.scene.input.MouseEvent;
 
 public class ControleurJeu implements Serializable {
-//méthodes et variables
+	//méthodes et variables
 	private static final long serialVersionUID = 1L;
 	@FXML
 	private ListView<Image> ListV;
@@ -87,9 +87,9 @@ public class ControleurJeu implements Serializable {
 	public Color geu;
 
 	public File fichier = new File("colo.dat");
-	
+
 	public ArrayList<Color> couleure;
-	
+
 	public Briques b;	
 	public List<Brique> brayk;	
 	public quadrillage quad;
@@ -104,12 +104,12 @@ public class ControleurJeu implements Serializable {
 		}		
 
 	}
-//code principal
+	//code principal
 	@FXML
 	private void initialize() throws FileNotFoundException {
-		
 
-//Sérialisation
+
+		//Sérialisation
 		try {
 			FileInputStream fis = new FileInputStream(fichier);
 			ObjectInputStream ois = new ObjectInputStream(fis);
@@ -123,29 +123,29 @@ public class ControleurJeu implements Serializable {
 		}catch (IOException | ClassNotFoundException e){
 			//throw new RuntimeException("Lecture des donn�es impossible ou donn�es corrompues");
 		}
-		
-		
+
+
 		//affichage des images
-	
+
 		grillebas();
-		
-		
+
+
 		//button1.setGraphic(imOn.setImage(brayk.get(0).im));
 		//button2.setGraphic(imOn.setImage(brayk.get(1).im));
 		//button3.setGraphic(imOn.setImage(brayk.get(2).im));
-		
+
 		imOn.setImage(brayk.get(0).im);		
 		imTwo.setImage(brayk.get(1).im);
 		imTre.setImage(brayk.get(2).im);
-		
+
 		leHB.setSpacing(50);
-		
+
 		//gestion de la grille de jeu
 		quad = new quadrillage();
 
-		
+
 		bopa.setCenter(quad);
-		
+
 		c = coul.getValue();
 		System.out.println(c);
 
@@ -166,7 +166,7 @@ public class ControleurJeu implements Serializable {
 
 		System.out.println(d);
 
-		
+
 
 
 
@@ -198,7 +198,7 @@ public class ControleurJeu implements Serializable {
 
 				System.out.println(d);
 
-			//	quad.setStyle("-fx-background-color: "+d);
+				//	quad.setStyle("-fx-background-color: "+d);
 
 
 
@@ -213,9 +213,9 @@ public class ControleurJeu implements Serializable {
 
 			@Override
 			public void handle(ActionEvent arg0) {
-				
+
 				((Stage)((close.getParentPopup().getOwnerWindow()).getScene().getWindow())).close();	
-				
+
 				Stage stage = new Stage();
 
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vue/PageOne.fxml"));
@@ -271,21 +271,37 @@ public class ControleurJeu implements Serializable {
 		});
 
 		quad.setOnMouseClicked((MouseEvent t) -> {
-		
-			Rectangle re=new Rectangle(30,30);
-			int x = (int)t.getX();
-			int y = (int)t.getY();
+
+			Rectangle re=new Rectangle(40,40);
+
+			int x = (int)t.getX();			
+			int y = (int)t.getY();		
+			y=Math.round(y/21)-4;
+			x=Math.round(x/35)-4;
+			if (y<0) {
+				y=0;
+			}else if(y>34) {
+				y=34;
+			}
+			
+			if (x<0) {
+				x=0;
+			}else if(x>20) {
+				x=20;
+			}
 			re.setFill(c);
-			quad.add(re , x, y );
+			quad.add(re , x, y);
+			
+		});
+
+
+		imOn.setOnMouseClicked((MouseEvent e) -> {
+
 
 		});
-	
-	
-		imOn.setOnMouseClicked((MouseEvent e) -> {
-			
-			
-		});
-		
+
+
+
 
 	}	
 }
