@@ -107,10 +107,7 @@ public class ControleurJeu implements Serializable {
 
 	@FXML
 	private void initialize() throws FileNotFoundException {
-		quad = new quadrillage();
-
-
-		bopa.setCenter(quad);
+		
 
 //Sérialisation
 		try {
@@ -137,6 +134,11 @@ public class ControleurJeu implements Serializable {
 		
 		leHB.setSpacing(50);
 		
+		//gestion de la grille de jeu
+		quad = new quadrillage();
+
+		
+		bopa.setCenter(quad);
 		
 		c = coul.getValue();
 		System.out.println(c);
@@ -158,7 +160,7 @@ public class ControleurJeu implements Serializable {
 
 		System.out.println(d);
 
-		quad.setStyle("-fx-background-color: "+d);
+		//quad.setStyle("-fx-background-color: "+d);
 
 
 
@@ -190,7 +192,7 @@ public class ControleurJeu implements Serializable {
 
 				System.out.println(d);
 
-				quad.setStyle("-fx-background-color: "+d);
+			//	quad.setStyle("-fx-background-color: "+d);
 
 
 
@@ -263,9 +265,12 @@ public class ControleurJeu implements Serializable {
 		});
 
 		quad.setOnMouseClicked((MouseEvent t) -> {
-			Rectangle re=new Rectangle();
+			
+			Rectangle re=new Rectangle(30,30);
+			int x = (int)t.getX();
+			int y = (int)t.getY();
 			re.setFill(c);
-			quad.add(re , (int)t.getX(), (int)t.getY() );
+			quad.add(re , x, y );
 
 		});
 		/*
