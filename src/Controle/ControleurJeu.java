@@ -128,6 +128,14 @@ public class ControleurJeu implements Serializable {
 		//affichage des images
 	
 		grillebas();
+		Button button1 = new Button();
+		Button button2 = new Button();
+		Button button3 = new Button();
+		
+		//button1.setGraphic(imOn.setImage(brayk.get(0).im));
+		//button2.setGraphic(imOn.setImage(brayk.get(1).im));
+		//button3.setGraphic(imOn.setImage(brayk.get(2).im));
+		
 		imOn.setImage(brayk.get(0).im);		
 		imTwo.setImage(brayk.get(1).im);
 		imTre.setImage(brayk.get(2).im);
@@ -273,6 +281,27 @@ public class ControleurJeu implements Serializable {
 			quad.add(re , x, y );
 
 		});
+		EventHandler<MouseEvent> SelectImage1 = new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent arg0) {
+				// si image 1 selectionner : creer une brique de type 1
+				
+			}
+			
+			
+		};
+		EventHandler<MouseEvent> SelectImage1Handler = new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent arg0) {
+				// si image 1 selectionner : creer une brique de type 1
+				
+			}
+			
+			
+		};
+		
+		button1.addEventFilter(MouseEvent.MOUSE_CLICKED,SelectImage1);
+		button1.addEventHandler(MouseEvent.MOUSE_CLICKED,SelectImage1Handler);
 		/*
 		EventType<MouseEvent> event = MouseEvent.MOUSE_CLICKED;
 
