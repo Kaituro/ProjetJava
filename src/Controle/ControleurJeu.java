@@ -303,12 +303,12 @@ public class ControleurJeu implements Serializable {
 				quad.add(re , x, y);
 			}
 			else if (Taille=="2") {
-				if((imTwo.getRotate()/90)%2==0) {
+				if((Math.abs(imTwo.getRotate())/90)%2==0) {
 				
 				quad.add(re, x, y);
 				quad.add(re1, x+1, y);
 				}
-				else if ((imTwo.getRotate()/90)%2==1){
+				else if ((Math.abs(imTwo.getRotate())/90)%2==1){
 					
 					quad.add(re, x, y);
 					quad.add(re11, x, y+1);
