@@ -275,32 +275,31 @@ public class ControleurJeu implements Serializable {
 		quad.setOnMouseClicked((MouseEvent t) -> {
 
 			Rectangle re=new Rectangle(40,40);
-
+			Rectangle re1=new Rectangle(40,40);
+			Rectangle re2=new Rectangle(40,40);
 			int x = (int)t.getX();
 			
 			int y = (int)t.getY();
 
-			System.out.println(y);
-			y=Math.round(y/40);
-			x=Math.round(x/40);
-
-			re.setFill(c);
-			quad.add(re , x, y);
 			
-			if(Taille=="1") {
-				re.setFill(c);
+			y=Math.round(y/40);
+			x=Math.round(x/40);			
+			re.setFill(c);
+			re1.setFill(c);
+			re2.setFill(c);
+			if(Taille=="1") {				
 				quad.add(re , x, y);
 			}
 			else if (Taille=="2") {
 				re.setFill(c);
 				quad.add(re, x, y);
-				quad.add(re, x+40, y);
+				quad.add(re1, x+1, y);
 			}
 			else if (Taille=="3") {
 				re.setFill(c);
 				quad.add(re, x, y);
-				quad.add(re, x, y+40);
-				quad.add(re, x+40, y+40);
+				quad.add(re1, x+1, y);
+				quad.add(re2, x+1, y-1);
 			}
 			
 		});
