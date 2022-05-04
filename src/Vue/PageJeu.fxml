@@ -7,23 +7,30 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
 <BorderPane fx:id="bopa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="1001.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <left>
-      <ColorPicker fx:id="coul" prefHeight="356.0" prefWidth="131.0" style="-fx-background-color: #767676;" BorderPane.alignment="CENTER">
+      <ColorPicker fx:id="coul" prefHeight="377.0" prefWidth="131.0" style="-fx-background-color: #767676;" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="5.0" top="5.0" />
          </BorderPane.margin>
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></ColorPicker>
+         </cursor>
+         <effect>
+            <ColorAdjust contrast="0.7" />
+         </effect></ColorPicker>
    </left>
    <top>
-      <MenuBar fx:id="fen" style="-fx-background-color: #424242;" BorderPane.alignment="CENTER">
+      <MenuBar fx:id="fen" BorderPane.alignment="CENTER">
         <menus>
           <Menu fx:id="file" mnemonicParsing="false" text="File">
             <items>
@@ -42,6 +49,22 @@
             </items>
           </Menu>
         </menus>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <Lighting diffuseConstant="0.97" specularConstant="0.0" specularExponent="40.0" surfaceScale="4.25">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
       </MenuBar>
    </top>
    <right>
