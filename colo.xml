@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="17.0.1" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="javafx.scene.shape.Rectangle">
+    <void property="height">
+     <double>40.0</double>
+    </void>
+    <void property="layoutX">
+     <double>702.0</double>
+    </void>
+    <void property="layoutY">
+     <double>429.0</double>
+    </void>
+    <void property="width">
+     <double>40.0</double>
+    </void>
+    <void property="x">
+     <double>18.0</double>
+    </void>
+    <void property="y">
+     <double>11.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="javafx.scene.shape.Rectangle">
+    <void property="height">
+     <double>40.0</double>
+    </void>
+    <void property="width">
+     <double>40.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="javafx.scene.shape.Rectangle">
+    <void property="height">
+     <double>40.0</double>
+    </void>
+    <void property="layoutX">
+     <double>702.0</double>
+    </void>
+    <void property="layoutY">
+     <double>390.0</double>
+    </void>
+    <void property="width">
+     <double>40.0</double>
+    </void>
+    <void property="x">
+     <double>18.0</double>
+    </void>
+    <void property="y">
+     <double>10.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="javafx.scene.shape.Rectangle">
+    <void property="height">
+     <double>40.0</double>
+    </void>
+    <void property="layoutX">
+     <double>680.0</double>
+    </void>
+    <void property="layoutY">
+     <double>429.0</double>
+    </void>
+    <void property="width">
+     <double>40.0</double>
+    </void>
+    <void property="y">
+     <double>11.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="javafx.scene.shape.Rectangle">
+    <void property="height">
+     <double>40.0</double>
+    </void>
+    <void property="width">
+     <double>40.0</double>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

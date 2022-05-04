@@ -3,7 +3,7 @@ package Controle;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.IOException;
-
+import java.net.URL;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,6 +14,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -33,7 +35,6 @@ public class Controleur{
 	@FXML
     private void initialize() {
 	
-		
 		
 		play.setOnAction(new EventHandler<ActionEvent>() {
 
