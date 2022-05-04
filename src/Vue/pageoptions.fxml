@@ -94,7 +94,7 @@
             <Blend />
          </effect>
       </MenuButton>
-      <CheckBox layoutX="519.0" layoutY="231.0" mnemonicParsing="false" text="SON OFF" textAlignment="CENTER" AnchorPane.leftAnchor="700.0" AnchorPane.rightAnchor="700.0" AnchorPane.topAnchor="276.0">
+      <CheckBox layoutX="519.0" layoutY="265.0" mnemonicParsing="false" text="SON OFF" textAlignment="CENTER" AnchorPane.bottomAnchor="389.2" AnchorPane.leftAnchor="519.0" AnchorPane.rightAnchor="548.4" AnchorPane.topAnchor="265.0">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
          </font>
@@ -105,7 +105,7 @@
             <Blend />
          </effect>
       </CheckBox>
-      <CheckBox layoutX="428.0" layoutY="301.0" mnemonicParsing="false" text="SAUVEGARDE AUTOMATIQUE" AnchorPane.leftAnchor="600.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="376.0">
+      <CheckBox layoutX="427.0" layoutY="371.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="600.0" text="SAUVEGARDE AUTOMATIQUE" AnchorPane.bottomAnchor="282.4" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="371.0">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
          </font>
