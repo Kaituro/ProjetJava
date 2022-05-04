@@ -62,12 +62,12 @@
                <HBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </HBox.margin>
-               <effect>
-                  <DropShadow height="0.0" offsetY="2.0" radius="20.14" spread="0.11" width="82.56" />
-               </effect>
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
+               <effect>
+                  <DropShadow height="70.0" radius="37.0" spread="0.1" width="80.0" />
+               </effect>
             </ImageView>
             <ImageView fx:id="imTwo" fitHeight="168.0" fitWidth="168.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>

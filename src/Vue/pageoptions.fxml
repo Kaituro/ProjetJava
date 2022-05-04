@@ -76,7 +76,7 @@
             </DropShadow>
          </effect>
       </Button>
-      <MenuButton fx:id="credits" layoutX="515.0" layoutY="376.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" text="Crédits" textAlignment="CENTER" AnchorPane.leftAnchor="515.0" AnchorPane.rightAnchor="545.0" AnchorPane.topAnchor="376.0">
+      <MenuButton fx:id="credits" layoutX="515.0" layoutY="376.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" text="Crédits" textAlignment="CENTER" AnchorPane.leftAnchor="515.0" AnchorPane.rightAnchor="545.0" AnchorPane.topAnchor="476.0">
         <items>
           <MenuItem mnemonicParsing="false" text="Josian Rivière" />
             <SeparatorMenuItem mnemonicParsing="false" />
@@ -94,7 +94,7 @@
             <Blend />
          </effect>
       </MenuButton>
-      <CheckBox layoutX="519.0" layoutY="231.0" mnemonicParsing="false" text="SON OFF">
+      <CheckBox layoutX="519.0" layoutY="231.0" mnemonicParsing="false" text="SON OFF" textAlignment="CENTER" AnchorPane.leftAnchor="700.0" AnchorPane.rightAnchor="700.0" AnchorPane.topAnchor="276.0">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
          </font>
@@ -105,7 +105,7 @@
             <Blend />
          </effect>
       </CheckBox>
-      <CheckBox layoutX="428.0" layoutY="301.0" mnemonicParsing="false" text="SAUVEGARDE AUTOMATIQUE">
+      <CheckBox layoutX="428.0" layoutY="301.0" mnemonicParsing="false" text="SAUVEGARDE AUTOMATIQUE" AnchorPane.leftAnchor="600.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="376.0">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
          </font>
