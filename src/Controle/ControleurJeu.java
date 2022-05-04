@@ -278,22 +278,11 @@ public class ControleurJeu implements Serializable {
 			int x = (int)t.getX();
 			
 			int y = (int)t.getY();
-			//System.out.println(x);
-			//System.out.println(y);		
-			y=Math.round(y/21)-4;
-			x=Math.round(x/35)-4;
-			
-			if (y<0) {
-				y=0;
-			}else if(y>34) {
-				y=34;
-			}
-			
-			if (x<0) {
-				x=0;
-			}else if(x>20) {
-				x=20;
-			}
+
+			System.out.println(y);
+			y=Math.round(y/40);
+			x=Math.round(x/40);
+
 			re.setFill(c);
 			quad.add(re , x, y);
 			
