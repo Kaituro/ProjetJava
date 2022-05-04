@@ -94,6 +94,8 @@ public class ControleurJeu implements Serializable {
 	public List<Brique> brayk;	
 	public quadrillage quad;
 	public String Taille="1";
+	
+	public List<Rectangle> stock;
 	public void grillebas() {
 		b= new Briques();
 		brayk = new ArrayList<>();
@@ -114,10 +116,11 @@ public class ControleurJeu implements Serializable {
 		try {
 			FileInputStream fis = new FileInputStream(fichier);
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			d = (String)ois.readObject();
-
-			c = Color.valueOf(d);
-			this.coul.setValue(c);
+			stock = (List<Rectangle>)ois.readObject();
+			for(int i=0;i<stock.size();i++) {
+				quad.add(stock.get(i),(int)stock.get(i).getX(),(int)stock.get(i).getY());
+			}
+			
 			ois.close();
 			fis.close();
 
@@ -131,14 +134,11 @@ public class ControleurJeu implements Serializable {
 		grillebas();
 
 
-		//button1.setGraphic(imOn.setImage(brayk.get(0).im));
-		//button2.setGraphic(imOn.setImage(brayk.get(1).im));
-		//button3.setGraphic(imOn.setImage(brayk.get(2).im));
 
 		imOn.setImage(brayk.get(0).im);		
 		imTwo.setImage(brayk.get(1).im);
 		imTre.setImage(brayk.get(2).im);
-
+		
 		leHB.setSpacing(50);
 		imOn.setFitHeight(imOn.getFitHeight()/2);
 		
@@ -257,9 +257,8 @@ public class ControleurJeu implements Serializable {
 				try {
 					FileOutputStream fos = new FileOutputStream(fichier);
 					ObjectOutputStream oos = new ObjectOutputStream(fos);
-
-
-					oos.writeObject(d);
+					
+					oos.writeObject(stock);
 					oos.close();
 					fos.close();
 
@@ -277,7 +276,7 @@ public class ControleurJeu implements Serializable {
 		});
 
 		quad.setOnMouseClicked((MouseEvent t) -> {
-
+			stock = new ArrayList<>();
 			Rectangle re=new Rectangle(40,40);
 			Rectangle re1=new Rectangle(40,40);
 			Rectangle re2=new Rectangle(40,40);
@@ -320,7 +319,11 @@ public class ControleurJeu implements Serializable {
 				quad.add(re1, x+1, y);
 				quad.add(re2, x+1, y-1);
 			}
-			
+			stock.add(re1);
+			stock.add(re11);
+			stock.add(re2);
+			stock.add(re);
+			stock.add(re22);
 		});
 
 		
@@ -334,11 +337,12 @@ public class ControleurJeu implements Serializable {
 			System.out.println(Taille);
 			
 		});
+		
 		imTre.setOnMouseClicked((MouseEvent e) -> {
 			Taille="3";
 			System.out.println(Taille);
 			
-		});
+	});
 		
 		bopa.setOnKeyPressed(e -> {
 	         switch (e.getCode()) {
