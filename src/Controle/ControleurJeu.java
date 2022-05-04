@@ -281,6 +281,10 @@ public class ControleurJeu implements Serializable {
 			Rectangle re=new Rectangle(40,40);
 			Rectangle re1=new Rectangle(40,40);
 			Rectangle re2=new Rectangle(40,40);
+			
+			Rectangle re11=new Rectangle(40,40);
+			Rectangle re22=new Rectangle(40,40);
+			
 			int x = (int)t.getX();
 			
 			int y = (int)t.getY();
@@ -291,16 +295,27 @@ public class ControleurJeu implements Serializable {
 			re.setFill(c);
 			re1.setFill(c);
 			re2.setFill(c);
+			
+			re11.setFill(c);
+			re22.setFill(c);
+			
 			if(Taille=="1") {				
 				quad.add(re , x, y);
 			}
 			else if (Taille=="2") {
-				re.setFill(c);
+				if(imTwo.getRotate()==0) {
+				
 				quad.add(re, x, y);
 				quad.add(re1, x+1, y);
+				}
+				else if ((imTwo.getRotate()/90)%2==1){
+					
+					quad.add(re, x, y);
+					quad.add(re11, x, y+1);
+				}
 			}
 			else if (Taille=="3") {
-				re.setFill(c);
+				
 				quad.add(re, x, y);
 				quad.add(re1, x+1, y);
 				quad.add(re2, x+1, y-1);
