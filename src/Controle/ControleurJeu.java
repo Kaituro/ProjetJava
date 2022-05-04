@@ -93,7 +93,7 @@ public class ControleurJeu implements Serializable {
 	public Briques b;	
 	public List<Brique> brayk;	
 	public quadrillage quad;
-	public String Taille="0";
+	public String Taille="1";
 	public void grillebas() {
 		b= new Briques();
 		brayk = new ArrayList<>();
@@ -104,6 +104,7 @@ public class ControleurJeu implements Serializable {
 		}		
 
 	}
+	 
 	//code principal
 	@FXML
 	private void initialize() throws FileNotFoundException {
@@ -274,10 +275,14 @@ public class ControleurJeu implements Serializable {
 
 			Rectangle re=new Rectangle(40,40);
 
-			int x = (int)t.getX();			
-			int y = (int)t.getY();		
+			int x = (int)t.getX();
+			
+			int y = (int)t.getY();
+			//System.out.println(x);
+			//System.out.println(y);		
 			y=Math.round(y/21)-4;
 			x=Math.round(x/35)-4;
+			
 			if (y<0) {
 				y=0;
 			}else if(y>34) {
@@ -292,16 +297,41 @@ public class ControleurJeu implements Serializable {
 			re.setFill(c);
 			quad.add(re , x, y);
 			
+			if(Taille=="1") {
+				re.setFill(c);
+				quad.add(re , x, y);
+			}
+			else if (Taille=="2") {
+				re.setFill(c);
+				quad.add(re, x, y);
+				quad.add(re, x+40, y);
+			}
+			else if (Taille=="3") {
+				re.setFill(c);
+				quad.add(re, x, y);
+				quad.add(re, x, y+40);
+				quad.add(re, x+40, y+40);
+			}
+			
 		});
 
-
+		
 		imOn.setOnMouseClicked((MouseEvent e) -> {
-
-
+			Taille="1";
+			System.out.println(Taille);
+			
 		});
-
-
-
+		imTwo.setOnMouseClicked((MouseEvent e) -> {
+			Taille="2";
+			System.out.println(Taille);
+			
+		});
+		imTre.setOnMouseClicked((MouseEvent e) -> {
+			Taille="3";
+			System.out.println(Taille);
+			
+		});
+		
 
 	}	
 }
