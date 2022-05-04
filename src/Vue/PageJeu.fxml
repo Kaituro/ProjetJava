@@ -14,7 +14,7 @@
 
 <BorderPane fx:id="bopa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="1001.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <left>
-      <ColorPicker fx:id="coul" prefHeight="386.0" style="-fx-background-color: #767676;" BorderPane.alignment="CENTER">
+      <ColorPicker fx:id="coul" prefHeight="356.0" prefWidth="131.0" style="-fx-background-color: #767676;" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="5.0" top="5.0" />
          </BorderPane.margin>
@@ -51,14 +51,14 @@
          </BorderPane.margin></ImageView>
    </right>
    <bottom>
-      <HBox fx:id="leHB" prefHeight="228.0" prefWidth="1277.0" style="-fx-background-color: #767676;" BorderPane.alignment="CENTER">
+      <HBox fx:id="leHB" prefHeight="191.0" prefWidth="1001.0" style="-fx-background-color: #767676;" BorderPane.alignment="CENTER">
          <children>
             <ScrollBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="14.0" prefWidth="89.0" style="-fx-background-color: #767676;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ScrollBar>
-            <ImageView fx:id="imOn" fitHeight="188.0" fitWidth="188.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imOn" fitHeight="168.0" fitWidth="168.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </HBox.margin>
@@ -69,7 +69,7 @@
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </ImageView>
-            <ImageView fx:id="imTwo" fitHeight="188.0" fitWidth="188.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imTwo" fitHeight="168.0" fitWidth="168.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </HBox.margin>
@@ -80,7 +80,7 @@
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </ImageView>
-            <ImageView fx:id="imTre" fitHeight="188.0" fitWidth="188.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imTre" fitHeight="168.0" fitWidth="168.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </HBox.margin>
@@ -91,7 +91,7 @@
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </ImageView>
-            <ImageView fitHeight="188.0" fitWidth="188.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="168.0" fitWidth="168.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </HBox.margin>
