@@ -140,7 +140,8 @@ public class ControleurJeu implements Serializable {
 		imTre.setImage(brayk.get(2).im);
 
 		leHB.setSpacing(50);
-
+		imOn.setFitHeight(imOn.getFitHeight()/2);
+		imOn.setFitWidth(imOn.getFitWidth()/2);
 		//gestion de la grille de jeu
 		quad = new quadrillage();
 
