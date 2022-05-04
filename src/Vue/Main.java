@@ -34,11 +34,7 @@ public class Main extends Application {
 			loader.setController(controlleur);		
 			root = loader.load();			
 			scene = new Scene(root);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			URL Song = getClass().getResource("/Vue/musique.mp3");
-			Media media = new Media(Song.toString());
-			MediaPlayer mediaplay = new MediaPlayer(media);
-			mediaplay.play();
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());			
 			primaryStage.setScene(scene);	
 			primaryStage.setFullScreen(true);
 			primaryStage.show();
