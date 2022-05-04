@@ -315,7 +315,7 @@ public class ControleurJeu implements Serializable {
 				}
 			}
 			else if (Taille=="3") {
-				
+				if((Math.abs(imTwo.getRotate())/90)%2==0) 
 				quad.add(re, x, y);
 				quad.add(re1, x+1, y);
 				quad.add(re2, x+1, y-1);
