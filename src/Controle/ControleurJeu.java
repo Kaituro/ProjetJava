@@ -325,9 +325,39 @@ public class ControleurJeu implements Serializable {
 			
 		});
 		
+		bopa.setOnKeyPressed(e -> {
+	         switch (e.getCode()) {
+	        
+	         case LEFT:
+	        	 if (Taille=="1") {
+	        	 imOn.setRotate(imOn.getRotate() - 90); 
+	        	 }
+	        	 else if (Taille=="2") {
+	        		 imTwo.setRotate(imTwo.getRotate() - 90); 
+	        	 }
+	        	 else if (Taille=="3") {
+	        		 imTre.setRotate(imTre.getRotate() - 90); 
+	        	 }
+	        	 
+	            break;
+	         case RIGHT:
+	        	 if (Taille=="1") {
+		        	 imOn.setRotate(imOn.getRotate() + 90); 
+		        	 }
+		        	 else if (Taille=="2") {
+		        		 imTwo.setRotate(imTwo.getRotate() + 90); 
+		        	 }
+		        	 else if (Taille=="3") {
+		        		 imTre.setRotate(imTre.getRotate() + 90); 
+		        	 } 
+
+	            break;
+	         }
+	      });
 
 	}	
 }
+
 
 
 
