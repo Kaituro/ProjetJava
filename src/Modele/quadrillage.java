@@ -13,15 +13,15 @@ import javafx.stage.Stage;
 public class quadrillage extends GridPane{	
 	
 	public quadrillage()  {
-		int ligne = 21;
-		int colonne = 35;
+		int ligne = 25;
+		int colonne = 30;
 		
 		for(int i = 0; i < colonne; i++) {
-			ColumnConstraints column = new ColumnConstraints(40);
+			ColumnConstraints column = new ColumnConstraints(30);
 			this.getColumnConstraints().add(column);
 		}
 		for(int i = 0; i < ligne; i++) {
-			RowConstraints row = new RowConstraints(40);
+			RowConstraints row = new RowConstraints(30);
 			this.getRowConstraints().add(row);
 		}
 				

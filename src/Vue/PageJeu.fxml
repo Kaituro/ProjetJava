@@ -68,7 +68,7 @@
       </MenuBar>
    </top>
    <right>
-      <ImageView fx:id="imagedroit" fitHeight="364.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+      <ImageView fx:id="imagedroit" fitHeight="302.0" fitWidth="215.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="5.0" top="5.0" />
          </BorderPane.margin></ImageView>

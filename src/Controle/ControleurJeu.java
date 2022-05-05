@@ -148,8 +148,9 @@ public class ControleurJeu implements Serializable {
 
 		grillebas();
 
-
-
+		URL limaj = getClass().getResource("/Vue/unknown.png");
+		Image oumage=new Image(limaj.toExternalForm());
+		imagedroit.setImage(oumage);
 		imOn.setImage(brayk.get(0).im);		
 		imTwo.setImage(brayk.get(1).im);
 		imTre.setImage(brayk.get(2).im);
@@ -294,20 +295,20 @@ public class ControleurJeu implements Serializable {
 
 		quad.setOnMouseClicked((MouseEvent t) -> {
 			stock = new ArrayList<>();
-			re=new Rectangle(40,40);
-			re1=new Rectangle(40,40);
-			re2=new Rectangle(40,40);
+			re=new Rectangle(30,30);
+			re1=new Rectangle(30,30);
+			re2=new Rectangle(30,30);
 
-			re11=new Rectangle(40,40);
-			re22=new Rectangle(40,40);
+			re11=new Rectangle(30,30);
+			re22=new Rectangle(30,30);
 
 			int x = (int)t.getX();
 
 			int y = (int)t.getY();
 
 
-			y=Math.round(y/40);
-			x=Math.round(x/40);			
+			y=Math.round(y/30);
+			x=Math.round(x/30);			
 			re.setFill(c);
 			re1.setFill(c);
 			re2.setFill(c);
