@@ -150,6 +150,7 @@ public class ControleurJeu implements Serializable {
 
 		URL limaj = getClass().getResource("/Vue/unknown.png");
 		Image oumage=new Image(limaj.toExternalForm());
+	
 		imagedroit.setImage(oumage);
 		imOn.setImage(brayk.get(0).im);		
 		imTwo.setImage(brayk.get(1).im);
@@ -338,7 +339,7 @@ public class ControleurJeu implements Serializable {
 				}
 			}
 			else if (Taille=="3") {
-				if((Math.abs(imTwo.getRotate())/90)%2==0) 
+				if((Math.abs(imTre.getRotate())/90)%2==0) 
 					re.setX(x);
 				re.setY(y);
 				quad.add(re, x, y);
