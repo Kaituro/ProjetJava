@@ -33,21 +33,17 @@ public class Controleur{
 	@FXML
 	private AnchorPane ecran;
 	
-	Media media;
-	MediaPlayer mediaplay;
+
 	@FXML	
     private void initialize() {
 		
-		URL Song = getClass().getResource("/Vue/musique.mp3");
-		media = new Media(Song.toString());
-		mediaplay = new MediaPlayer(media);
 		
-		
-		mediaplay.play();
 		play.setOnAction(new EventHandler<ActionEvent>() {
+			
 
 			@Override
 			public void handle(ActionEvent arg0) {
+				
 				((Stage)(((Button)arg0.getSource()).getScene().getWindow())).close();
 				 Stage stage = new Stage();
 				 
