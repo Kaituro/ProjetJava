@@ -151,7 +151,8 @@ public class ControleurJeu implements Serializable {
 
 		URL limaj = getClass().getResource("/Vue/unknown.png");
 		Image oumage=new Image(limaj.toExternalForm());
-	
+		imagedroit.setFitHeight(450);
+		imagedroit.setFitWidth(450);
 		imagedroit.setImage(oumage);
 		imOn.setImage(brayk.get(0).im);		
 		imTwo.setImage(brayk.get(1).im);
