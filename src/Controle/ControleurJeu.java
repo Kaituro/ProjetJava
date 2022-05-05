@@ -116,6 +116,7 @@ public class ControleurJeu implements Serializable {
 		}		
 
 	}
+	public int compteurfig3=0;
 
 	//code principal
 	@FXML
@@ -338,7 +339,7 @@ public class ControleurJeu implements Serializable {
 				}
 			}
 			else if (Taille=="3") {
-				if((Math.abs(imTwo.getRotate())/90)%2==0) 
+			/*	if((Math.abs(imTre.getRotate())/90)%2==0) 
 					re.setX(x);
 				re.setY(y);
 				quad.add(re, x, y);
@@ -347,8 +348,10 @@ public class ControleurJeu implements Serializable {
 				quad.add(re1, x+1, y);
 				re2.setX(x+1);
 				re2.setY(y-1);
-				quad.add(re2, x+1, y-1);
-			}
+				quad.add(re2, x+1, y-1); */
+				
+				switch((Math.abs(imTre.getRotate())/90)){
+				}
 			stock.add(re1);
 			stock.add(re11);
 			stock.add(re2);
@@ -386,6 +389,14 @@ public class ControleurJeu implements Serializable {
 				}
 				else if (Taille=="3") {
 					imTre.setRotate(imTre.getRotate() - 90); 
+					compteurfig3-=1;
+					if(compteurfig3<0) {
+						compteurfig3=3;
+					}
+					if(compteurfig3>3) {
+						compteurfig3=0;
+					}
+					
 				}
 
 				break;
@@ -398,11 +409,21 @@ public class ControleurJeu implements Serializable {
 				}
 				else if (Taille=="3") {
 					imTre.setRotate(imTre.getRotate() + 90); 
+					compteurfig3+=1;
+					if(compteurfig3<0) {
+						compteurfig3=3;
+					}
+					if(compteurfig3>3) {
+						compteurfig3=0;
+					}
+					
 				} 
 
 				break;
 			}
 		});
+		
+		
 
 	}	
 }
