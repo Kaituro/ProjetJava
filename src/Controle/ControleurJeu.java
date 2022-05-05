@@ -334,7 +334,7 @@ public class ControleurJeu implements Serializable {
 					quad.add(re, x, y);
 					re1.setX(x);
 					re1.setY(y+1);
-					quad.add(re11, x, y+1);
+					quad.add(re1, x, y+1);
 				}
 			}
 			else if (Taille=="3") {
