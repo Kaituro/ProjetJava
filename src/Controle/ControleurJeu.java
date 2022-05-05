@@ -103,8 +103,7 @@ public class ControleurJeu implements Serializable {
 	public Rectangle re1;
 	public Rectangle re2;
 		
-	public Rectangle re11;
-	public Rectangle re22;
+	
 	public List<Rectangle> stock;
 	public void grillebas() {
 		b= new Briques();
@@ -302,8 +301,7 @@ public class ControleurJeu implements Serializable {
 			re1=new Rectangle(30,30);
 			re2=new Rectangle(30,30);
 
-			re11=new Rectangle(30,30);
-			re22=new Rectangle(30,30);
+			
 
 			int x = (int)t.getX();
 
@@ -316,8 +314,7 @@ public class ControleurJeu implements Serializable {
 			re1.setFill(c);
 			re2.setFill(c);
 
-			re11.setFill(c);
-			re22.setFill(c);
+			
 
 			if(Taille=="1") {				
 				quad.add(re , x, y);
@@ -335,8 +332,8 @@ public class ControleurJeu implements Serializable {
 					re.setX(x);
 					re.setY(y);
 					quad.add(re, x, y);
-					re11.setX(x);
-					re11.setY(y+1);
+					re1.setX(x);
+					re1.setY(y+1);
 					quad.add(re11, x, y+1);
 				}
 			}
@@ -363,10 +360,10 @@ public class ControleurJeu implements Serializable {
 				
 				}
 			stock.add(re1);
-			stock.add(re11);
+			
 			stock.add(re2);
 			stock.add(re);
-			stock.add(re22);
+			
 		});
 
 
