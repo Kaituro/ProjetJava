@@ -102,7 +102,8 @@ public class ControleurJeu implements Serializable {
 	public Rectangle re;
 	public Rectangle re1;
 	public Rectangle re2;
-		
+	
+	public int compteurfig3 =0;
 	
 	public List<Rectangle> stock;
 	public void grillebas() {
@@ -341,7 +342,7 @@ public class ControleurJeu implements Serializable {
 			else if (Taille=="3") {
 
 			
-				if((Math.abs(imTre.getRotate())/90)%2==0) {
+				/*if((Math.abs(imTre.getRotate())/90)%2==0) {
 
 					re.setX(x);
 				re.setY(y);
@@ -356,10 +357,57 @@ public class ControleurJeu implements Serializable {
 				}
 				else if ((Math.abs(imTwo.getRotate())/90)%2==1){
 					
-				}
+				}*/
+				if(compteurfig3 == 0){
+			        re.setY(y);
+							quad.add(re, x, y);
+							re1.setX(x+1);
+							re1.setY(y);
+							quad.add(re1, x+1, y);
+							re2.setX(x+1);
+							re2.setY(y-1);
+							quad.add(re2, x+1, y-1);
+			    }
+
+			    else if(compteurfig3 == 1){
+			    
+			        re.setY(y);
+							quad.add(re, x, y);
+							re1.setX(x+1);
+							re1.setY(y);
+							quad.add(re1, x+1, y);
+							re2.setX(x+1);
+							re2.setY(y-1);
+							quad.add(re2, x, y-1);
+			    }
+			    
+			    else if(compteurfig3 == 2){
+			    
+			        re.setY(y);
+							quad.add(re, x, y);
+							re1.setX(x+1);
+							re1.setY(y);
+							quad.add(re1, x, y-1);
+							re2.setX(x+1);
+							re2.setY(y-1);
+							quad.add(re2, x+1, y-1);
+			    }
+			    
+			    else if (compteurfig3 == 3){
+			    
+			        re.setY(y);
+							quad.add(re, x, y-1);
+							re1.setX(x+1);
+							re1.setY(y);
+							quad.add(re1, x+1, y-1);
+							re2.setX(x+1);
+							re2.setY(y-1);
+							quad.add(re2, x+1, y);
+			    }
 				
+			}
 				
-				}
+	
 			stock.add(re1);
 			
 			stock.add(re2);
@@ -397,6 +445,13 @@ public class ControleurJeu implements Serializable {
 				}
 				else if (Taille=="3") {
 					imTre.setRotate(imTre.getRotate() - 90); 
+					compteurfig3-=1;
+					if(compteurfig3<0) {
+						compteurfig3=3;
+					}
+					if(compteurfig3>3) {
+						compteurfig3=0;
+					}
 					
 				}
 
@@ -409,8 +464,14 @@ public class ControleurJeu implements Serializable {
 					imTwo.setRotate(imTwo.getRotate() + 90); 
 				}
 				else if (Taille=="3") {
-					imTre.setRotate(imTre.getRotate() + 90); 		
-					
+					imTre.setRotate(imTre.getRotate() + 90);
+					compteurfig3+=1;
+					if(compteurfig3<0) {
+						compteurfig3=3;
+					}
+					if(compteurfig3>3) {
+						compteurfig3=0;
+					}
 					
 				} 
 
