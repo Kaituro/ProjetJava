@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.effect.DropShadow?>
@@ -15,7 +16,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ecranOP" accessibleText="Josian Rivière" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="679.0" prefWidth="1177.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="ecranOP" accessibleText="Josian Rivière" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="717.0" prefWidth="1171.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="labeloptions" alignment="CENTER" contentDisplay="CENTER" layoutX="433.0" layoutY="87.0" prefHeight="48.0" prefWidth="281.0" text="Options" AnchorPane.leftAnchor="433.0" AnchorPane.rightAnchor="462.4" AnchorPane.topAnchor="87.00000000000004">
          <font>
@@ -94,17 +95,6 @@
             <Blend />
          </effect>
       </MenuButton>
-      <CheckBox layoutX="519.0" layoutY="265.0" mnemonicParsing="false" text="SON OFF" textAlignment="CENTER" AnchorPane.bottomAnchor="389.2" AnchorPane.leftAnchor="519.0" AnchorPane.rightAnchor="548.4" AnchorPane.topAnchor="265.0">
-         <font>
-            <Font name="Berlin Sans FB Demi Bold" size="19.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <effect>
-            <Blend />
-         </effect>
-      </CheckBox>
       <CheckBox layoutX="427.0" layoutY="371.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="600.0" text="SAUVEGARDE AUTOMATIQUE" AnchorPane.bottomAnchor="282.4" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="371.0">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
@@ -113,5 +103,55 @@
             <Blend />
          </effect>
       </CheckBox>
+      <Button layoutX="481.0" layoutY="256.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" text="▷">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="19.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow height="26.0" radius="11.25" spread="0.12">
+               <input>
+                  <Lighting diffuseConstant="1.1" specularConstant="0.5" surfaceScale="4.25">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </input>
+            </DropShadow>
+         </effect>
+      </Button>
+      <Button layoutX="606.0" layoutY="256.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" text="| |">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="19.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow height="26.0" radius="11.25" spread="0.12">
+               <input>
+                  <Lighting diffuseConstant="1.1" specularConstant="0.5" surfaceScale="4.25">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </input>
+            </DropShadow>
+         </effect>
+      </Button>
+      <ProgressBar layoutX="515.0" layoutY="267.0" prefHeight="18.0" prefWidth="110.0" progress="0.0" rotate="91.1" style="-fx-background-color: blue;" AnchorPane.bottomAnchor="432.0" AnchorPane.topAnchor="267.0" />
+      <Label layoutX="535.0" layoutY="188.0" prefHeight="23.0" prefWidth="72.0" text="Musique" textAlignment="CENTER">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="19.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
