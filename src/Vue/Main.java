@@ -25,8 +25,8 @@ public class Main extends Application {
 	public static FXMLLoader loader;
 	public static Scene scene;
 	public static Parent root;
-	Media media;
-	MediaPlayer mediaplay;
+	public  Media media;
+	public static MediaPlayer mediaplay;
 	@Override
 	public void start(Stage primaryStage) {
 		URL Song = getClass().getResource("/Vue/musique.mp3");

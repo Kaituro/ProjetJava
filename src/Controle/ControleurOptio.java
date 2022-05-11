@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.io.IOException;
 
+import Vue.Main;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -24,9 +25,29 @@ public class ControleurOptio {
 
 	@FXML
 	private AnchorPane ecranOP;
+	
+	@FXML
+	private Button Plae;
+	
+	@FXML
+	private Button Poz;
 
 	public void initialize() {	
 
+		
+		Poz.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent arg0) {
+				Main.mediaplay.pause();
+				
+			}
+		});
+		
+		Plae.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent arg0) {
+				Main.mediaplay.play();
+			}
+		});
+		
 		back.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override

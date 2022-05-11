@@ -103,7 +103,7 @@
             <Blend />
          </effect>
       </CheckBox>
-      <Button layoutX="481.0" layoutY="256.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" text="▷">
+      <Button fx:id="Plae" layoutX="481.0" layoutY="256.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" text="▷">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
          </font>
@@ -125,7 +125,7 @@
             </DropShadow>
          </effect>
       </Button>
-      <Button layoutX="606.0" layoutY="256.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" text="| |">
+      <Button fx:id="Poz" layoutX="606.0" layoutY="256.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" text="| |">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
          </font>

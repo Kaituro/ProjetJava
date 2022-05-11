@@ -102,9 +102,9 @@ public class ControleurJeu implements Serializable {
 	public Rectangle re;
 	public Rectangle re1;
 	public Rectangle re2;
-	
+
 	public int compteurfig3 =0;
-	
+
 	public List<Rectangle> stock;
 	public void grillebas() {
 		b= new Briques();
@@ -117,14 +117,17 @@ public class ControleurJeu implements Serializable {
 
 	}
 
-	
+
 
 	//code principal
 	@FXML
 	private void initialize() throws FileNotFoundException {
+		quad = new quadrillage();
 
+		bopa.setMaxSize(quad.getWidth(),quad.getHeight() );
+		bopa.setCenter(quad);
 
-		//Sérialisation
+		//Déserialisation
 		XMLDecoder decoder =null;
 		try {
 			FileInputStream fis = new FileInputStream(fichier);
@@ -132,12 +135,14 @@ public class ControleurJeu implements Serializable {
 			decoder = new XMLDecoder(bis);
 
 			stock = (ArrayList<Rectangle>)decoder.readObject();
-			for(int i=0;i<stock.size();i++) {
-				stock.get(i).setFill(Color.BLUE);
+
+			/*
+			for(int i=stock.size();i>0;i--) {
+
+				stock.get(i).setFill(stock.get(i).getFill());
 				quad.add(stock.get(i),(int)stock.get(i).getX(),(int)stock.get(i).getY());
 			}
-
-
+			 */
 
 		}catch (Exception e){
 			//throw new RuntimeException("Lecture des donn�es impossible ou donn�es corrompues");
@@ -145,6 +150,11 @@ public class ControleurJeu implements Serializable {
 			if(decoder !=null)decoder.close();
 		}
 
+		if(stock !=null) {
+			for (Rectangle ser : stock) {
+				System.out.println(ser);
+			}
+		}
 
 		//affichage des images
 
@@ -167,13 +177,9 @@ public class ControleurJeu implements Serializable {
 
 
 		//gestion de la grille de jeu
-		quad = new quadrillage();
 
-		bopa.setMaxSize(quad.getWidth(),quad.getHeight() );
-		bopa.setCenter(quad);
 
 		c = coul.getValue();
-		System.out.println(c);
 
 		ArrayList<Color> a = new ArrayList<>();
 		a.add(c);
@@ -190,7 +196,7 @@ public class ControleurJeu implements Serializable {
 			d+=b.get(0).charAt(i);
 		}
 
-		System.out.println(d);
+
 
 
 
@@ -268,7 +274,7 @@ public class ControleurJeu implements Serializable {
 		});
 
 
-
+		//Sérialisation
 		Quitter.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -303,7 +309,7 @@ public class ControleurJeu implements Serializable {
 			re1=new Rectangle(30,30);
 			re2=new Rectangle(30,30);
 
-			
+
 
 			int x = (int)t.getX();
 
@@ -311,108 +317,119 @@ public class ControleurJeu implements Serializable {
 
 
 			y=Math.round(y/30);
-			x=Math.round(x/30);			
-			re.setFill(c);
-			re1.setFill(c);
-			re2.setFill(c);
+			x=Math.round(x/30);	
 
-			
-
-			if(Taille=="1") {				
+			if(Taille=="1") {	
+				re.setX(x);
+				re.setY(y);
+				re.setFill(c);
 				quad.add(re , x, y);
+				stock.add(re);
 			}
 			else if (Taille=="2") {
 				if((Math.abs(imTwo.getRotate())/90)%2==0) {
 					re.setX(x);
 					re.setY(y);
+					re.setFill(c);
 					quad.add(re, x, y);
 					re1.setX(x+1);
 					re1.setY(y);
+					re1.setFill(c);
 					quad.add(re1, x+1, y);
+					stock.add(re);
+					stock.add(re1);
 				}
 				else if ((Math.abs(imTwo.getRotate())/90)%2==1){
 					re.setX(x);
 					re.setY(y);
+					re.setFill(c);
 					quad.add(re, x, y);
 					re1.setX(x);
 					re1.setY(y+1);
+					re1.setFill(c);
 					quad.add(re1, x, y+1);
+					stock.add(re);
+					stock.add(re1);
 				}
 			}
-			else if (Taille=="3") {
+			else if (Taille=="3") {			
 
-			
-				/*if((Math.abs(imTre.getRotate())/90)%2==0) {
-
-					re.setX(x);
-				re.setY(y);
-				quad.add(re, x, y);
-				re1.setX(x+1);
-				re1.setY(y);
-				quad.add(re1, x+1, y);
-				re2.setX(x+1);
-				re2.setY(y-1);
-				quad.add(re2, x+1, y-1); 
-				
-				}
-				else if ((Math.abs(imTwo.getRotate())/90)%2==1){
-					
-				}*/
 				if(compteurfig3 == 0){
-			        re.setY(y);
-							quad.add(re, x, y);
-							re1.setX(x+1);
-							re1.setY(y);
-							quad.add(re1, x+1, y);
-							re2.setX(x+1);
-							re2.setY(y-1);
-							quad.add(re2, x+1, y-1);
-			    }
+					re.setY(y);
+					re.setFill(c);
+					quad.add(re, x, y);
+					re1.setX(x+1);
+					re1.setY(y);
+					re1.setFill(c);
+					quad.add(re1, x+1, y);
+					re2.setX(x+1);
+					re2.setY(y-1);
+					re2.setFill(c);
+					quad.add(re2, x+1, y-1);
+					stock.add(re);
+					stock.add(re1);
+					stock.add(re2);
+				}
 
-			    else if(compteurfig3 == 1){
-			    
-			        re.setY(y);
-							quad.add(re, x, y);
-							re1.setX(x+1);
-							re1.setY(y);
-							quad.add(re1, x+1, y);
-							re2.setX(x+1);
-							re2.setY(y-1);
-							quad.add(re2, x, y-1);
-			    }
-			    
-			    else if(compteurfig3 == 2){
-			    
-			        re.setY(y);
-							quad.add(re, x, y);
-							re1.setX(x+1);
-							re1.setY(y);
-							quad.add(re1, x, y-1);
-							re2.setX(x+1);
-							re2.setY(y-1);
-							quad.add(re2, x+1, y-1);
-			    }
-			    
-			    else if (compteurfig3 == 3){
-			    
-			        re.setY(y);
-							quad.add(re, x, y-1);
-							re1.setX(x+1);
-							re1.setY(y);
-							quad.add(re1, x+1, y-1);
-							re2.setX(x+1);
-							re2.setY(y-1);
-							quad.add(re2, x+1, y);
-			    }
-				
+				else if(compteurfig3 == 1){
+
+					re.setY(y);
+					re.setFill(c);
+					quad.add(re, x, y);
+					re1.setX(x+1);
+					re1.setY(y);
+					re1.setFill(c);
+					quad.add(re1, x+1, y);
+					re2.setX(x+1);
+					re2.setY(y-1);
+					re2.setFill(c);
+					quad.add(re2, x, y-1);
+					stock.add(re);
+					stock.add(re1);
+					stock.add(re2);
+				}
+
+				else if(compteurfig3 == 2){
+
+					re.setY(y);
+					re.setFill(c);
+					quad.add(re, x, y);
+					re1.setX(x+1);
+					re1.setY(y);
+					re1.setFill(c);
+					quad.add(re1, x, y-1);
+					re2.setX(x+1);
+					re2.setY(y-1);
+					re2.setFill(c);
+					quad.add(re2, x+1, y-1);
+					stock.add(re);
+					stock.add(re1);
+					stock.add(re2);
+				}
+
+				else if (compteurfig3 == 3){
+
+					re.setY(y);
+					re.setFill(c);
+					quad.add(re, x, y-1);
+					re1.setX(x+1);
+					re1.setY(y);
+					re1.setFill(c);
+					quad.add(re1, x+1, y-1);
+					re2.setX(x+1);
+					re2.setY(y-1);
+					re2.setFill(c);
+					quad.add(re2, x+1, y);
+					stock.add(re);
+					stock.add(re1);
+					stock.add(re2);
+				}
+
 			}
-				
-	
-			stock.add(re1);
-			
-			stock.add(re2);
-			stock.add(re);
-			
+
+
+
+
 		});
 
 
@@ -452,7 +469,7 @@ public class ControleurJeu implements Serializable {
 					if(compteurfig3>3) {
 						compteurfig3=0;
 					}
-					
+
 				}
 
 				break;
@@ -472,14 +489,14 @@ public class ControleurJeu implements Serializable {
 					if(compteurfig3>3) {
 						compteurfig3=0;
 					}
-					
+
 				} 
 
 				break;
 			}
 		});
-		
-		
+
+
 
 	}	
 }
