@@ -20,6 +20,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.Optional;
 
 import Modele.Brique;
 import Modele.Briques;
@@ -38,10 +39,14 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBase;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ContextMenu;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -295,8 +300,18 @@ public class ControleurJeu implements Serializable {
 				}finally {
 					if (encoder !=null) encoder.close();
 				}
-
-				System.exit(0);
+				Alert dialogC = new Alert(AlertType.CONFIRMATION);
+				dialogC.setTitle("Quitter ?");
+				dialogC.setHeaderText("Sauvegarde effectuée");
+				dialogC.setContentText("Êtes-vous sûr de vouloir quitter ?");
+				
+				Optional<ButtonType> answer = dialogC.showAndWait();
+				if (answer.get()==ButtonType.OK) {
+					System.exit(0);
+				}else {
+					dialogC.hide();
+				}
+				
 			}
 
 
