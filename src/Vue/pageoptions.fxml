@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.effect.DropShadow?>
@@ -95,7 +94,7 @@
             <Blend />
          </effect>
       </MenuButton>
-      <CheckBox layoutX="427.0" layoutY="371.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="600.0" text="SAUVEGARDE AUTOMATIQUE" AnchorPane.bottomAnchor="282.4" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="371.0">
+      <CheckBox layoutX="427.0" layoutY="371.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="297.0" text="SAUVEGARDE AUTOMATIQUE" AnchorPane.leftAnchor="600.0">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
          </font>
@@ -103,7 +102,7 @@
             <Blend />
          </effect>
       </CheckBox>
-      <Button fx:id="Plae" layoutX="481.0" layoutY="256.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" text="▷">
+      <Button fx:id="Plae" layoutX="504.0" layoutY="256.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" text="▷" AnchorPane.leftAnchor="689.0">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
          </font>
@@ -125,7 +124,7 @@
             </DropShadow>
          </effect>
       </Button>
-      <Button fx:id="Poz" layoutX="606.0" layoutY="256.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" text="| |">
+      <Button fx:id="Poz" layoutX="576.0" layoutY="256.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" text="| |" AnchorPane.leftAnchor="765.0">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
          </font>
@@ -147,8 +146,7 @@
             </DropShadow>
          </effect>
       </Button>
-      <ProgressBar layoutX="515.0" layoutY="267.0" prefHeight="18.0" prefWidth="110.0" progress="0.0" rotate="91.1" style="-fx-background-color: blue;" AnchorPane.bottomAnchor="432.0" AnchorPane.topAnchor="267.0" />
-      <Label layoutX="535.0" layoutY="188.0" prefHeight="23.0" prefWidth="72.0" text="Musique" textAlignment="CENTER">
+      <Label layoutX="534.0" layoutY="203.0" prefHeight="23.0" prefWidth="72.0" text="Musique" textAlignment="CENTER" AnchorPane.leftAnchor="719.0" AnchorPane.rightAnchor="365.0">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
          </font>

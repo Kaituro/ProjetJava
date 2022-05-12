@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
@@ -48,14 +50,6 @@
                </input>
             </DropShadow>
          </effect></Button>
-      <Label layoutX="152.0" layoutY="122.0" prefHeight="526.0" prefWidth="472.0" text="ghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu" wrapText="true" AnchorPane.bottomAnchor="1.6000000000000227" AnchorPane.leftAnchor="152.0" AnchorPane.rightAnchor="152.0" AnchorPane.topAnchor="122.0">
-         <font>
-            <Font name="Bauhaus 93" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </Label>
       <Button fx:id="fin" cancelButton="true" layoutX="57.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="49.0" text="X">
          <font>
             <Font name="Berlin Sans FB Bold" size="19.0" />
@@ -78,5 +72,13 @@
             </DropShadow>
          </effect>
       </Button>
+      <TextArea layoutX="152.0" layoutY="122.0" prefHeight="526.0" prefWidth="472.0" text="PRESENTATION:&#10;&#10;BLOCKS est un jeu de création ludique qui vise à développer son esprit artistique.&#10;Il s'inspire des construction lego pour ce qui est d'assembler des pièces les unes sur les autres afin de créer un objet en particulier. &#10;&#10;&#10;UTILISATION:&#10;&#10;Lorsque vous lancez BLOCKS, un accueil apparait avec 3 boutons jaunes sur fond rouge, chacun possède sa spécialité.&#10;Il y a tout d'abords le bouton PLAY qui permet d'accéder au jeu et de vous amuser comme jamais vous vous êtes amusés.&#10;Il y a ensuite le bouton OPTIONS qui permet d'accéder au paramètres de BLOCKS pour pouvoir arrêter ou reprendre la musique, activer ou non la sauvegarde automatique ou encore constater de qui le jeu a été créé.&#10;Puis pour finir le bouton COMMENT JOUER (le bouton sur lequel vous venez de cliquer) pour bien assimiler le fonctionnement du jeu BLOCKS.&#10;&#10;LES REGLES:&#10;&#10;Le jeux se présente sous une grille de 30 carrés de largeur par 25 de hauteur.&#10;Il y a à gauche de cette grille un panel avec des choix de couleur prédéfini que vous pouvez choisir et un systeme de personnalisation des couleurs.&#10;En bas de la grille se trouve de nombres biques, elles sont toutes différentes les unes des autres et chacune a sa spécialité, veuillez sélectionner une couleur et un type de brique pour commencer à compléter la grille et faire parler votre esprit artistique!&#10;Ce mode de jeu est le mode créatif ce qui signifie que vous pouvez créé un dessin à votre guise et comme bon vous semble.&#10;&#10;Il y a un autre systeme de jeux, à droite de la grille vous pouvez constater que différentes images pixellisés apparaissent.&#10;L'objectif ici est de recopier les modèles sur votre gauche sans vous tromper et le plus rapidement possible. &#10;Attention tous les modèles ne sont pas de la même difficulté,il y a 4 niveau de modèles. Alors à vous d'être assez compétitif pour pouvoir réaliser tous ces modèles!&#10;&#10;&#10;&#10;Bon courage et bon jeu à toi mon ami !!!" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="152.0" AnchorPane.rightAnchor="152.0" AnchorPane.topAnchor="300.0">
+         <font>
+            <Font name="OCR A Extended" size="18.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </TextArea>
    </children>
 </AnchorPane>
