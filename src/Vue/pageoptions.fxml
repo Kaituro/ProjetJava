@@ -7,6 +7,7 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Light.Distant?>
@@ -76,7 +77,7 @@
             </DropShadow>
          </effect>
       </Button>
-      <MenuButton fx:id="credits" layoutX="515.0" layoutY="376.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" text="Crédits" textAlignment="CENTER" AnchorPane.leftAnchor="515.0" AnchorPane.rightAnchor="545.0" AnchorPane.topAnchor="476.0">
+      <MenuButton fx:id="credits" layoutX="515.0" layoutY="376.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" text="Crédits" textAlignment="CENTER" AnchorPane.leftAnchor="515.0" AnchorPane.rightAnchor="545.0" AnchorPane.topAnchor="530.0">
         <items>
           <MenuItem mnemonicParsing="false" text="Josian Rivière" />
             <SeparatorMenuItem mnemonicParsing="false" />
@@ -94,7 +95,7 @@
             <Blend />
          </effect>
       </MenuButton>
-      <CheckBox layoutX="427.0" layoutY="371.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="297.0" text="SAUVEGARDE AUTOMATIQUE" AnchorPane.leftAnchor="600.0">
+      <CheckBox layoutX="600.0" layoutY="413.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="297.0" text="SAUVEGARDE AUTOMATIQUE" AnchorPane.leftAnchor="600.0">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
          </font>
@@ -149,6 +150,35 @@
       <Label layoutX="534.0" layoutY="203.0" prefHeight="23.0" prefWidth="72.0" text="Musique" textAlignment="CENTER" AnchorPane.leftAnchor="719.0" AnchorPane.rightAnchor="365.0">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="663.0" layoutY="318.0" text="Volume :  -" AnchorPane.leftAnchor="663.0">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="13.0" />
+         </font>
+      </Label>
+      <Slider layoutX="735.0" layoutY="321.0" prefHeight="0.0" prefWidth="119.0" AnchorPane.leftAnchor="735.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow height="13.55" radius="8.1375" spread="0.12">
+               <input>
+                  <Lighting diffuseConstant="1.1" specularConstant="0.5" surfaceScale="4.25">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </input>
+            </DropShadow>
+         </effect>
+      </Slider>
+      <Label layoutX="854.0" layoutY="317.0" text="+" AnchorPane.leftAnchor="854.0">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="13.0" />
          </font>
       </Label>
    </children>

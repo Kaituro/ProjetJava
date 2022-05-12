@@ -49,7 +49,7 @@
             <InnerShadow choke="0.1" height="30.0" radius="14.5" width="30.0" />
          </effect>
       </Button>
-      <Button fx:id="howtoplay" layoutX="442.0" layoutY="548.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" stylesheets="@application.css" text="How to play" AnchorPane.leftAnchor="442.0" AnchorPane.rightAnchor="430.79999999999995" AnchorPane.topAnchor="548.0">
+      <Button fx:id="howtoplay" layoutX="442.0" layoutY="548.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="443.0" stylesheets="@application.css" text="Comment jouer" AnchorPane.leftAnchor="442.0" AnchorPane.rightAnchor="430.79999999999995" AnchorPane.topAnchor="548.0">
          <font>
             <Font name="Bauhaus 93" size="55.0" />
          </font>
