@@ -5,6 +5,8 @@ import java.awt.Toolkit;
 import java.io.IOException;
 
 import Vue.Main;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -12,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -31,9 +34,25 @@ public class ControleurOptio {
 	
 	@FXML
 	private Button Poz;
+	
+	@FXML
+	private Slider volu;
+	
+	public int volume;
 
 	public void initialize() {	
+		
+		volu.valueProperty().addListener(new ChangeListener<Number>() {
+			@Override
+			public void changed(ObservableValue<? extends Number>arg0, Number arg1, Number arg2) {
+				System.out.println(volu.getValue());
+				Main.mediaplay.setVolume(volu.getValue());
+			}
 
+			
+		});
+		//Main.mediaplay.setVolume(volu.getValue());
+		
 		
 		Poz.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent arg0) {
@@ -47,6 +66,8 @@ public class ControleurOptio {
 				Main.mediaplay.play();
 			}
 		});
+		
+		
 		
 		back.setOnAction(new EventHandler<ActionEvent>() {
 

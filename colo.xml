@@ -7,13 +7,60 @@
      <double>30.0</double>
     </void>
     <void property="layoutX">
-     <double>841.0</double>
+     <double>540.0</double>
+    </void>
+    <void property="layoutY">
+     <double>28.0</double>
+    </void>
+    <void property="width">
+     <double>30.0</double>
+    </void>
+    <void property="y">
+     <double>2.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="javafx.scene.shape.Rectangle">
+    <void property="height">
+     <double>30.0</double>
+    </void>
+    <void property="layoutX">
+     <double>551.0</double>
+    </void>
+    <void property="layoutY">
+     <double>28.0</double>
     </void>
     <void property="width">
      <double>30.0</double>
     </void>
     <void property="x">
-     <double>29.0</double>
+     <double>19.0</double>
+    </void>
+    <void property="y">
+     <double>2.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="javafx.scene.shape.Rectangle">
+    <void property="height">
+     <double>30.0</double>
+    </void>
+    <void property="layoutX">
+     <double>551.0</double>
+    </void>
+    <void property="layoutY">
+     <double>59.0</double>
+    </void>
+    <void property="width">
+     <double>30.0</double>
+    </void>
+    <void property="x">
+     <double>19.0</double>
+    </void>
+    <void property="y">
+     <double>1.0</double>
     </void>
    </object>
   </void>
