@@ -43,9 +43,9 @@
               <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
-          <Menu fx:id="help" mnemonicParsing="false" text="Help">
+          <Menu fx:id="help" mnemonicParsing="false" text="Partie">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="recom" mnemonicParsing="false" text="Changer de modèle" />
             </items>
           </Menu>
         </menus>

@@ -89,7 +89,9 @@ public class ControleurJeu implements Serializable {
 	@FXML
 	private ImageView imTwo;
 	@FXML
-	private ImageView imTre;
+	private ImageView imTre;	
+	@FXML
+	private MenuItem recom;
 	public String d;
 	public Color c=null;
 
@@ -109,6 +111,10 @@ public class ControleurJeu implements Serializable {
 	public Rectangle re2;
 
 	public int compteurfig3 =0;
+	public int ancien;
+	int rang;
+	int max;
+	public int rand;
 
 	public List<Rectangle> stock;
 	public void grillebas() {
@@ -164,8 +170,18 @@ public class ControleurJeu implements Serializable {
 		//affichage des images
 
 		grillebas();
-
-		URL limaj = getClass().getResource("/Vue/unknown.png");
+		List<String> modls = new ArrayList<> ();
+		
+		modls.add("unknown.png");
+		modls.add("pacman.png");
+		modls.add("papillon.png");
+		modls.add("NFT.png");
+		max=3;		
+		rang = max+1;
+		rand = (int)(Math.random()*rang);
+		ancien =rand;
+		
+		URL limaj = getClass().getResource("/Vue/"+modls.get(rand));
 		Image oumage=new Image(limaj.toExternalForm());
 		imagedroit.setFitHeight(450);
 		imagedroit.setFitWidth(450);
@@ -316,6 +332,26 @@ public class ControleurJeu implements Serializable {
 
 
 
+		});
+		
+		recom.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent arg0) {				
+				rand = (int)(Math.random()*rang);
+				
+				while (rand ==ancien){				
+					 rand= (int)(Math.random()*rang);
+					 
+				}
+				ancien =rand;
+				URL limaj = getClass().getResource("/Vue/"+modls.get(rand));
+				Image oumage=new Image(limaj.toExternalForm());
+				imagedroit.setFitHeight(450);
+				imagedroit.setFitWidth(450);
+				imagedroit.setImage(oumage);
+				
+				
+			}
 		});
 
 		quad.setOnMouseClicked((MouseEvent t) -> {
