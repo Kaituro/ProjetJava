@@ -104,6 +104,7 @@ public class ControleurJeu implements Serializable {
 	public Briques b;	
 	public List<Brique> brayk;	
 	public quadrillage quad;
+	
 	public String Taille="1";
 
 	public Rectangle re;
@@ -133,6 +134,7 @@ public class ControleurJeu implements Serializable {
 	//code principal
 	@FXML
 	private void initialize() throws FileNotFoundException {
+		//création de la grille
 		quad = new quadrillage();
 
 		bopa.setMaxSize(quad.getWidth(),quad.getHeight() );
@@ -349,8 +351,12 @@ public class ControleurJeu implements Serializable {
 				imagedroit.setFitHeight(450);
 				imagedroit.setFitWidth(450);
 				imagedroit.setImage(oumage);
+				//nouvelle grilleS
 				
-				
+				quad = new quadrillage();
+				bopa.setMaxSize(quad.getWidth(),quad.getHeight() );
+				bopa.setCenter(quad);
+				return;
 			}
 		});
 
