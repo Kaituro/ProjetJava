@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
@@ -95,7 +96,7 @@
             <Blend />
          </effect>
       </MenuButton>
-      <CheckBox layoutX="600.0" layoutY="413.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="297.0" text="SAUVEGARDE AUTOMATIQUE" AnchorPane.leftAnchor="600.0">
+      <CheckBox alignment="CENTER" contentDisplay="CENTER" layoutX="426.0" layoutY="462.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="297.0" text="SAUVEGARDE AUTOMATIQUE" AnchorPane.leftAnchor="426.0" AnchorPane.rightAnchor="447.4">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
          </font>
@@ -103,7 +104,7 @@
             <Blend />
          </effect>
       </CheckBox>
-      <Button fx:id="Plae" layoutX="504.0" layoutY="256.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" text="▷" AnchorPane.leftAnchor="689.0">
+      <Button fx:id="Plae" accessibleRole="RADIO_BUTTON" alignment="CENTER" contentDisplay="CENTER" layoutX="573.0" layoutY="250.0" minWidth="6.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="6.0" text="▷" AnchorPane.leftAnchor="573.0" AnchorPane.rightAnchor="592.0">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
          </font>
@@ -125,7 +126,7 @@
             </DropShadow>
          </effect>
       </Button>
-      <Button fx:id="Poz" layoutX="576.0" layoutY="256.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="60.0" text="| |" AnchorPane.leftAnchor="765.0">
+      <Button fx:id="Poz" alignment="CENTER" contentDisplay="CENTER" layoutX="573.0" layoutY="303.0" minWidth="6.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="6.0" text="| |" AnchorPane.leftAnchor="573.0" AnchorPane.rightAnchor="592.0">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
          </font>
@@ -146,18 +147,21 @@
                </input>
             </DropShadow>
          </effect>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
       </Button>
-      <Label layoutX="534.0" layoutY="203.0" prefHeight="23.0" prefWidth="72.0" text="Musique" textAlignment="CENTER" AnchorPane.leftAnchor="719.0" AnchorPane.rightAnchor="365.0">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="532.0" layoutY="203.0" prefHeight="23.0" prefWidth="72.0" text="Musique :" AnchorPane.leftAnchor="532.0" AnchorPane.rightAnchor="552.0">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="663.0" layoutY="318.0" text="Volume :  -" AnchorPane.leftAnchor="663.0">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="536.0" layoutY="383.0" prefHeight="15.0" prefWidth="79.0" text="- Volume :  +" AnchorPane.leftAnchor="536.0" AnchorPane.rightAnchor="555.8">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="13.0" />
          </font>
       </Label>
-      <Slider fx:id="volu" blockIncrement="1.0" layoutX="736.0" layoutY="321.0" majorTickUnit="0.1" max="1.0" minorTickCount="10" prefHeight="0.0" prefWidth="119.0" value="1.0" AnchorPane.leftAnchor="736.0">
+      <Slider fx:id="volu" blockIncrement="1.0" layoutX="560.0" layoutY="418.0" majorTickUnit="0.1" max="1.0" minorTickCount="10" prefHeight="24.0" prefWidth="32.0" value="1.0" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="579.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -176,10 +180,5 @@
             </DropShadow>
          </effect>
       </Slider>
-      <Label layoutX="854.0" layoutY="317.0" text="+" AnchorPane.leftAnchor="854.0">
-         <font>
-            <Font name="Berlin Sans FB Demi Bold" size="13.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>
