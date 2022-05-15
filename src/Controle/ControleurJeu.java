@@ -1,68 +1,47 @@
 package Controle;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
+
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map.Entry;
 import java.util.Optional;
+
+import java.net.URL;
 
 import Modele.Brique;
 import Modele.Briques;
 import Modele.quadrillage;
-import Vue.Main;
-import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBase;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ColorPicker;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.DialogPane;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
-
-
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
-import javafx.scene.input.MouseEvent;
 
 public class ControleurJeu implements Serializable {
 	//méthodes et variables
@@ -107,9 +86,7 @@ public class ControleurJeu implements Serializable {
 	
 	public String Taille="1";
 
-	public Rectangle re;
-	public Rectangle re1;
-	public Rectangle re2;
+	
 
 	public int compteurfig3 =0;
 	public int ancien;
@@ -117,7 +94,7 @@ public class ControleurJeu implements Serializable {
 	int max;
 	public int rand;
 
-	public List<Rectangle> stock;
+	public ArrayList<Rectangle> stock= new ArrayList<>();	;
 	public void grillebas() {
 		b= new Briques();
 		brayk = new ArrayList<>();
@@ -147,16 +124,14 @@ public class ControleurJeu implements Serializable {
 			BufferedInputStream bis = new BufferedInputStream(fis);
 			decoder = new XMLDecoder(bis);
 
-			stock = (ArrayList<Rectangle>)decoder.readObject();
-
-			/*
-			for(int i=stock.size();i>0;i--) {
-
-				stock.get(i).setFill(stock.get(i).getFill());
-				quad.add(stock.get(i),(int)stock.get(i).getX(),(int)stock.get(i).getY());
+			stock =  (ArrayList<Rectangle>) decoder.readObject();
+			
+			
+			for(Rectangle rekt : stock) {
+				quad.add(rekt,(int) rekt.getX(),(int) rekt.getY());
 			}
-			 */
-
+			
+			
 		}catch (Exception e){
 			//throw new RuntimeException("Lecture des donn�es impossible ou donn�es corrompues");
 		} finally {
@@ -227,7 +202,7 @@ public class ControleurJeu implements Serializable {
 
 
 
-		coul.setOnAction(new EventHandler<ActionEvent>() {		
+		coul.setOnAction( new EventHandler<ActionEvent>() {		
 
 
 			@Override
@@ -302,6 +277,7 @@ public class ControleurJeu implements Serializable {
 
 			@Override
 			public void handle(ActionEvent arg0) {
+				System.out.println(stock.toString()); 
 				XMLEncoder encoder = null;
 				try {
 					FileOutputStream fos = new FileOutputStream("colo.xml");
@@ -346,7 +322,7 @@ public class ControleurJeu implements Serializable {
 					 
 				}
 				ancien =rand;
-				URL limaj = getClass().getResource("/Vue/"+modls.get(rand));
+				java.net.URL limaj = getClass().getResource("/Vue/"+modls.get(rand));
 				Image oumage=new Image(limaj.toExternalForm());
 				imagedroit.setFitHeight(450);
 				imagedroit.setFitWidth(450);
@@ -361,13 +337,8 @@ public class ControleurJeu implements Serializable {
 		});
 
 		quad.setOnMouseClicked((MouseEvent t) -> {
-			stock = new ArrayList<>();
-			re=new Rectangle(30,30);
-			re1=new Rectangle(30,30);
-			re2=new Rectangle(30,30);
-
-
-
+			
+			int num = t.getClickCount();
 			int x = (int)t.getX();
 
 			int y = (int)t.getY();
@@ -377,14 +348,19 @@ public class ControleurJeu implements Serializable {
 			x=Math.round(x/30);	
 
 			if(Taille=="1") {	
+				Rectangle re=new Rectangle(30,30);
+				Rectangle re1=new Rectangle(30,30);
 				re.setX(x);
 				re.setY(y);
 				re.setFill(c);
 				quad.add(re , x, y);
+				System.out.println(re);
 				stock.add(re);
 			}
 			else if (Taille=="2") {
 				if((Math.abs(imTwo.getRotate())/90)%2==0) {
+					Rectangle re=new Rectangle(30,30);
+					Rectangle re1=new Rectangle(30,30);
 					re.setX(x);
 					re.setY(y);
 					re.setFill(c);
@@ -393,10 +369,14 @@ public class ControleurJeu implements Serializable {
 					re1.setY(y);
 					re1.setFill(c);
 					quad.add(re1, x+1, y);
+					System.out.println(re);
+					System.out.println(re1);
 					stock.add(re);
 					stock.add(re1);
 				}
 				else if ((Math.abs(imTwo.getRotate())/90)%2==1){
+					Rectangle re=new Rectangle(30,30);
+					Rectangle re1=new Rectangle(30,30);
 					re.setX(x);
 					re.setY(y);
 					re.setFill(c);
@@ -405,6 +385,8 @@ public class ControleurJeu implements Serializable {
 					re1.setY(y+1);
 					re1.setFill(c);
 					quad.add(re1, x, y+1);
+					System.out.println(re);
+					System.out.println(re1);
 					stock.add(re);
 					stock.add(re1);
 				}
@@ -412,6 +394,9 @@ public class ControleurJeu implements Serializable {
 			else if (Taille=="3") {			
 
 				if(compteurfig3 == 0){
+					Rectangle re=new Rectangle(30,30);
+					Rectangle re1=new Rectangle(30,30);
+					Rectangle re2=new Rectangle(30,30);
 					re.setY(y);
 					re.setFill(c);
 					quad.add(re, x, y);
@@ -423,13 +408,18 @@ public class ControleurJeu implements Serializable {
 					re2.setY(y-1);
 					re2.setFill(c);
 					quad.add(re2, x+1, y-1);
+					System.out.println(re);
+					System.out.println(re1);
+					System.out.println(re2);
 					stock.add(re);
 					stock.add(re1);
 					stock.add(re2);
 				}
 
 				else if(compteurfig3 == 1){
-
+					Rectangle re=new Rectangle(30,30);
+					Rectangle re1=new Rectangle(30,30);
+					Rectangle re2=new Rectangle(30,30);
 					re.setY(y);
 					re.setFill(c);
 					quad.add(re, x, y);
@@ -441,13 +431,18 @@ public class ControleurJeu implements Serializable {
 					re2.setY(y-1);
 					re2.setFill(c);
 					quad.add(re2, x, y-1);
+					System.out.println(re);
+					System.out.println(re1);
+					System.out.println(re2);
 					stock.add(re);
 					stock.add(re1);
 					stock.add(re2);
 				}
 
 				else if(compteurfig3 == 2){
-
+					Rectangle re=new Rectangle(30,30);
+					Rectangle re1=new Rectangle(30,30);
+					Rectangle re2=new Rectangle(30,30);
 					re.setY(y);
 					re.setFill(c);
 					quad.add(re, x, y);
@@ -459,13 +454,18 @@ public class ControleurJeu implements Serializable {
 					re2.setY(y-1);
 					re2.setFill(c);
 					quad.add(re2, x+1, y-1);
+					System.out.println(re);
+					System.out.println(re1);
+					System.out.println(re2);
 					stock.add(re);
 					stock.add(re1);
 					stock.add(re2);
 				}
 
 				else if (compteurfig3 == 3){
-
+					Rectangle re=new Rectangle(30,30);
+					Rectangle re1=new Rectangle(30,30);
+					Rectangle re2=new Rectangle(30,30);
 					re.setY(y);
 					re.setFill(c);
 					quad.add(re, x, y-1);
@@ -477,6 +477,9 @@ public class ControleurJeu implements Serializable {
 					re2.setY(y-1);
 					re2.setFill(c);
 					quad.add(re2, x+1, y);
+					System.out.println(re);
+					System.out.println(re1);
+					System.out.println(re2);
 					stock.add(re);
 					stock.add(re1);
 					stock.add(re2);
@@ -492,18 +495,18 @@ public class ControleurJeu implements Serializable {
 
 		imOn.setOnMouseClicked((MouseEvent e) -> {
 			Taille="1";
-			System.out.println(Taille);
+			
 
 		});
 		imTwo.setOnMouseClicked((MouseEvent e) -> {
 			Taille="2";
-			System.out.println(Taille);
+			
 
 		});
 
 		imTre.setOnMouseClicked((MouseEvent e) -> {
 			Taille="3";
-			System.out.println(Taille);
+			
 
 		});
 
