@@ -20,6 +20,7 @@ import java.net.URL;
 
 import Modele.Brique;
 import Modele.Briques;
+import Modele.Rectangleu;
 import Modele.quadrillage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -94,7 +95,7 @@ public class ControleurJeu implements Serializable {
 	int max;
 	public int rand;
 
-	public ArrayList<Rectangle> stock= new ArrayList<>();	;
+	public ArrayList<Rectangleu> stock= new ArrayList<>();	;
 	public void grillebas() {
 		b= new Briques();
 		brayk = new ArrayList<>();
@@ -124,10 +125,13 @@ public class ControleurJeu implements Serializable {
 			BufferedInputStream bis = new BufferedInputStream(fis);
 			decoder = new XMLDecoder(bis);
 
-			stock =  (ArrayList<Rectangle>) decoder.readObject();
+			stock =  (ArrayList<Rectangleu>) decoder.readObject();
 			
 			
-			for(Rectangle rekt : stock) {
+			for(Rectangleu rekt : stock) {				
+				
+				rekt.setFill(Color.valueOf(rekt.getCoulu()));
+				
 				quad.add(rekt,(int) rekt.getX(),(int) rekt.getY());
 			}
 			
@@ -177,29 +181,17 @@ public class ControleurJeu implements Serializable {
 		//gestion de la grille de jeu
 
 
-		c = coul.getValue();
-
-		ArrayList<Color> a = new ArrayList<>();
-		a.add(c);
-
+		c = coul.getValue();		
 
 		String hex;
 		hex=String.valueOf(c);
-		ArrayList<String> b = new ArrayList<>();
-		b.add(hex);
+		
 		d="#";
 
 		System.out.println("b.get"+b.get(0));
-		for(int i=2;i<b.get(0).length()-2;i++) {
-			d+=b.get(0).charAt(i);
+		for(int i=2;i<hex.length()-2;i++) {
+			d+=hex.charAt(i);
 		}
-
-
-
-
-
-
-
 
 
 		coul.setOnAction( new EventHandler<ActionEvent>() {		
@@ -221,7 +213,7 @@ public class ControleurJeu implements Serializable {
 				b.add(hex);
 				d="#";
 
-				System.out.println("b.get"+b.get(0));
+				
 				for(int i=2;i<b.get(0).length()-2;i++) {
 					d+=b.get(0).charAt(i);
 				}
@@ -230,11 +222,7 @@ public class ControleurJeu implements Serializable {
 
 				//	quad.setStyle("-fx-background-color: "+d);
 
-
-
 			}
-
-
 		});	
 
 
@@ -348,10 +336,11 @@ public class ControleurJeu implements Serializable {
 			x=Math.round(x/30);	
 
 			if(Taille=="1") {	
-				Rectangle re=new Rectangle(30,30);
-				Rectangle re1=new Rectangle(30,30);
+				Rectangleu re=new Rectangleu(30,30);
+				Rectangleu re1=new Rectangleu(30,30);
 				re.setX(x);
 				re.setY(y);
+				re.coulsauv(c);
 				re.setFill(c);
 				quad.add(re , x, y);
 				System.out.println(re);
@@ -359,14 +348,16 @@ public class ControleurJeu implements Serializable {
 			}
 			else if (Taille=="2") {
 				if((Math.abs(imTwo.getRotate())/90)%2==0) {
-					Rectangle re=new Rectangle(30,30);
-					Rectangle re1=new Rectangle(30,30);
+					Rectangleu re=new Rectangleu(30,30);
+					Rectangleu re1=new Rectangleu(30,30);
 					re.setX(x);
 					re.setY(y);
+					re.coulsauv(c);
 					re.setFill(c);
 					quad.add(re, x, y);
 					re1.setX(x+1);
 					re1.setY(y);
+					re1.coulsauv(c);
 					re1.setFill(c);
 					quad.add(re1, x+1, y);
 					System.out.println(re);
@@ -375,14 +366,16 @@ public class ControleurJeu implements Serializable {
 					stock.add(re1);
 				}
 				else if ((Math.abs(imTwo.getRotate())/90)%2==1){
-					Rectangle re=new Rectangle(30,30);
-					Rectangle re1=new Rectangle(30,30);
+					Rectangleu re=new Rectangleu(30,30);
+					Rectangleu re1=new Rectangleu(30,30);
 					re.setX(x);
 					re.setY(y);
+					re.coulsauv(c);
 					re.setFill(c);
 					quad.add(re, x, y);
 					re1.setX(x);
 					re1.setY(y+1);
+					re1.coulsauv(c);
 					re1.setFill(c);
 					quad.add(re1, x, y+1);
 					System.out.println(re);
@@ -394,18 +387,22 @@ public class ControleurJeu implements Serializable {
 			else if (Taille=="3") {			
 
 				if(compteurfig3 == 0){
-					Rectangle re=new Rectangle(30,30);
-					Rectangle re1=new Rectangle(30,30);
-					Rectangle re2=new Rectangle(30,30);
+					Rectangleu re=new Rectangleu(30,30);
+					Rectangleu re1=new Rectangleu(30,30);
+					Rectangleu re2=new Rectangleu(30,30);
 					re.setY(y);
+					re.setX(x);
+					re.coulsauv(c);
 					re.setFill(c);
 					quad.add(re, x, y);
 					re1.setX(x+1);
 					re1.setY(y);
+					re1.coulsauv(c);
 					re1.setFill(c);
 					quad.add(re1, x+1, y);
 					re2.setX(x+1);
 					re2.setY(y-1);
+					re2.coulsauv(c);
 					re2.setFill(c);
 					quad.add(re2, x+1, y-1);
 					System.out.println(re);
@@ -417,18 +414,22 @@ public class ControleurJeu implements Serializable {
 				}
 
 				else if(compteurfig3 == 1){
-					Rectangle re=new Rectangle(30,30);
-					Rectangle re1=new Rectangle(30,30);
-					Rectangle re2=new Rectangle(30,30);
+					Rectangleu re=new Rectangleu(30,30);
+					Rectangleu re1=new Rectangleu(30,30);
+					Rectangleu re2=new Rectangleu(30,30);
 					re.setY(y);
+					re.setX(x);
+					re.coulsauv(c);
 					re.setFill(c);
 					quad.add(re, x, y);
 					re1.setX(x+1);
 					re1.setY(y);
+					re1.coulsauv(c);
 					re1.setFill(c);
 					quad.add(re1, x+1, y);
 					re2.setX(x+1);
 					re2.setY(y-1);
+					re2.coulsauv(c);
 					re2.setFill(c);
 					quad.add(re2, x, y-1);
 					System.out.println(re);
@@ -440,18 +441,22 @@ public class ControleurJeu implements Serializable {
 				}
 
 				else if(compteurfig3 == 2){
-					Rectangle re=new Rectangle(30,30);
-					Rectangle re1=new Rectangle(30,30);
-					Rectangle re2=new Rectangle(30,30);
+					Rectangleu re=new Rectangleu(30,30);
+					Rectangleu re1=new Rectangleu(30,30);
+					Rectangleu re2=new Rectangleu(30,30);
 					re.setY(y);
+					re.setX(x);
+					re.coulsauv(c);
 					re.setFill(c);
 					quad.add(re, x, y);
 					re1.setX(x+1);
 					re1.setY(y);
+					re1.coulsauv(c);
 					re1.setFill(c);
 					quad.add(re1, x, y-1);
 					re2.setX(x+1);
 					re2.setY(y-1);
+					re2.coulsauv(c);
 					re2.setFill(c);
 					quad.add(re2, x+1, y-1);
 					System.out.println(re);
@@ -463,18 +468,22 @@ public class ControleurJeu implements Serializable {
 				}
 
 				else if (compteurfig3 == 3){
-					Rectangle re=new Rectangle(30,30);
-					Rectangle re1=new Rectangle(30,30);
-					Rectangle re2=new Rectangle(30,30);
+					Rectangleu re=new Rectangleu(30,30);
+					Rectangleu re1=new Rectangleu(30,30);
+					Rectangleu re2=new Rectangleu(30,30);
 					re.setY(y);
+					re.setX(x);
+					re.coulsauv(c);
 					re.setFill(c);
 					quad.add(re, x, y-1);
 					re1.setX(x+1);
 					re1.setY(y);
+					re1.coulsauv(c);
 					re1.setFill(c);
 					quad.add(re1, x+1, y-1);
 					re2.setX(x+1);
 					re2.setY(y-1);
+					re2.coulsauv(c);
 					re2.setFill(c);
 					quad.add(re2, x+1, y);
 					System.out.println(re);
