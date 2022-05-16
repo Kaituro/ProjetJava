@@ -406,8 +406,7 @@ public class ControleurJeu implements Serializable {
 					Rectangleu re=new Rectangleu(30,30);
 					Rectangleu re1=new Rectangleu(30,30);
 					Rectangleu re2=new Rectangleu(30,30);
-					if(x-1<0) {
-						/*
+					if(x-1<0) {						
 						re.setY(y);
 						re.setX(x);
 						re.coulsauv(c);
@@ -418,18 +417,17 @@ public class ControleurJeu implements Serializable {
 						re1.coulsauv(c);
 						re1.setFill(c);
 						quad.add(re1, x-1, y);
-						re2.setX(x);
+						re2.setX(x-1);
 						re2.setY(y-1);
 						re2.coulsauv(c);
 						re2.setFill(c);
-						quad.add(re2, x, y-1);
+						quad.add(re2, x-1, y-1);
 						System.out.println(re);
 						System.out.println(re1);
 						System.out.println(re2);
 						stock.add(re);
 						stock.add(re1);
 						stock.add(re2);
-						*/
 					}else {
 						re.setY(y);
 						re.setX(x);
