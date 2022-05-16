@@ -84,10 +84,10 @@ public class ControleurJeu implements Serializable {
 	public Briques b;	
 	public List<Brique> brayk;	
 	public quadrillage quad;
-	
+
 	public String Taille="1";
 
-	
+
 
 	public int compteurfig3 =0;
 	public int ancien;
@@ -126,16 +126,16 @@ public class ControleurJeu implements Serializable {
 			decoder = new XMLDecoder(bis);
 
 			stock =  (ArrayList<Rectangleu>) decoder.readObject();
-			
-			
+
+
 			for(Rectangleu rekt : stock) {				
-				
+
 				rekt.setFill(Color.valueOf(rekt.getCoulu()));
-				
+
 				quad.add(rekt,(int) rekt.getX(),(int) rekt.getY());
 			}
-			
-			
+
+
 		}catch (Exception e){
 			//throw new RuntimeException("Lecture des donn�es impossible ou donn�es corrompues");
 		} finally {
@@ -152,7 +152,7 @@ public class ControleurJeu implements Serializable {
 
 		grillebas();
 		List<String> modls = new ArrayList<> ();
-		
+
 		modls.add("unknown.png");
 		modls.add("pacman.png");
 		modls.add("papillon.png");
@@ -161,7 +161,7 @@ public class ControleurJeu implements Serializable {
 		rang = max+1;
 		rand = (int)(Math.random()*rang);
 		ancien =rand;
-		
+
 		URL limaj = getClass().getResource("/Vue/"+modls.get(rand));
 		Image oumage=new Image(limaj.toExternalForm());
 		imagedroit.setFitHeight(450);
@@ -185,7 +185,7 @@ public class ControleurJeu implements Serializable {
 
 		String hex;
 		hex=String.valueOf(c);
-		
+
 		d="#";
 
 		System.out.println("b.get"+b.get(0));
@@ -213,7 +213,7 @@ public class ControleurJeu implements Serializable {
 				b.add(hex);
 				d="#";
 
-				
+
 				for(int i=2;i<b.get(0).length()-2;i++) {
 					d+=b.get(0).charAt(i);
 				}
@@ -286,37 +286,37 @@ public class ControleurJeu implements Serializable {
 				dialogC.setTitle("Quitter ?");
 				dialogC.setHeaderText("Sauvegarde effectuée");
 				dialogC.setContentText("Êtes-vous sûr de vouloir quitter ?");
-				
+
 				Optional<ButtonType> answer = dialogC.showAndWait();
 				if (answer.get()==ButtonType.OK) {
 					System.exit(0);
 				}else {
 					dialogC.hide();
 				}
-				
+
 			}
 
 
 
 		});
-		
+
 		recom.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent arg0) {				
 				rand = (int)(Math.random()*rang);
-				
+
 				while (rand ==ancien){				
-					 rand= (int)(Math.random()*rang);
-					 
+					rand= (int)(Math.random()*rang);
+
 				}
 				ancien =rand;
-				java.net.URL limaj = getClass().getResource("/Vue/"+modls.get(rand));
+				URL limaj = getClass().getResource("/Vue/"+modls.get(rand));
 				Image oumage=new Image(limaj.toExternalForm());
 				imagedroit.setFitHeight(450);
 				imagedroit.setFitWidth(450);
 				imagedroit.setImage(oumage);
 				//nouvelle grilleS
-				
+
 				quad = new quadrillage();
 				bopa.setMaxSize(quad.getWidth(),quad.getHeight() );
 				bopa.setCenter(quad);
@@ -325,7 +325,7 @@ public class ControleurJeu implements Serializable {
 		});
 
 		quad.setOnMouseClicked((MouseEvent t) -> {
-			
+
 			int num = t.getClickCount();
 			int x = (int)t.getX();
 
@@ -504,18 +504,18 @@ public class ControleurJeu implements Serializable {
 
 		imOn.setOnMouseClicked((MouseEvent e) -> {
 			Taille="1";
-			
+
 
 		});
 		imTwo.setOnMouseClicked((MouseEvent e) -> {
 			Taille="2";
-			
+
 
 		});
 
 		imTre.setOnMouseClicked((MouseEvent e) -> {
 			Taille="3";
-			
+
 
 		});
 

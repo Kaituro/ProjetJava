@@ -26,12 +26,9 @@ public class quadrillage extends GridPane{
 		}
 				
 		this.setMaxSize(ligne, colonne);
-		this.setGridLinesVisible(true);
-		
+		this.setGridLinesVisible(true);		
 		
 	}
-
-
 	
 		
 
