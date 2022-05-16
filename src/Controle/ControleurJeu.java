@@ -30,6 +30,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ColorPicker;
@@ -46,7 +47,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class ControleurJeu implements Serializable {
-	//méthodes et variables
+	//mÃ©thodes et variables
 	private static final long serialVersionUID = 1L;
 	@FXML
 	private ListView<Image> ListV;
@@ -113,13 +114,13 @@ public class ControleurJeu implements Serializable {
 	//code principal
 	@FXML
 	private void initialize() throws FileNotFoundException {
-		//création de la grille
+		//crÃ©ation de la grille
 		quad = new quadrillage();
 
 		bopa.setMaxSize(quad.getWidth(),quad.getHeight());
 		bopa.setCenter(quad);
 
-		//Déserialisation
+		//DÃ©serialisation
 		XMLDecoder decoder =null;
 		try {
 			FileInputStream fis = new FileInputStream(fichier);
@@ -138,7 +139,7 @@ public class ControleurJeu implements Serializable {
 
 
 		}catch (Exception e){
-			//throw new RuntimeException("Lecture des donn�es impossible ou donn�es corrompues");
+			//throw new RuntimeException("Lecture des donnï¿½es impossible ou donnï¿½es corrompues");
 		} finally {
 			if(decoder !=null)decoder.close();
 		}
@@ -259,9 +260,10 @@ public class ControleurJeu implements Serializable {
 
 
 		});
+		
+		
 
-
-		//Sérialisation
+		//SÃ©rialisation
 		Quitter.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -278,15 +280,15 @@ public class ControleurJeu implements Serializable {
 
 				}catch (final java.io.IOException e1) {
 					e1.printStackTrace();
-					//throw new RuntimeException("Impossible d'�crire les donn�es");
+					//throw new RuntimeException("Impossible d'ï¿½crire les donnï¿½es");
 
 				}finally {
 					if (encoder !=null) encoder.close();
 				}
 				Alert dialogC = new Alert(AlertType.CONFIRMATION);
 				dialogC.setTitle("Quitter ?");
-				dialogC.setHeaderText("Sauvegarde effectuée");
-				dialogC.setContentText("Êtes-vous sûr de vouloir quitter ?");
+				dialogC.setHeaderText("Sauvegarde effectuÃ©e");
+				dialogC.setContentText("êtes-vous sÃ»r de vouloir quitter ?");
 
 				Optional<ButtonType> answer = dialogC.showAndWait();
 				if (answer.get()==ButtonType.OK) {
@@ -356,7 +358,8 @@ public class ControleurJeu implements Serializable {
 					re.coulsauv(c);
 					re.setFill(c);
 					quad.add(re, x, y);
-					re1.setX(x+1);
+					if (x-1<0) {
+						re1.setX(x+1);
 					re1.setY(y);
 					re1.coulsauv(c);
 					re1.setFill(c);
@@ -365,6 +368,18 @@ public class ControleurJeu implements Serializable {
 					System.out.println(re1);
 					stock.add(re);
 					stock.add(re1);
+					}else {
+						re1.setX(x-1);
+						re1.setY(y);
+						re1.coulsauv(c);
+						re1.setFill(c);
+						quad.add(re1, x-1, y);
+						System.out.println(re);
+						System.out.println(re1);
+						stock.add(re);
+						stock.add(re1);
+					}
+					
 				}
 				else if ((Math.abs(imTwo.getRotate())/90)%2==1){
 					Rectangleu re=new Rectangleu(30,30);
@@ -396,39 +411,12 @@ public class ControleurJeu implements Serializable {
 					re.coulsauv(c);
 					re.setFill(c);
 					quad.add(re, x, y);
-					re1.setX(x+1);
+					re1.setX(x-1);
 					re1.setY(y);
 					re1.coulsauv(c);
 					re1.setFill(c);
-					quad.add(re1, x+1, y);
-					re2.setX(x+1);
-					re2.setY(y-1);
-					re2.coulsauv(c);
-					re2.setFill(c);
-					quad.add(re2, x+1, y-1);
-					System.out.println(re);
-					System.out.println(re1);
-					System.out.println(re2);
-					stock.add(re);
-					stock.add(re1);
-					stock.add(re2);
-				}
-
-				else if(compteurfig3 == 1){
-					Rectangleu re=new Rectangleu(30,30);
-					Rectangleu re1=new Rectangleu(30,30);
-					Rectangleu re2=new Rectangleu(30,30);
-					re.setY(y);
-					re.setX(x);
-					re.coulsauv(c);
-					re.setFill(c);
-					quad.add(re, x, y);
-					re1.setX(x+1);
-					re1.setY(y);
-					re1.coulsauv(c);
-					re1.setFill(c);
-					quad.add(re1, x+1, y);
-					re2.setX(x+1);
+					quad.add(re1, x-1, y);
+					re2.setX(x);
 					re2.setY(y-1);
 					re2.coulsauv(c);
 					re2.setFill(c);
@@ -441,10 +429,85 @@ public class ControleurJeu implements Serializable {
 					stock.add(re2);
 				}
 
+				else if(compteurfig3 == 1){
+					Rectangleu re=new Rectangleu(30,30);
+					Rectangleu re1=new Rectangleu(30,30);
+					Rectangleu re2=new Rectangleu(30,30);
+					if (x+1>29) {
+						re.setY(y);
+						re.setX(x-1);
+						re.coulsauv(c);
+						re.setFill(c);
+						quad.add(re, x-1, y);
+						re1.setX(x);
+						re1.setY(y);
+						re1.coulsauv(c);
+						re1.setFill(c);
+						quad.add(re1, x, y);
+						re2.setX(x-1);
+						re2.setY(y-1);
+						re2.coulsauv(c);
+						re2.setFill(c);
+						quad.add(re2, x-1, y-1);
+						System.out.println(re);
+						System.out.println(re1);
+						System.out.println(re2);
+						stock.add(re);
+						stock.add(re1);
+						stock.add(re2);
+					} else {
+						re.setY(y);
+						re.setX(x);
+						re.coulsauv(c);
+						re.setFill(c);
+						quad.add(re, x, y);
+						re1.setX(x);
+						re1.setY(y);
+						re1.coulsauv(c);
+						re1.setFill(c);
+						quad.add(re1, x+1, y);
+						re2.setX(x);
+						re2.setY(y-1);
+						re2.coulsauv(c);
+						re2.setFill(c);
+						quad.add(re2, x, y-1);
+						System.out.println(re);
+						System.out.println(re1);
+						System.out.println(re2);
+						stock.add(re);
+						stock.add(re1);
+						stock.add(re2);
+					}
+					
+				}
+
 				else if(compteurfig3 == 2){
 					Rectangleu re=new Rectangleu(30,30);
 					Rectangleu re1=new Rectangleu(30,30);
 					Rectangleu re2=new Rectangleu(30,30);
+					if(x+1>29) {
+						re.setY(y+1);
+						re.setX(x-1);
+						re.coulsauv(c);
+						re.setFill(c);
+						quad.add(re, x-1, y+1);
+						re1.setX(x);
+						re1.setY(y);
+						re1.coulsauv(c);
+						re1.setFill(c);
+						quad.add(re1, x, y);
+						re2.setX(x-1);
+						re2.setY(y);
+						re2.coulsauv(c);
+						re2.setFill(c);
+						quad.add(re2, x-1, y);
+						System.out.println(re);
+						System.out.println(re1);
+						System.out.println(re2);
+						stock.add(re);
+						stock.add(re1);
+						stock.add(re2);
+					}else {
 					re.setY(y);
 					re.setX(x);
 					re.coulsauv(c);
@@ -454,47 +517,76 @@ public class ControleurJeu implements Serializable {
 					re1.setY(y);
 					re1.coulsauv(c);
 					re1.setFill(c);
-					quad.add(re1, x, y-1);
-					re2.setX(x+1);
+					quad.add(re1, x+1, y-1);
+					re2.setX(x);
 					re2.setY(y-1);
 					re2.coulsauv(c);
 					re2.setFill(c);
-					quad.add(re2, x+1, y-1);
+					quad.add(re2, x, y-1);
 					System.out.println(re);
 					System.out.println(re1);
 					System.out.println(re2);
 					stock.add(re);
 					stock.add(re1);
 					stock.add(re2);
+					}
+					
 				}
 
 				else if (compteurfig3 == 3){
 					Rectangleu re=new Rectangleu(30,30);
 					Rectangleu re1=new Rectangleu(30,30);
 					Rectangleu re2=new Rectangleu(30,30);
-					re.setY(y);
+					if(x-1<0) {
+						/*
+						re.setY(y-1);
+						re.setX(x);
+						re.coulsauv(c);
+						re.setFill(c);
+						quad.add(re, x, y-1);
+						re1.setX(x-1);
+						re1.setY(y);
+						re1.coulsauv(c);
+						re1.setFill(c);
+						quad.add(re1, x-1, y-1);
+						re2.setX(x);
+						re2.setY(y);
+						re2.coulsauv(c);
+						re2.setFill(c);
+						quad.add(re2, x, y);
+						System.out.println(re);
+						System.out.println(re1);
+						System.out.println(re2);
+						stock.add(re);
+						stock.add(re1);
+						stock.add(re2);
+						*/
+					} else {
+					re.setY(y-1);
 					re.setX(x);
 					re.coulsauv(c);
 					re.setFill(c);
 					quad.add(re, x, y-1);
-					re1.setX(x+1);
+					re1.setX(x-1);
 					re1.setY(y);
 					re1.coulsauv(c);
 					re1.setFill(c);
-					quad.add(re1, x+1, y-1);
-					re2.setX(x+1);
-					re2.setY(y-1);
+					quad.add(re1, x-1, y-1);
+					re2.setX(x);
+					re2.setY(y);
 					re2.coulsauv(c);
 					re2.setFill(c);
-					quad.add(re2, x+1, y);
+					quad.add(re2, x, y);
 					System.out.println(re);
 					System.out.println(re1);
 					System.out.println(re2);
 					stock.add(re);
 					stock.add(re1);
 					stock.add(re2);
+					}
+					
 				}
-
+System.out.println(compteurfig3);
 			}
 
 
