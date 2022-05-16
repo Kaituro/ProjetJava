@@ -268,6 +268,7 @@ public class ControleurJeu implements Serializable {
 
 			@Override
 			public void handle(ActionEvent arg0) {
+				if(ControleurOptio.getAutoSav()) {
 				System.out.println(stock.toString()); 
 				XMLEncoder encoder = null;
 				try {

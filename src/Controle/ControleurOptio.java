@@ -45,10 +45,9 @@ public class ControleurOptio {
 	public int volume;
 
 	
-	public boolean getAutoSav() {
-		return this.AutoSav.isSelected();
+	public void getAutoSav() {
+		 this.AutoSav.isSelected();
 	}
-	
 	public void initialize() {
 		
 		volu.valueProperty().addListener(new ChangeListener<Number>() {
