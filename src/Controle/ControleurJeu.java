@@ -29,6 +29,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ColorPicker;
@@ -45,7 +46,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class ControleurJeu implements Serializable {
-	//méthodes et variables
+	//mÃ©thodes et variables
 	private static final long serialVersionUID = 1L;
 	@FXML
 	private ListView<Image> ListV;
@@ -112,13 +113,13 @@ public class ControleurJeu implements Serializable {
 	//code principal
 	@FXML
 	private void initialize() throws FileNotFoundException {
-		//création de la grille
+		//crÃ©ation de la grille
 		quad = new quadrillage();
 
 		bopa.setMaxSize(quad.getWidth(),quad.getHeight());
 		bopa.setCenter(quad);
 
-		//Déserialisation
+		//DÃ©serialisation
 		XMLDecoder decoder =null;
 		try {
 			FileInputStream fis = new FileInputStream(fichier);
@@ -137,7 +138,7 @@ public class ControleurJeu implements Serializable {
 
 
 		}catch (Exception e){
-			//throw new RuntimeException("Lecture des donn�es impossible ou donn�es corrompues");
+			//throw new RuntimeException("Lecture des donnï¿½es impossible ou donnï¿½es corrompues");
 		} finally {
 			if(decoder !=null)decoder.close();
 		}
@@ -258,9 +259,10 @@ public class ControleurJeu implements Serializable {
 
 
 		});
+		
+		
 
-
-		//Sérialisation
+		//SÃ©rialisation
 		Quitter.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
@@ -277,15 +279,15 @@ public class ControleurJeu implements Serializable {
 
 				}catch (final java.io.IOException e1) {
 					e1.printStackTrace();
-					//throw new RuntimeException("Impossible d'�crire les donn�es");
+					//throw new RuntimeException("Impossible d'ï¿½crire les donnï¿½es");
 
 				}finally {
 					if (encoder !=null) encoder.close();
 				}
 				Alert dialogC = new Alert(AlertType.CONFIRMATION);
 				dialogC.setTitle("Quitter ?");
-				dialogC.setHeaderText("Sauvegarde effectuée");
-				dialogC.setContentText("Êtes-vous sûr de vouloir quitter ?");
+				dialogC.setHeaderText("Sauvegarde effectuÃ©e");
+				dialogC.setContentText("êtes-vous sÃ»r de vouloir quitter ?");
 
 				Optional<ButtonType> answer = dialogC.showAndWait();
 				if (answer.get()==ButtonType.OK) {
