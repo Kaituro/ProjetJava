@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -38,6 +39,9 @@ public class ControleurOptio {
 	@FXML
 	private Slider volu;
 	
+	@FXML
+	private CheckBox AutoSav;
+	
 	public int volume;
 
 	public void initialize() {	
@@ -48,16 +52,12 @@ public class ControleurOptio {
 				System.out.println(volu.getValue());
 				Main.mediaplay.setVolume(volu.getValue());
 			}
-
 			
-		});
-		//Main.mediaplay.setVolume(volu.getValue());
-		
+		});		
 		
 		Poz.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent arg0) {
-				Main.mediaplay.pause();
-				
+				Main.mediaplay.pause();				
 			}
 		});
 		
@@ -92,9 +92,9 @@ public class ControleurOptio {
 					e1.printStackTrace();
 				}
 
-
 			}});
-
+		
+		System.out.println(AutoSav);
 
 		close.setOnAction(new EventHandler<ActionEvent>() {
 

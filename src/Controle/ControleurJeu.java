@@ -115,7 +115,7 @@ public class ControleurJeu implements Serializable {
 		//création de la grille
 		quad = new quadrillage();
 
-		bopa.setMaxSize(quad.getWidth(),quad.getHeight() );
+		bopa.setMaxSize(quad.getWidth(),quad.getHeight());
 		bopa.setCenter(quad);
 
 		//Déserialisation

@@ -95,7 +95,7 @@
             <Blend />
          </effect>
       </MenuButton>
-      <CheckBox layoutX="600.0" layoutY="413.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="297.0" text="SAUVEGARDE AUTOMATIQUE" AnchorPane.leftAnchor="600.0">
+      <CheckBox fx:id="AutoSav" layoutX="600.0" layoutY="413.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="297.0" text="SAUVEGARDE AUTOMATIQUE" AnchorPane.leftAnchor="600.0">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="19.0" />
          </font>
