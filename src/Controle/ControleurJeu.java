@@ -268,41 +268,56 @@ public class ControleurJeu implements Serializable {
 
 			@Override
 			public void handle(ActionEvent arg0) {
-				if(ControleurOptio.getAutoSav()) {
-				System.out.println(stock.toString()); 
-				XMLEncoder encoder = null;
-				try {
-					FileOutputStream fos = new FileOutputStream("colo.xml");
-					BufferedOutputStream bos = new BufferedOutputStream(fos);
-					encoder =new XMLEncoder(bos);
-					encoder.writeObject(stock);
-					encoder.flush();
+				if(ControleurOptio.sauv) {
+					System.out.println(stock.toString()); 
+					XMLEncoder encoder = null;
+					try {
+						FileOutputStream fos = new FileOutputStream("colo.xml");
+						BufferedOutputStream bos = new BufferedOutputStream(fos);
+						encoder =new XMLEncoder(bos);
+						encoder.writeObject(stock);
+						encoder.flush();
 
 
-				}catch (final java.io.IOException e1) {
-					e1.printStackTrace();
-					//throw new RuntimeException("Impossible d'ï¿½crire les donnï¿½es");
+					}catch (final java.io.IOException e1) {
+						e1.printStackTrace();
+						//throw new RuntimeException("Impossible d'ï¿½crire les donnï¿½es");
 
-				}finally {
-					if (encoder !=null) encoder.close();
-				}
-				Alert dialogC = new Alert(AlertType.CONFIRMATION);
-				dialogC.setTitle("Quitter ?");
-				dialogC.setHeaderText("Sauvegarde effectuÃ©e");
-				dialogC.setContentText("êtes-vous sÃ»r de vouloir quitter ?");
+					}finally {
+						if (encoder !=null) encoder.close();
+					}
+					Alert dialogC = new Alert(AlertType.CONFIRMATION);
+					dialogC.setTitle("Quitter ?");
+					dialogC.setHeaderText("Sauvegarde effectuée");
+					dialogC.setContentText("êtes-vous sûr de vouloir quitter ?");
 
-				Optional<ButtonType> answer = dialogC.showAndWait();
-				if (answer.get()==ButtonType.OK) {
-					System.exit(0);
+					Optional<ButtonType> answer = dialogC.showAndWait();
+					if (answer.get()==ButtonType.OK) {
+						System.exit(0);
+					}else {
+						dialogC.hide();
+					}
 				}else {
-					dialogC.hide();
+					Alert dialogC = new Alert(AlertType.WARNING);
+					dialogC.setTitle("Quitter ?");
+					dialogC.setHeaderText("Sauvegarde non effectuée");
+					dialogC.setContentText("êtes-vous sûr de vouloir quitter ?");
+					ButtonType Cancel = new ButtonType("Cancel");
+					dialogC.getButtonTypes().add(Cancel);
+					Optional<ButtonType> answer = dialogC.showAndWait();
+					if (answer.get()==ButtonType.OK) {
+						System.exit(0);
+					}else {
+						dialogC.hide();
+					}
 				}
+				
 
 			}
 
 
 
-		});
+			});
 
 		recom.setOnAction(new EventHandler<ActionEvent>() {
 			@Override

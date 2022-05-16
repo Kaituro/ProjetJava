@@ -43,11 +43,11 @@ public class ControleurOptio {
 	private CheckBox AutoSav;
 	
 	public int volume;
+	
+	public static boolean sauv;
 
 	
-	public void getAutoSav() {
-		 this.AutoSav.isSelected();
-	}
+	
 	public void initialize() {
 		
 		volu.valueProperty().addListener(new ChangeListener<Number>() {
@@ -111,7 +111,12 @@ System.out.println(AutoSav.isSelected());
 
 			});
 
-
+AutoSav.setOnAction(new EventHandler<ActionEvent>() {
+	@Override
+	public void handle(ActionEvent arg0) {	
+		sauv=AutoSav.isSelected();
+	}
+});
 
 		}
 	}
