@@ -25,7 +25,7 @@ public class quadrillage extends GridPane{
 			this.getRowConstraints().add(row);
 		}
 				
-	
+		this.setMaxSize(ligne, colonne);
 		this.setGridLinesVisible(true);
 		
 		
