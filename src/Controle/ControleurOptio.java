@@ -48,7 +48,7 @@ public class ControleurOptio {
 	public boolean getAutoSav() {
 		return this.AutoSav.isSelected();
 	}
-	public void initialize() {	
+	public void initialize() {
 		
 		volu.valueProperty().addListener(new ChangeListener<Number>() {
 			@Override
