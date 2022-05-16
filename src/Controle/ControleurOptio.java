@@ -73,6 +73,7 @@ public class ControleurOptio {
 
 			@Override
 			public void handle(ActionEvent arg0) {
+				System.out.println(AutoSav);
 				((Stage)(((Button)arg0.getSource()).getScene().getWindow())).close();
 				Stage stage = new Stage();
 
@@ -94,14 +95,14 @@ public class ControleurOptio {
 
 			}});
 		
-		System.out.println(AutoSav);
+		
 
 		close.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent arg0) {				
 					System.exit(0);
-
+System.out.println(AutoSav.isSelected());
 				}
 
 			});

@@ -26,6 +26,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -302,7 +303,11 @@ public class ControleurJeu implements Serializable {
 
 		recom.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
-			public void handle(ActionEvent arg0) {				
+			public void handle(ActionEvent arg0) {	
+				Node node =quad.getChildren().get(0);
+				quad.getChildren().clear();
+				quad.getChildren().add(0,node);
+				
 				rand = (int)(Math.random()*rang);
 
 				while (rand ==ancien){				
@@ -315,12 +320,8 @@ public class ControleurJeu implements Serializable {
 				imagedroit.setFitHeight(450);
 				imagedroit.setFitWidth(450);
 				imagedroit.setImage(oumage);
-				//nouvelle grilleS
 
-				quad = new quadrillage();
-				bopa.setMaxSize(quad.getWidth(),quad.getHeight() );
-				bopa.setCenter(quad);
-				return;
+				
 			}
 		});
 
