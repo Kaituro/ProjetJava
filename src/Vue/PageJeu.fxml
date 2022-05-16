@@ -13,8 +13,11 @@
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane fx:id="bopa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="1001.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <left>
@@ -68,14 +71,8 @@
          </padding>
       </MenuBar>
    </top>
-   <right>
-      <ImageView fx:id="imagedroit" fitHeight="187.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets bottom="5.0" top="5.0" />
-         </BorderPane.margin></ImageView>
-   </right>
    <bottom>
-      <HBox fx:id="leHB" prefHeight="191.0" prefWidth="1001.0" style="-fx-background-color: #767676;" BorderPane.alignment="CENTER">
+      <HBox fx:id="leHB" prefHeight="208.0" prefWidth="967.0" style="-fx-background-color: #767676;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="imTre" fitHeight="168.0" fitWidth="168.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                <HBox.margin>
@@ -110,20 +107,21 @@
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </ImageView>
-            <ImageView fitHeight="168.0" fitWidth="168.0" pickOnBounds="true" preserveRatio="true">
-               <HBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </HBox.margin>
-               <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow height="62.0" radius="35.75" spread="0.1" width="83.0" />
-               </effect>
-            </ImageView>
          </children></HBox>
    </bottom>
    <center>
       <ButtonBar prefHeight="382.0" prefWidth="703.0" BorderPane.alignment="CENTER" />
    </center>
+   <right>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imagedroit" fitHeight="240.0" fitWidth="252.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="20.0" />
+            <Text layoutX="43.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00" textAlignment="CENTER" wrappingWidth="100.13671875" AnchorPane.bottomAnchor="300.0" AnchorPane.rightAnchor="150.0">
+               <font>
+                  <Font size="37.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </right>
 </BorderPane>

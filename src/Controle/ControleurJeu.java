@@ -315,8 +315,6 @@ public class ControleurJeu implements Serializable {
 
 			}
 
-
-
 			});
 
 		recom.setOnAction(new EventHandler<ActionEvent>() {
