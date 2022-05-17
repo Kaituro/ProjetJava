@@ -1,6 +1,7 @@
 package Controle;
 
 
+
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 import java.io.BufferedInputStream;
@@ -31,6 +32,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBase;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ColorPicker;
@@ -205,17 +207,7 @@ public class ControleurJeu implements Serializable {
 		System.out.println("b.get"+b.get(0));
 		for(int i=2;i<hex.length()-2;i++) {
 			d+=hex.charAt(i);
-		}
-		
-		time= new Time("00:05:0");
-		timer.setText(time.GetCurrentTime());
-		/*
-		while (time.GetCurrentTime()!="0:0:0") {
-			time.oneSecondPassed();
-			timer.setText(time.GetCurrentTime());
-		}*/
-		
-		
+		}	
 		
 		coul.setOnAction( new EventHandler<ActionEvent>() {		
 
@@ -414,8 +406,7 @@ public class ControleurJeu implements Serializable {
 						stock.add(re);
 						stock.add(re1);
 												
-					}
-					
+					}					
 					
 				}
 				else if ((Math.abs(imTwo.getRotate())/90)%2==1){
@@ -857,7 +848,9 @@ System.out.println(compteurfig3);
 
 
 
-	}	
+	}
+
+	
 }
 
 

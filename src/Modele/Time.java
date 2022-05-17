@@ -1,5 +1,6 @@
 package Modele;
 
+
 import javafx.fxml.FXML;
 
 public class Time {
@@ -46,4 +47,6 @@ public void oneSecondPassed() {
 		}
 	}
 }
+
+
 }
