@@ -268,7 +268,7 @@ public class ControleurJeu implements Serializable {
 
 			@Override
 			public void handle(ActionEvent arg0) {
-				if(ControleurOptio.sauv) {
+				if(ControleurOptio.sauv==true) {
 					System.out.println(stock.toString()); 
 					XMLEncoder encoder = null;
 					try {

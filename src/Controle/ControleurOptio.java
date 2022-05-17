@@ -47,8 +47,11 @@ public class ControleurOptio {
 	public static boolean sauv;
 
 	
-	
 	public void initialize() {
+		if((sauv==true ||sauv==false)) {
+			AutoSav.setSelected(sauv);
+
+		}
 		
 		volu.valueProperty().addListener(new ChangeListener<Number>() {
 			@Override
@@ -75,9 +78,10 @@ public class ControleurOptio {
 		
 		back.setOnAction(new EventHandler<ActionEvent>() {
 
+
 			@Override
 			public void handle(ActionEvent arg0) {
-				System.out.println(AutoSav);
+				System.out.println(sauv);
 				((Stage)(((Button)arg0.getSource()).getScene().getWindow())).close();
 				Stage stage = new Stage();
 
@@ -115,8 +119,13 @@ AutoSav.setOnAction(new EventHandler<ActionEvent>() {
 	@Override
 	public void handle(ActionEvent arg0) {	
 		sauv=AutoSav.isSelected();
+		
+		
+		
+		
 	}
 });
+
 
 		}
 	}
