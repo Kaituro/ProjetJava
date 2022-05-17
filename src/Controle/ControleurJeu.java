@@ -15,9 +15,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
-
 import java.net.URL;
-
 import Modele.Brique;
 import Modele.Briques;
 import Modele.Rectangleu;
@@ -44,7 +42,16 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.fxml.Initializable;
+import java.util.ResourceBundle;
+import javafx.scene.control.TextField;
+import javafx.util.Duration;
+import javafx.animation.Timeline;
+import javafx.animation.KeyFrame;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class ControleurJeu implements Serializable {
 	//mÃ©thodes et variables
@@ -74,6 +81,10 @@ public class ControleurJeu implements Serializable {
 	private ImageView imTre;	
 	@FXML
 	private MenuItem recom;
+	@FXML
+	private Text timer;
+	
+
 	public String d;
 	public Color c=null;
 
@@ -108,9 +119,64 @@ public class ControleurJeu implements Serializable {
 		}		
 
 	}
+	
+	public class Time{
+		@FXML
+		private int hour;
+		@FXML
+		private int minute;
+		@FXML
+		private int second;
+	
+	
+	public Time(int hour,int minute,int second) {
+		this.hour=hour;
+		this.minute=minute;
+		this.second=second;
+	}
+	
+	public Time(String currentTime) {
+		String [] time=currentTime.split(":");
+		hour=Integer.parseInt(time[0]);
+		minute=Integer.parseInt(time[1]);
+		second=Integer.parseInt(time[2]);
+	}
+	
+	public String GetCurrentTime() {
+		return hour + ":" + minute + ":" +second;
+	}
+	
+	public void oneSecondPassed() {
+		second++;
+		if (second==60) {
+			minute++;
+			second=0;
+			if (minute==60) {
+				hour++;
+				minute=0;
+				if(hour==24) {
+					hour=0;
+					System.out.println("NextDay");
+				}
+			}
+		}
+	}
+	}
+	
+	public class CurrentTime {
+		DateTimeFormatter dtf =DateTimeFormatter.ofPattern("HH:mm:ss");
+		LocalDateTime now = LocalDateTime.now();
+		
+		public CurrentTime() {
+	}
+		public String currentTime() {return dtf.format(now);}}	
+	Time time= new Time("00:00:0");
+	
 
-
-
+	public void initialize(URL url,ResourceBundle resourceBundle) {
+		timer.setText(time.GetCurrentTime());
+	}
+	
 	//code principal
 	@FXML
 	private void initialize() throws FileNotFoundException {

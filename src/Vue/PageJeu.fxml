@@ -115,8 +115,8 @@
    <right>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="imagedroit" fitHeight="240.0" fitWidth="252.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="20.0" />
-            <Text layoutX="43.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00" textAlignment="CENTER" wrappingWidth="100.13671875" AnchorPane.bottomAnchor="300.0" AnchorPane.rightAnchor="150.0">
+            <ImageView fx:id="imagedroit" fitHeight="240.0" fitWidth="252.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="79.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0" />
+            <Text fx:id="timer" layoutX="151.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00" textAlignment="CENTER" wrappingWidth="100.13671875" AnchorPane.leftAnchor="151.0" AnchorPane.rightAnchor="0.86328125" AnchorPane.topAnchor="0.0732421875">
                <font>
                   <Font size="37.0" />
                </font>
