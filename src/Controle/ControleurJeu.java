@@ -18,7 +18,9 @@ import java.util.Optional;
 import java.net.URL;
 import Modele.Brique;
 import Modele.Briques;
+import Modele.CurrentTime;
 import Modele.Rectangleu;
+import Modele.Time;
 import Modele.quadrillage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -101,7 +103,6 @@ public class ControleurJeu implements Serializable {
 	public String Taille="1";
 
 
-
 	public int compteurfig3 =0;
 	public int ancien;
 	int rang;
@@ -118,64 +119,9 @@ public class ControleurJeu implements Serializable {
 			brayk.add(b.get("grand"));
 		}		
 
-	}
+	}		
 	
-	public class Time{
-		@FXML
-		private int hour;
-		@FXML
-		private int minute;
-		@FXML
-		private int second;
-	
-	
-	public Time(int hour,int minute,int second) {
-		this.hour=hour;
-		this.minute=minute;
-		this.second=second;
-	}
-	
-	public Time(String currentTime) {
-		String [] time=currentTime.split(":");
-		hour=Integer.parseInt(time[0]);
-		minute=Integer.parseInt(time[1]);
-		second=Integer.parseInt(time[2]);
-	}
-	
-	public String GetCurrentTime() {
-		return hour + ":" + minute + ":" +second;
-	}
-	
-	public void oneSecondPassed() {
-		second++;
-		if (second==60) {
-			minute++;
-			second=0;
-			if (minute==60) {
-				hour++;
-				minute=0;
-				if(hour==24) {
-					hour=0;
-					System.out.println("NextDay");
-				}
-			}
-		}
-	}
-	}
-	
-	public class CurrentTime {
-		DateTimeFormatter dtf =DateTimeFormatter.ofPattern("HH:mm:ss");
-		LocalDateTime now = LocalDateTime.now();
-		
-		public CurrentTime() {
-	}
-		public String currentTime() {return dtf.format(now);}}	
-	Time time= new Time("00:00:0");
-	
-
-	public void initialize(URL url,ResourceBundle resourceBundle) {
-		timer.setText(time.GetCurrentTime());
-	}
+	Time time;
 	
 	//code principal
 	@FXML
@@ -260,8 +206,17 @@ public class ControleurJeu implements Serializable {
 		for(int i=2;i<hex.length()-2;i++) {
 			d+=hex.charAt(i);
 		}
-
-
+		
+		time= new Time("00:05:0");
+		timer.setText(time.GetCurrentTime());
+		/*
+		while (time.GetCurrentTime()!="0:0:0") {
+			time.oneSecondPassed();
+			timer.setText(time.GetCurrentTime());
+		}*/
+		
+		
+		
 		coul.setOnAction( new EventHandler<ActionEvent>() {		
 
 
